@@ -1,0 +1,134 @@
+# Stock 量化交易系统 - 统一配置文件
+# 用于避免 Agent 之间的硬编码不一致
+
+# ============================================
+# Phase 0: 数据验证配置
+# ============================================
+
+data_validation:
+  # 验证指标阈值
+  missing_rate_threshold: 0.05  # 5% - 数据缺失率上限
+  expected_trading_days_per_year: 252  # 每年约252个交易日
+
+  # 样本股票（用于验证）
+  sample_stocks:
+    - symbol: "000001.SZ"
+      name: "平安银行"
+      market: "深证"
+      sector: "金融"
+    - symbol: "000858.SZ"
+      name: "五粮液"
+      market: "深证"
+      sector: "消费"
+    - symbol: "300750.SZ"
+      name: "宁德时代"
+      market: "深证创业板"
+      sector: "科技/新能源"
+
+  # 指数
+  sample_index:
+    - symbol: "000300.SH"
+      name: "沪深300"
+
+  # 数据时间范围
+  default_years: 3  # 默认获取3年数据
+
+  # 数据源优先级
+  data_source_priority:
+    - "AKShare"    # 第一优先级：免费无限制
+    - "OpenBB"     # 第二优先级：需验证A股支持
+    - "Yahoo"      # 第三优先级：复权问题待确认
+    - "Tushare"    # 最后备选：免费额度有限
+
+# ============================================
+# 数据获取配置
+# ============================================
+
+akshare:
+  adjust_type: "hfq"  # 后复权（历史复权）
+  period: "daily"     # 日线数据
+  max_retries: 3      # 最大重试次数
+  retry_delay: [2, 4, 8]  # 重试延迟（秒，指数退避）
+
+qlib:
+  data_root: "~/.qlib/qlib_data/cn_data"  # Qlib 数据根目录
+  provider_uri: "~/.qlib/qlib_data/cn_data"
+  region: "cn"
+
+  # Phase 0 暂时使用 CSV 格式
+  storage_format: "csv"  # Phase 1 可改为 "bin"
+
+# ============================================
+# 环境配置
+# ============================================
+
+environment:
+  python_version_min: "3.8"
+  python_version_max: "3.10"
+
+  dependencies:
+    akshare: ">=1.12.0"
+    pandas: ">=1.3.0"
+    qlib: ">=0.9.0"
+    numpy: ">=1.20.0"
+
+# ============================================
+# 日志配置
+# ============================================
+
+logging:
+  validation_log: "validation_report.log"
+  level: "INFO"
+  format: "%(asctime)s [%(levelname)s] %(message)s"
+
+# ============================================
+# Phase 1 配置（预留，待 Phase 0 完成后填充）
+# ============================================
+
+backtest:
+  # 待规划
+  strategy: null
+  benchmark: null
+  commission: null
+
+# ============================================
+# 退出条件配置
+# ============================================
+
+exit_conditions:
+  # Go - 进入下一阶段
+  go_criteria:
+    min_data_quality: 0.95  # 数据完整性 > 95%
+    min_stocks_validated: 3  # 至少3只股票验证通过
+
+  # No-Go - 启动 Plan B
+  no_go_triggers:
+    max_missing_rate: 0.10  # 缺失率 > 10%
+    max_consecutive_failures: 3  # 连续失败3次
+    max_network_errors: 5  # 网络错误 > 5次
+
+# ============================================
+# Plan B 配置（备选方案）
+# ============================================
+
+plan_b:
+  options:
+    - id: "B1"
+      description: "缩短时间窗口或减少股票数量"
+      trigger: "数据缺失率在 5%-10% 之间"
+      action: "years: 3 -> 1, stocks: 4 -> 2"
+
+    - id: "B2"
+      description: "切换到 Yahoo Finance"
+      trigger: "AKShare 和 OpenBB 都不可用"
+      action: "使用 yfinance 库，注意复权问题"
+
+    - id: "B3"
+      description: "申请 Tushare 试用配额"
+      trigger: "免费数据源全部失败"
+      action: "发邮件说明学术/研究用途"
+
+    - id: "B4"
+      description: "使用公开数据集"
+      trigger: "所有 API 数据源失败"
+      action: "从 Kaggle/GitHub 下载打包数据"

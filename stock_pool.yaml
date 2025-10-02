@@ -1,0 +1,120 @@
+stock_pools:
+  small_cap:
+  - symbol: 000001.SZ
+    name: 平安银行
+    industry: 金融
+    sector: 银行
+  - symbol: 601318.SH
+    name: 中国平安
+    industry: 金融
+    sector: 保险
+  - symbol: 000858.SZ
+    name: 五粮液
+    industry: 消费
+    sector: 白酒
+  - symbol: 600519.SH
+    name: 贵州茅台
+    industry: 消费
+    sector: 白酒
+  - symbol: 300750.SZ
+    name: 宁德时代
+    industry: 新能源
+    sector: 电池
+  - symbol: 600036.SH
+    name: 招商银行
+    industry: 金融
+    sector: 银行
+  - symbol: 002594.SZ
+    name: 比亚迪
+    industry: 新能源
+    sector: 汽车
+  - symbol: 000002.SZ
+    name: 万科A
+    industry: 地产
+    sector: 房地产
+  - symbol: 600276.SH
+    name: 恒瑞医药
+    industry: 医药
+    sector: 化学制药
+  - symbol: 601166.SH
+    name: 兴业银行
+    industry: 金融
+    sector: 银行
+  medium_cap:
+    inherit_from: small_cap
+    plan: A
+    plan_name: 保守版（20只纯A股）
+    plan_description: 使用长江电力替换中芯国际，避免科创板数据问题
+    additional:
+    - symbol: 300059.SZ
+      name: 东方财富
+      industry: 金融
+      sector: 金融科技
+    - symbol: 601012.SH
+      name: 隆基绿能
+      industry: 新能源
+      sector: 光伏
+    - symbol: 603288.SH
+      name: 海天味业
+      industry: 消费
+      sector: 调味品
+    - symbol: 000333.SZ
+      name: 美的集团
+      industry: 消费
+      sector: 家电
+    - symbol: 002475.SZ
+      name: 立讯精密
+      industry: 科技
+      sector: 电子制造
+    - symbol: 600309.SH
+      name: 万华化学
+      industry: 周期
+      sector: 化工
+    - symbol: 600031.SH
+      name: 三一重工
+      industry: 周期
+      sector: 机械
+    - symbol: 300760.SZ
+      name: 迈瑞医疗
+      industry: 医药
+      sector: 医疗器械
+    - symbol: 600900.SH
+      name: 长江电力
+      industry: 公用事业
+      sector: 电力
+    - symbol: 002920.SZ
+      name: 德赛西威
+      industry: 科技
+      sector: 汽车电子
+industry_config:
+  金融:
+  - 银行
+  - 保险
+  - 金融科技
+  消费:
+  - 白酒
+  - 调味品
+  - 家电
+  新能源:
+  - 电池
+  - 汽车
+  - 光伏
+  科技:
+  - 电子制造
+  - 汽车电子
+  - 半导体
+  医药:
+  - 化学制药
+  - 医疗器械
+  周期:
+  - 化工
+  - 机械
+  地产:
+  - 房地产
+  公用事业:
+  - 电力
+_metadata:
+  version: 1.0.0
+  phase: Phase 6E
+  created_by: generate_stock_pool_yaml.py
+  warning: 请勿手动编辑此文件，修改请重新运行生成脚本
