@@ -105,13 +105,13 @@ def load_json(filepath):
     return full_data, metadata
 
 
-def load_benchmark_data(start_date='2022-01-01', end_date='2024-09-30'):
+def load_benchmark_data(start_date='2021-01-01', end_date='2025-09-30'):
     """
     下载沪深300指数数据并缓存到本地，记录完整元数据
 
     Args:
-        start_date: 起始日期
-        end_date: 结束日期
+        start_date: 起始日期（默认2021-01-01，支持Phase 8回归测试）
+        end_date: 结束日期（默认2025-09-30，覆盖Phase 7数据）
 
     Returns:
         DataFrame: 沪深300指数数据
@@ -152,8 +152,8 @@ def load_benchmark_data(start_date='2022-01-01', end_date='2024-09-30'):
     if not pd.api.types.is_datetime64_any_dtype(df['date']):
         df['date'] = pd.to_datetime(df['date'])
 
-    # 保守起见，下载完整历史（从2022年开始）
-    df = df[df['date'] >= pd.Timestamp('2022-01-01')]
+    # 使用参数化起始日期过滤（支持2021-2025，Phase 8扩展）
+    df = df[df['date'] >= pd.Timestamp(start_date)]
 
     # 缓存数据
     df.to_csv(cache_file, index=False)
