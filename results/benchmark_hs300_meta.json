@@ -1,8 +1,8 @@
 {
-  "last_updated": "2025-10-02 11:35:54",
-  "start_date": "2022-01-04",
+  "last_updated": "2025-10-02 23:08:13",
+  "start_date": "2007-01-04",
   "end_date": "2025-09-30",
-  "data_points": 909,
+  "data_points": 4558,
   "source": "akshare.stock_zh_index_daily",
   "symbol": "sh000300"
 }

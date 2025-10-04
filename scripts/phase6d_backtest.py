@@ -47,11 +47,11 @@ THRESHOLDS = {
 
 def load_stock_pool_from_yaml(pool_name='small_cap'):
     """
-    从stock_pool.yaml加载股票池
-    
+    从stock_pool.yaml或stock_pool_legacy7.yaml加载股票池
+
     Args:
-        pool_name: 股票池名称（small_cap/medium_cap）
-    
+        pool_name: 股票池名称（small_cap/medium_cap/legacy_7stocks）
+
     Returns:
         dict: {symbol: name}
     """
@@ -60,18 +60,23 @@ def load_stock_pool_from_yaml(pool_name='small_cap'):
     except ImportError:
         print("❌ 请安装 ruamel.yaml: pip install ruamel.yaml")
         sys.exit(1)
-    
-    yaml_path = Path(__file__).parent.parent / 'stock_pool.yaml'
+
+    # 根据池名选择配置文件
+    if pool_name == 'legacy_7stocks':
+        yaml_path = Path(__file__).parent.parent / 'stock_pool_legacy7.yaml'
+    else:
+        yaml_path = Path(__file__).parent.parent / 'stock_pool.yaml'
+
     if not yaml_path.exists():
         print(f"❌ 配置文件不存在: {yaml_path}")
         sys.exit(1)
-    
+
     yaml = YAML(typ='safe')
     with open(yaml_path) as f:
         config = yaml.load(f)
-    
+
     stock_pools = config.get('stock_pools', {})
-    
+
     if pool_name == 'small_cap':
         # 直接返回small_cap列表
         stocks = {s['symbol']: s['name'] for s in stock_pools.get('small_cap', [])}
@@ -81,11 +86,15 @@ def load_stock_pool_from_yaml(pool_name='small_cap'):
         medium_cap_config = stock_pools.get('medium_cap', {})
         additional_stocks = {s['symbol']: s['name'] for s in medium_cap_config.get('additional', [])}
         stocks = {**small_cap_stocks, **additional_stocks}
+    elif pool_name == 'legacy_7stocks':
+        # Phase 8: 7只老股（2005年就存在）
+        stocks = {s['symbol']: s['name'] for s in stock_pools.get('legacy_7stocks', [])}
     else:
         print(f"❌ 未知股票池: {pool_name}")
         sys.exit(1)
-    
-    print(f"✓ 从stock_pool.yaml加载 {pool_name}（{len(stocks)}只股票）")
+
+    yaml_file = 'stock_pool_legacy7.yaml' if pool_name == 'legacy_7stocks' else 'stock_pool.yaml'
+    print(f"✓ 从{yaml_file}加载 {pool_name}（{len(stocks)}只股票）")
     return stocks
 
 
@@ -94,13 +103,35 @@ def get_year_config(year, rebalance_freq='monthly'):
     获取年份配置（起止日期、调仓日期）
 
     Args:
-        year: 年份（2021/2022/2023/2024/2025，Phase 8扩展至2021）
+        year: 年份（2007/2019/2021/2022/2023/2024/2025，Phase 8扩展）
         rebalance_freq: 调仓频率（'monthly' 或 'quarterly'）
 
     Returns:
         dict: 配置信息
     """
     configs = {
+        '2007': {
+            'start_date': '2007-01-04',
+            'end_date': '2007-12-31',
+            'rebalance_dates': [
+                '2007-01-31', '2007-02-28', '2007-03-30', '2007-04-30',
+                '2007-05-31', '2007-06-29', '2007-07-31', '2007-08-31',
+                '2007-09-28', '2007-10-31', '2007-11-30', '2007-12-31'
+            ] if rebalance_freq == 'monthly' else [
+                '2007-03-30', '2007-06-29', '2007-09-28', '2007-12-31'
+            ]
+        },
+        '2019': {
+            'start_date': '2019-01-01',
+            'end_date': '2019-12-31',
+            'rebalance_dates': [
+                '2019-01-31', '2019-02-28', '2019-03-29', '2019-04-30',
+                '2019-05-31', '2019-06-28', '2019-07-31', '2019-08-30',
+                '2019-09-30', '2019-10-31', '2019-11-29', '2019-12-31'
+            ] if rebalance_freq == 'monthly' else [
+                '2019-03-29', '2019-06-28', '2019-09-30', '2019-12-31'
+            ]
+        },
         '2021': {
             'start_date': '2021-01-01',
             'end_date': '2021-12-31',
@@ -185,6 +216,11 @@ def load_stock_data(data_dir, start_date, end_date, pool_name='small_cap'):
 
         df = pd.read_csv(csv_file, index_col='date', parse_dates=True)
         df = df[start_date:end_date]
+
+        if df.empty:
+            print(f"⚠️ {symbol} 在 {start_date} ~ {end_date} 无可用数据，已跳过")
+            continue
+
         df['symbol'] = symbol
         df['name'] = name
 
@@ -320,6 +356,18 @@ def select_stocks_with_stability(stock_data, date, prev_holdings, momentum_thres
     # Step 7: 合并
     final_selection = keep_stocks + new_stocks
 
+    # [ENHANCED DEBUG LOG] 调仓摘要（Phase 8专用）
+    if debug and prev_holdings:
+        removed = [s for s in prev_holdings if s not in final_selection]
+        added = [s for s in final_selection if s not in prev_holdings]
+        turnover_rate = (len(removed) / len(prev_holdings)) * 100 if prev_holdings else 0
+
+        print(f"\n[调仓摘要] {date.date()}")
+        print(f"  持仓: {len(prev_holdings)}只 → {len(final_selection)}只")
+        print(f"  换出: {len(removed)}只 - {removed if removed else '无'}")
+        print(f"  换入: {len(added)}只 - {added if added else '无'}")
+        print(f"  换手率: {turnover_rate:.1f}%")
+
     return final_selection
 
 
@@ -433,6 +481,21 @@ def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, moment
             'count': len(selected)
         })
 
+        # [ENHANCED DEBUG] 调仓摘要（Phase 8）
+        if debug and i > 0:
+            prev_stocks = holdings_history[i-1]['stocks']
+            removed = [s for s in prev_stocks if s not in selected]
+            added = [s for s in selected if s not in prev_stocks]
+            turnover_rate = (len(removed) / len(prev_stocks)) * 100 if prev_stocks else 0
+
+            print(f"\n[调仓摘要] {date.date()}")
+            print(f"  持仓: {len(prev_stocks)}只 → {len(selected)}只")
+            print(f"  换出: {len(removed)}只 - {removed if removed else '无'}")
+            print(f"  换入: {len(added)}只 - {added if added else '无'}")
+            print(f"  换手率: {turnover_rate:.1f}%")
+        elif debug and i == 0:
+            print(f"\n[首次建仓] {date.date()}: {len(selected)}只 - {selected}")
+
         # 初始建仓成本
         if i == 0 and commission > 0:
             initial_trade_cost = current_value * commission
@@ -540,8 +603,12 @@ def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq
     data_dir = Path.home() / '.qlib/qlib_data/cn_data'
     stock_data = load_stock_data(data_dir, config['start_date'], config['end_date'], pool_name=pool_name)
 
-    if len(stock_data) < 10:
-        raise ValueError(f"数据不足: 仅加载{len(stock_data)}只股票")
+    # 动态检查：至少需要5只股票（支持legacy_7stocks）
+    if len(stock_data) < 5:
+        raise ValueError(
+            f"数据不足: 仅加载{len(stock_data)}只股票（最少需要5只）。"
+            f"请确认已将 {config['start_date']} ~ {config['end_date']} 区间内的数据转换到 ~/.qlib/qlib_data/cn_data"
+        )
 
     # 固定持仓回测
     print("\n执行固定持仓回测...")
@@ -805,8 +872,8 @@ def main():
                         choices=['monthly', 'quarterly'],
                         help='调仓频率（默认monthly）')
     parser.add_argument('--pool', type=str, default='medium_cap',
-                        choices=['small_cap', 'medium_cap'],
-                        help='股票池（默认medium_cap=20只[推荐], small_cap=10只[legacy]）')
+                        choices=['small_cap', 'medium_cap', 'legacy_7stocks'],
+                        help='股票池（默认medium_cap=20只[推荐], small_cap=10只[legacy], legacy_7stocks=7只[Phase 8]）')
     parser.add_argument('--commission', type=float, default=0.0,
                         help='单边交易佣金率（默认0.0，示例：0.001=0.1%%）')
     parser.add_argument('--stability-ratio', type=float, default=0.0,
@@ -826,13 +893,34 @@ def main():
     # 初始化目录
     ensure_directories()
 
+    # 确定基准数据起始日期（Phase 8扩展：支持2007/2019）
+    if args.full:
+        benchmark_start = '2022-01-01'  # 完整三年模式
+    else:
+        single_year_config = get_year_config(args.year, args.rebalance_freq)
+        if not single_year_config:
+            print(f"❌ 不支持的年份: {args.year}")
+            sys.exit(1)
+        benchmark_start = single_year_config['start_date']
+
     # 加载沪深300基准
-    benchmark_df = load_benchmark_data()
+    benchmark_df = load_benchmark_data(start_date=benchmark_start)
 
     # 生成文件名后缀
     freq_suffix = 'quarterly' if args.rebalance_freq == 'quarterly' else 'monthly'
     threshold_str = f"m{int(args.momentum_threshold)}" if args.momentum_threshold != 0 else "m0"
-    pool_suffix = '20stocks' if args.pool == 'medium_cap' else '10stocks'
+
+    # 根据股票池确定目标持仓数量和文件后缀（Phase 8扩展）
+    if args.pool == 'legacy_7stocks':
+        target_count = 7
+        pool_suffix = '7stocks'
+    elif args.pool == 'medium_cap':
+        target_count = 20
+        pool_suffix = '20stocks'
+    else:  # small_cap
+        target_count = 10
+        pool_suffix = '10stocks'
+
     file_suffix = f"_{threshold_str}_{freq_suffix}_{pool_suffix}"
 
     if args.full:
@@ -842,9 +930,9 @@ def main():
         print(f"参数: 阈值={args.momentum_threshold}%, 频率={args.rebalance_freq}, 佣金={args.commission*100:.2f}%, 稳定性={args.stability_ratio:.1f}")
         print("="*60)
 
-        results_2022 = run_year_backtest('2022', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, debug=args.debug)
-        results_2023 = run_year_backtest('2023', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, debug=args.debug)
-        results_2024 = run_year_backtest('2024', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, debug=args.debug)
+        results_2022 = run_year_backtest('2022', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
+        results_2023 = run_year_backtest('2023', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
+        results_2024 = run_year_backtest('2024', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
 
         # 判定结果
         print("\n" + "="*60)
@@ -876,7 +964,7 @@ def main():
 
     else:
         # 单年回测
-        result = run_year_backtest(args.year, benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, debug=args.debug)
+        result = run_year_backtest(args.year, benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
 
         # 打印摘要
         print(f"\n{'-'*60}")
