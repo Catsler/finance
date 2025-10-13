@@ -22,28 +22,31 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 try:
     from ruamel.yaml import YAML
+    yaml_loader = YAML(typ="safe")
+    def load_yaml(path):
+        with open(path) as f:
+            return yaml_loader.load(f)
 except ImportError:
-    print("请安装 ruamel.yaml: pip install ruamel.yaml")
-    sys.exit(1)
+    import yaml
+    def load_yaml(path):
+        with open(path) as f:
+            return yaml.safe_load(f)
 
 
 def load_stock_pool(yaml_path: Path, pool_name: str = 'medium_cap') -> list:
     """
-    从 YAML 文件加载股票池
-    
+    从 YAML 文件加载股票池（返回拷贝，防污染）
+
     Args:
         yaml_path: YAML配置文件路径
-        pool_name: 股票池名称（small_cap/medium_cap）
-    
-    Returns:
-        list: 股票列表
-    """
-    yaml = YAML(typ="safe")
-    with open(yaml_path) as f:
-        config = yaml.load(f)
+        pool_name: 股票池名称（small_cap/medium_cap/legacy_test_pool）
 
+    Returns:
+        list: 股票列表（防御性拷贝）
+    """
+    config = load_yaml(yaml_path)
     stock_pools = config.get('stock_pools', {})
-    
+
     if pool_name == 'small_cap':
         # 直接返回small_cap列表
         stocks = stock_pools.get('small_cap', [])
@@ -53,12 +56,22 @@ def load_stock_pool(yaml_path: Path, pool_name: str = 'medium_cap') -> list:
         medium_cap_config = stock_pools.get('medium_cap', {})
         additional_stocks = medium_cap_config.get('additional', [])
         stocks = small_cap_stocks + additional_stocks
+    elif pool_name in stock_pools:
+        # 其他池（如legacy_test_pool）直接返回
+        pool_data = stock_pools[pool_name]
+        if isinstance(pool_data, list):
+            stocks = pool_data
+        else:
+            # medium_cap这种继承结构已在上面处理
+            print(f"❌ 池 {pool_name} 结构不支持")
+            sys.exit(1)
     else:
         print(f"❌ 未知股票池: {pool_name}")
         sys.exit(1)
-    
+
     print(f"✅ 加载 {pool_name}（{len(stocks)} 只股票）")
-    return stocks
+    # 防御性拷贝（列表推导浅拷贝）
+    return [stock.copy() for stock in stocks]
 
 
 def download_stock(symbol: str, years: int) -> dict:
@@ -76,6 +89,7 @@ def download_stock(symbol: str, years: int) -> dict:
                 "scripts/akshare-to-qlib-converter.py",
                 "--symbol", symbol,
                 "--years", str(years),
+                "--adjust", "qfq",
             ],
             capture_output=True,
             text=True,
@@ -171,10 +185,19 @@ def main():
     parser.add_argument(
         "--config", default="stock_pool.yaml", help="股票池配置文件路径（默认stock_pool.yaml）"
     )
+
+    # 动态读取stock_pool.yaml生成choices
+    try:
+        yaml_data = load_yaml(Path("stock_pool.yaml"))
+        valid_pools = list(yaml_data.get('stock_pools', {}).keys())
+    except Exception as e:
+        print(f"⚠️ 无法读取stock_pool.yaml，使用默认池选项: {e}")
+        valid_pools = ['small_cap', 'medium_cap']
+
     parser.add_argument(
         "--pool", type=str, default='medium_cap',
-        choices=['small_cap', 'medium_cap'],
-        help='股票池（默认medium_cap=20只[推荐], small_cap=10只[legacy]）'
+        choices=valid_pools,
+        help=f'股票池选择（可用: {valid_pools}）'
     )
     args = parser.parse_args()
 

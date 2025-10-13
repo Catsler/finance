@@ -45,7 +45,7 @@ data_validation:
 # ============================================
 
 akshare:
-  adjust_type: "hfq"  # 后复权（历史复权）
+  adjust_type: ""  # 真实交易价格（默认），可选：qfq=前复权, hfq=后复权
   period: "daily"     # 日线数据
   max_retries: 3      # 最大重试次数
   retry_delay: [2, 4, 8]  # 重试延迟（秒，指数退避）

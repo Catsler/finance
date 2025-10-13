@@ -1,0 +1,45 @@
+{
+  "baseline": {
+    "total_return": 0.4888936909999995,
+    "final_value": 148889.36909999995,
+    "description": "无止损（开盘价下单）"
+  },
+  "variant_a": {
+    "total_return": 0.3207414432319999,
+    "final_value": 132074.1443232,
+    "stop_triggered": 14,
+    "total_trades": 73,
+    "stop_trigger_rate": 19.17808219178082,
+    "description": "5%止损（开盘价下单）"
+  },
+  "variant_b": {
+    "total_return": 0.45438932563999956,
+    "final_value": 145438.93256399996,
+    "stop_triggered": 2,
+    "total_trades": 62,
+    "stop_trigger_rate": 3.225806451612903,
+    "description": "10%止损（开盘价下单）"
+  },
+  "benchmark": {
+    "hs300_return": 0.18648474818920188,
+    "description": "沪深300指数"
+  },
+  "config": {
+    "year": 2024,
+    "stock_count": 20,
+    "rebalance_freq": "monthly",
+    "entry_method": "open_price",
+    "stop_slippage": 0.015,
+    "limit_buffer": 0.003
+  },
+  "_metadata": {
+    "timestamp": "2025-10-10 20:41:16",
+    "phase": "Stage 2 Priority 1.2",
+    "version": "2.0.0",
+    "git": {
+      "commit": "320cb1e8",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "selection_date": "2025-10-10",
+  "strategy": "HS300动量策略",
+  "parameters": {
+    "budget": 100000.0,
+    "top_n": 5,
+    "momentum_threshold": 0.0
+  },
+  "constituents_count": 283,
+  "selected_count": 8,
+  "allocation": {
+    "positions": [
+      {
+        "symbol": "002920.SZ",
+        "name": "德赛西威",
+        "price": 153.0,
+        "lots": 1,
+        "shares": 100,
+        "cost": 15300.0,
+        "weight": 15.3,
+        "return_20d": 21.39,
+        "ma5": 152.062,
+        "ma10": 146.772
+      }
+    ],
+    "unaffordable": [
+      {
+        "symbol": "002475.SZ",
+        "name": "立讯精密",
+        "price": 2170.64,
+        "min_cost": 217064.0,
+        "allocated_budget": 20000.0,
+        "shortage": 197064.0,
+        "return_20d": 49.84,
+        "reason": "1手需217064元 > 分配20000元"
+      },
+      {
+        "symbol": "300750.SZ",
+        "name": "宁德时代",
+        "price": 762.8,
+        "min_cost": 76280.0,
+        "allocated_budget": 20000.0,
+        "shortage": 56280.0,
+        "return_20d": 31.25,
+        "reason": "1手需76280元 > 分配20000元"
+      },
+      {
+        "symbol": "600031.SH",
+        "name": "三一重工",
+        "price": 1026.45,
+        "min_cost": 102645.0,
+        "allocated_budget": 20000.0,
+        "shortage": 82645.0,
+        "return_20d": 10.01,
+        "reason": "1手需102645元 > 分配20000元"
+      },
+      {
+        "symbol": "601012.SH",
+        "name": "隆基股份",
+        "price": 377.1,
+        "min_cost": 37710.0,
+        "allocated_budget": 20000.0,
+        "shortage": 17710.0,
+        "return_20d": 9.51,
+        "reason": "1手需37710元 > 分配20000元"
+      }
+    ],
+    "total_cost": 15300.0,
+    "budget": 100000.0,
+    "utilization": 15.3,
+    "count": 1,
+    "warning": "4只候选股票因预算不足被排除 (总预算100000元 ÷ 5只 = 20000元/只)"
+  },
+  "top_candidates": [
+    {
+      "symbol": "002475.SZ",
+      "name": "立讯精密",
+      "return_20d": 49.84,
+      "close": 2170.64
+    },
+    {
+      "symbol": "300750.SZ",
+      "name": "宁德时代",
+      "return_20d": 31.25,
+      "close": 762.8
+    },
+    {
+      "symbol": "002920.SZ",
+      "name": "德赛西威",
+      "return_20d": 21.39,
+      "close": 153.0
+    },
+    {
+      "symbol": "600031.SH",
+      "name": "三一重工",
+      "return_20d": 10.01,
+      "close": 1026.45
+    },
+    {
+      "symbol": "601012.SH",
+      "name": "隆基股份",
+      "return_20d": 9.51,
+      "close": 377.1
+    },
+    {
+      "symbol": "300760.SZ",
+      "name": "迈瑞医疗",
+      "return_20d": 4.05,
+      "close": 276.03
+    },
+    {
+      "symbol": "002594.SZ",
+      "name": "比亚迪",
+      "return_20d": 3.07,
+      "close": 341.27
+    },
+    {
+      "symbol": "300059.SZ",
+      "name": "东方财富",
+      "return_20d": 0.48,
+      "close": 2112.81
+    }
+  ],
+  "_metadata": {
+    "timestamp": "2025-10-10 11:35:30",
+    "phase": "Phase 1 MVP",
+    "version": "1.0.0",
+    "git": {
+      "commit": "320cb1e8",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

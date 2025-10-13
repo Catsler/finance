@@ -54,12 +54,8 @@ STABILITY_WINDOW = 60
 TARGET_COUNT = 20
 INITIAL_CAPITAL = 1_000_000.0
 
-# 配置日志（仅在开发调试时启用DEBUG）
+# 模块级logger（不配置，避免导入副作用）
 logger = logging.getLogger(__name__)
-logging.basicConfig(
-    level=logging.INFO,  # 生产环境使用INFO，调试时改为DEBUG
-    format='%(levelname)s: %(message)s'
-)
 
 
 @dataclass
@@ -466,21 +462,19 @@ def validate_phase6f(
     baseline_result: BacktestResult,
     variant_result: BacktestResult,
     benchmark_return: float,
-    args: argparse.Namespace
 ) -> None:
     """
     Phase 6F 实验结果验证和输出
-    
+
     负责打印实验结果摘要，未来可扩展为：
     - 阈值检查（如收益率/换手率边界）
     - 异常检测（如极端波动、数据质量）
     - 统计显著性检验
-    
+
     Args:
         baseline_result: 基准策略回测结果
         variant_result: 实验方案回测结果
         benchmark_return: 沪深300基准收益率
-        args: 命令行参数（预留扩展用）
     """
     print("\n=== 实验完成 ===")
     print(f"Baseline 总收益: {format_percent(baseline_result.total_return)}")
@@ -550,6 +544,12 @@ def determine_window(args: argparse.Namespace) -> Tuple[pd.Timestamp, pd.Timesta
 
 
 def main() -> None:
+    # 配置日志（仅CLI执行时生效，避免污染导入环境）
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(levelname)s: %(message)s'
+    )
+
     parser = argparse.ArgumentParser(description="Phase 6F 换手率优化实验")
     parser.add_argument("--test", choices=["turnover_reduction", "stability_filter", "combined"], default="turnover_reduction", help="实验方案选择")
     parser.add_argument("--year", type=int, help="指定单一年份测试，例如 2023")
@@ -656,7 +656,7 @@ def main() -> None:
     save_holdings_csv(baseline_result, baseline_csv)
     save_holdings_csv(variant_result, variant_csv)
 
-    validate_phase6f(baseline_result, variant_result, benchmark_return, args)
+    validate_phase6f(baseline_result, variant_result, benchmark_return)
 
 
 if __name__ == "__main__":

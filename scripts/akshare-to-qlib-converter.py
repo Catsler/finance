@@ -54,9 +54,10 @@ def fetch_with_akshare(
     end_date: Optional[str] = None,
     years: int = 3,
     max_retries: int = 3,
+    adjust: str = "",
 ) -> pd.DataFrame:
     """
-    从 AKShare 获取股票历史数据（后复权）
+    从 AKShare 获取股票历史数据（真实交易价格）
 
     参数：
         symbol: 股票代码，如 "000001.SZ" 或 "600000.SH"
@@ -64,6 +65,7 @@ def fetch_with_akshare(
         end_date: 结束日期，格式 "YYYY-MM-DD"（可选）
         years: 回溯年数（当 start_date 未指定时生效）
         max_retries: 最大重试次数
+        adjust: 复权类型（""=真实价格，"qfq"=前复权，"hfq"=后复权，默认""）
 
     返回：
         DataFrame，包含字段：date, open, close, high, low, volume, money
@@ -98,7 +100,7 @@ def fetch_with_akshare(
                 period="daily",
                 start_date=start_str,
                 end_date=end_str,
-                adjust="hfq",  # 后复权（历史复权）
+                adjust=adjust,  # 真实交易价格（默认），可选：qfq=前复权, hfq=后复权
             )
 
             if df is None or df.empty:
@@ -228,6 +230,7 @@ def download_and_convert(
     end_date: Optional[str] = None,
     years: int = 3,
     output_root: Optional[str] = None,
+    adjust: str = "",
 ) -> Path:
     """
     完整流程：下载 → 验证 → 保存
@@ -238,6 +241,7 @@ def download_and_convert(
         end_date: 结束日期 "YYYY-MM-DD"（可选）
         years: 回溯年数（默认 3 年）
         output_root: 输出目录（默认 ~/.qlib/qlib_data/cn_data）
+        adjust: 复权类型（""=真实价格，"qfq"=前复权，"hfq"=后复权，默认""）
 
     返回：
         保存的 CSV 文件路径
@@ -248,7 +252,7 @@ def download_and_convert(
     output_root = Path(output_root or QLIB_ROOT).expanduser().resolve()
 
     # 1. 下载数据
-    df = fetch_with_akshare(symbol, start_date, end_date, years)
+    df = fetch_with_akshare(symbol, start_date, end_date, years, adjust=adjust)
 
     # 2. 验证数据
     expected_days = EXPECTED_TRADING_DAYS_PER_YEAR * years
@@ -293,6 +297,12 @@ def main() -> None:
         "--output-root", default=str(QLIB_ROOT), help=f"输出目录（默认 {QLIB_ROOT}）"
     )
     parser.add_argument(
+        "--adjust",
+        choices=["", "qfq", "hfq"],
+        default="qfq",
+        help="复权类型：qfq=前复权(默认), ''=真实价格, hfq=后复权",
+    )
+    parser.add_argument(
         "--log-level",
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
         default="INFO",
@@ -317,7 +327,7 @@ def main() -> None:
         logging.info("=" * 60)
 
         csv_file = download_and_convert(
-            args.symbol, args.start_date, args.end_date, args.years, args.output_root
+            args.symbol, args.start_date, args.end_date, args.years, args.output_root, args.adjust
         )
 
         logging.info("=" * 60)

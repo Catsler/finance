@@ -1,0 +1,21 @@
+{
+  "total_samples": 5,
+  "success_count": 5,
+  "total_cost_usd": 0.000149,
+  "avg_cost_per_sample": 3e-05,
+  "ai_score_stats": {
+    "mean": 6.0,
+    "std": 1.22,
+    "min": 4,
+    "max": 7
+  },
+  "correlation": {
+    "ai_score_vs_return": 0.818
+  },
+  "config": {
+    "model": "gpt-4.1-mini",
+    "max_samples": 5,
+    "backtest_file": "results/phase6d_profit_distribution.csv"
+  },
+  "timestamp": "2025-10-13 15:49:11"
+}

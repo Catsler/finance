@@ -1,0 +1,52 @@
+{
+  "symbols": [
+    {
+      "symbol": "300059.SZ",
+      "name": "东方财富"
+    },
+    {
+      "symbol": "601012.SH",
+      "name": "隆基绿能"
+    },
+    {
+      "symbol": "603288.SH",
+      "name": "海天味业"
+    },
+    {
+      "symbol": "000333.SZ",
+      "name": "美的集团"
+    },
+    {
+      "symbol": "002475.SZ",
+      "name": "立讯精密"
+    },
+    {
+      "symbol": "600309.SH",
+      "name": "万华化学"
+    },
+    {
+      "symbol": "600031.SH",
+      "name": "三一重工"
+    },
+    {
+      "symbol": "300760.SZ",
+      "name": "迈瑞医疗"
+    },
+    {
+      "symbol": "600900.SH",
+      "name": "长江电力"
+    },
+    {
+      "symbol": "002920.SZ",
+      "name": "德赛西威"
+    }
+  ],
+  "replacements": [
+    {
+      "original": "688981.SH",
+      "fallback": "600900.SH",
+      "reason": "中芯国际数据不足（科创板）"
+    }
+  ],
+  "timestamp": "2025-10-05 18:33:32"
+}

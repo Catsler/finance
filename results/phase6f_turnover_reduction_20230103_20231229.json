@@ -1,0 +1,52 @@
+{
+  "window": {
+    "start": "2023-01-03",
+    "end": "2023-12-29"
+  },
+  "inputs": {
+    "test": "turnover_reduction",
+    "momentum_threshold_pct": 0.0,
+    "stability_threshold": null,
+    "commission": 0.001,
+    "target_count": 20,
+    "pool": "medium_cap"
+  },
+  "baseline": {
+    "label": "Baseline",
+    "final_value": 916111.6943150433,
+    "total_return": -0.08388830568495675,
+    "annual_return": -0.09183200581522777,
+    "max_drawdown": -0.17244706717918928,
+    "avg_turnover": 2.1058333333333334,
+    "rebalance_count": 11
+  },
+  "variant": {
+    "label": "Quarterly Rebalance",
+    "final_value": 915359.7177875992,
+    "total_return": -0.08464028221240083,
+    "annual_return": -0.11151853415135837,
+    "max_drawdown": -0.09623891691136562,
+    "avg_turnover": 2.3666666666666667,
+    "rebalance_count": 3
+  },
+  "benchmark": {
+    "label": "HS300",
+    "total_return": -0.1174899347951168
+  },
+  "delta": {
+    "total_return": -0.000751976527444076,
+    "annual_return": -0.019686528336130604,
+    "max_drawdown": 0.07620815026782367,
+    "avg_turnover": 0.26083333333333325
+  },
+  "_metadata": {
+    "timestamp": "2025-10-09 12:02:29",
+    "phase": "Phase 6F",
+    "version": "1.0.0",
+    "git": {
+      "commit": "320cb1e8",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

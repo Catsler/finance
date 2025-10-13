@@ -1,0 +1,44 @@
+{
+  "total_return": 0.45438932563999956,
+  "final_value": 145438.93256399996,
+  "stop_triggered": 2,
+  "total_trades": 62,
+  "stop_trigger_rate": 3.225806451612903,
+  "regime_distribution": {
+    "sideways": 9
+  },
+  "stop_loss_by_regime": {
+    "sideways_market": 3.3333333333333335
+  },
+  "benchmark": {
+    "hs300_return": 0.18648474818920188,
+    "description": "沪深300指数"
+  },
+  "config": {
+    "year": 2024,
+    "stock_count": 20,
+    "rebalance_freq": "monthly",
+    "entry_method": "open_price",
+    "stop_loss_mode": "dynamic",
+    "regime_detection": {
+      "momentum_bull_threshold": 0.05,
+      "momentum_bear_threshold": -0.05,
+      "volatility_threshold": 0.15
+    },
+    "stop_loss_mapping": {
+      "bull_market": 0.15,
+      "bear_market": 0.08,
+      "sideways_market": 0.1
+    }
+  },
+  "_metadata": {
+    "timestamp": "2025-10-10 23:06:02",
+    "phase": "Stage 2 Priority 2 - 2024",
+    "version": "2.0.0",
+    "git": {
+      "commit": "320cb1e8",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

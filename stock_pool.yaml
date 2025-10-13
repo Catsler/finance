@@ -40,6 +40,28 @@ stock_pools:
     name: 兴业银行
     industry: 金融
     sector: 银行
+  legacy_test_pool:
+    # Phase 8.1试点池：5只2007年前上市的老股（验证20年历史数据回测）
+    - symbol: 600036.SH
+      name: 招商银行
+      industry: 金融
+      sector: 银行
+    - symbol: 000002.SZ
+      name: 万科A
+      industry: 地产
+      sector: 房地产
+    - symbol: 600519.SH
+      name: 贵州茅台
+      industry: 消费
+      sector: 白酒
+    - symbol: 000001.SZ
+      name: 平安银行
+      industry: 金融
+      sector: 银行
+    - symbol: 600000.SH
+      name: 浦发银行
+      industry: 金融
+      sector: 银行
   medium_cap:
     inherit_from: small_cap
     plan: A
