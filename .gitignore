@@ -1,3 +1,11 @@
 # Backup directories (per AGENTS.md)
 *_backup/
 **/*_backup/
+
+# Phase 9A: AI Agent 配置（防止 API 密钥泄漏）
+config/ai_agents_local.yaml
+config/*_local.yaml
+.env
+.env.local
+*.env
+**/.env

@@ -1,0 +1,90 @@
+# AI Agents 配置文件 - Phase 9A
+#
+# ⚠️  安全警告：
+# - 本文件为模板配置，仅包含环境变量占位符
+# - 切勿在此文件中硬编码真实 API 密钥
+# - 切勿提交含真实密钥的配置到 Git 仓库！
+#
+# 正确使用方式：
+# 1. 设置环境变量：export OPENAI_API_KEY=your_api_key
+# 2. 或创建本地配置：ai_agents_local.yaml（已加入 .gitignore，不会被提交）
+
+openai:
+  # API 密钥（使用环境变量占位符）
+  api_key: ${OPENAI_API_KEY}
+
+  # API 地址（中转服务）
+  base_url: "https://us.vveai.com/v1/"
+
+  # 模型配置
+  model: "gpt-4.1-mini"  # 测试通过：响应质量高，成本低
+  temperature: 0.1  # 降低随机性，保持分析一致性
+  max_tokens: 100  # 单次最大输出（测试显示27 tokens即可）
+  timeout: 10  # 请求超时时间（秒）
+
+# 智能体配置
+agents:
+  technical_analyst:
+    enabled: true
+    weight: 1.0
+
+    # Prompt 模板（可用变量：symbol, name, momentum_20d, ma5, ma10, industry, sector）
+    prompt_template: |
+      股票{symbol}({name})，20日涨{momentum_20d:.1%}，MA5={ma5:.0f}/MA10={ma10:.0f}，{industry}/{sector}。
+      给1-10分买入评分和10字理由。
+
+# 探针配置
+probe:
+  mode: "offline"  # 离线模式（不实时调用）
+  cache_ttl: 86400  # 缓存有效期（秒，24小时）
+  max_samples: 10  # 每次最多分析股票数（成本控制）
+
+  # 数据源配置
+  data_sources:
+    backtest_results: "results/phase6d_profit_distribution.csv"
+    stock_pool: "stock_pool.yaml"
+    qlib_data: "~/.qlib/qlib_data/cn_data"
+
+# 成本控制
+cost:
+  max_daily_cost: 1.0  # 最大日成本（美元）
+  alert_threshold: 0.5  # 警告阈值（美元）
+
+  # 价格参考（gpt-4.1-mini）
+  pricing:
+    model: "gpt-4.1-mini"
+    input_per_1k: 0.00015  # $0.15/1M tokens
+    output_per_1k: 0.0006  # $0.60/1M tokens
+    estimated_tokens_per_call: 60  # 预估每次调用总token数
+
+# 输出配置
+output:
+  csv_path: "results/phase9a_ai_probe.csv"
+  summary_path: "results/phase9a_ai_probe_summary.json"
+
+  # CSV 列定义
+  csv_columns:
+    - symbol
+    - name
+    - period_start
+    - period_end
+    - momentum_20d
+    - ma5
+    - ma10
+    - ai_score
+    - ai_reason
+    - actual_return
+    - cost_usd
+
+# 日志配置
+logging:
+  level: "INFO"  # DEBUG / INFO / WARNING / ERROR
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+# 元数据
+_metadata:
+  version: "1.0.0"
+  phase: "Phase 9A"
+  created_by: "Claude Code"
+  description: "TradingAgents 最小可行单元接入配置"
+  last_updated: "2025-10-13"

@@ -26,6 +26,8 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import sys
+import os
+import subprocess
 import argparse
 from datetime import datetime
 
@@ -43,6 +45,63 @@ THRESHOLDS = {
     'return_min_2022': -0.20,       # 2022年收益下限（红线）
     'excess_acceleration': 0.10     # 超额收益加速阈值（10%/年）
 }
+
+
+def derive_target_count(pool_name, pool_stocks, cli_value=None):
+    """
+    统一推导target_count（复用现有规则）
+
+    优先级：CLI参数 > 池名规则 > 池大小
+    """
+    if cli_value is not None:
+        return cli_value
+
+    # 池名规则（与现有行为完全一致）
+    if pool_name == 'small_cap':
+        return 10
+    elif pool_name == 'medium_cap':
+        return 20
+    elif pool_name == 'legacy_7stocks':
+        return 7
+    else:
+        # 默认：使用池大小
+        return len(pool_stocks)
+
+
+def build_custom_config(start_date, end_date, pool_name, pool_stocks,
+                       freq='M', target_count=None):
+    """
+    构建自定义时间区间配置（pilot模式）
+
+    Args:
+        start_date: 起始日期 (str, 'YYYY-MM-DD')
+        end_date: 结束日期 (str, 'YYYY-MM-DD')
+        pool_name: 股票池名称
+        pool_stocks: 股票池数据
+        freq: 调仓频率 ('M'=月末, 'Q'=季末)
+        target_count: CLI指定的持仓数（可选）
+
+    Returns:
+        dict: 配置字典
+    """
+    # 日期校验
+    start = pd.to_datetime(start_date)
+    end = pd.to_datetime(end_date)
+    if start >= end:
+        raise ValueError(f"Invalid date range: {start_date} >= {end_date}")
+
+    # 推导target_count（复用统一逻辑）
+    target_count = derive_target_count(pool_name, pool_stocks, target_count)
+
+    # 生成调仓日期（月末）
+    rebalance_dates = pd.date_range(start, end, freq=freq).strftime('%Y-%m-%d').tolist()
+
+    return {
+        'start_date': start_date,
+        'end_date': end_date,
+        'rebalance_dates': rebalance_dates,
+        'target_count': target_count
+    }
 
 
 def load_stock_pool_from_yaml(pool_name='small_cap'):
@@ -89,6 +148,9 @@ def load_stock_pool_from_yaml(pool_name='small_cap'):
     elif pool_name == 'legacy_7stocks':
         # Phase 8: 7只老股（2005年就存在）
         stocks = {s['symbol']: s['name'] for s in stock_pools.get('legacy_7stocks', [])}
+    elif pool_name in stock_pools and isinstance(stock_pools[pool_name], list):
+        # Phase 8.1: 支持其他简单列表池（如legacy_test_pool）
+        stocks = {s['symbol']: s['name'] for s in stock_pools[pool_name]}
     else:
         print(f"❌ 未知股票池: {pool_name}")
         sys.exit(1)
@@ -426,7 +488,7 @@ def backtest_fixed(stock_data, initial_capital=100000, commission=0.0):
     }
 
 
-def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, momentum_threshold=0.0, commission=0.0, stability_ratio=0.0, target_count=20, debug=False):
+def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, momentum_threshold=0.0, commission=0.0, stability_ratio=0.0, target_count=20, take_profit_tiers=None, debug=False):
     """
     动态选股回测
 
@@ -438,6 +500,7 @@ def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, moment
         commission: 单边交易佣金率（例如0.001表示0.1%）
         stability_ratio: 持仓稳定性比例（0=关闭，0.5=优先保留50%老仓位）
         target_count: 目标持仓数量
+        take_profit_tiers: 止盈梯度列表（例如[0.10, 0.15]表示10%和15%），None表示关闭
         debug: 是否启用DEBUG日志
 
     Returns:
@@ -445,14 +508,16 @@ def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, moment
     """
     # [DEBUG LOG]
     if debug:
+        take_profit_str = f", take_profit_tiers={take_profit_tiers}" if take_profit_tiers else ""
         print(f"[DEBUG] backtest_dynamic called: stability_ratio={stability_ratio}, target_count={target_count}, "
-              f"commission={commission}, periods={len(rebalance_dates)}")
+              f"commission={commission}, periods={len(rebalance_dates)}{take_profit_str}")
 
     rebalance_dates = [pd.Timestamp(d) for d in rebalance_dates]
 
     holdings_history = []
     current_value = initial_capital
     total_turnover = 0
+    take_profit_triggers = []  # 止盈触发记录
 
     for i, date in enumerate(rebalance_dates):
         # 选股：根据stability_ratio决定是否使用持仓稳定性过滤
@@ -513,20 +578,60 @@ def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, moment
         if i < len(rebalance_dates) - 1:
             next_date = rebalance_dates[i + 1]
             capital_per_stock = current_value / len(selected)
+
+            # Phase 6F: 止盈逻辑
+            active_stocks = selected.copy()  # 当前周期持仓
+
+            if take_profit_tiers and len(take_profit_tiers) > 0:
+                # 先计算每只股票的收益率，检查是否触发止盈
+                for symbol in selected:
+                    df = stock_data[symbol]
+
+                    if date not in df.index or next_date not in df.index:
+                        continue
+
+                    buy_price = df.loc[date, 'close']
+                    sell_price = df.loc[next_date, 'close']
+                    period_return = (sell_price - buy_price) / buy_price
+
+                    # 检查是否触发止盈（从高到低检查梯度）
+                    for tier_idx, tier_threshold in enumerate(sorted(take_profit_tiers, reverse=True)):
+                        if period_return >= tier_threshold:
+                            # 触发止盈，记录并从active_stocks移除
+                            take_profit_triggers.append({
+                                'symbol': symbol,
+                                'date': next_date.strftime('%Y-%m-%d'),
+                                'tier': tier_idx + 1,
+                                'threshold': tier_threshold,
+                                'return': period_return
+                            })
+                            active_stocks.remove(symbol)
+
+                            if debug:
+                                print(f"[止盈触发] {symbol} @ {next_date.date()}: 收益{period_return*100:.2f}% >= 梯度{tier_threshold*100:.0f}%")
+                            break
+
+            # 计算期末价值（仅计算仍持有的股票）
             period_value = 0
+            if len(active_stocks) > 0:
+                # 资金仅分配给仍持有的股票
+                capital_per_active_stock = current_value / len(active_stocks)
 
-            for symbol in selected:
-                df = stock_data[symbol]
+                for symbol in active_stocks:
+                    df = stock_data[symbol]
 
-                if date not in df.index or next_date not in df.index:
-                    period_value += capital_per_stock
-                    continue
+                    if date not in df.index or next_date not in df.index:
+                        period_value += capital_per_active_stock
+                        continue
 
-                buy_price = df.loc[date, 'close']
-                sell_price = df.loc[next_date, 'close']
+                    buy_price = df.loc[date, 'close']
+                    sell_price = df.loc[next_date, 'close']
 
-                shares = capital_per_stock / buy_price
-                period_value += shares * sell_price
+                    shares = capital_per_active_stock / buy_price
+                    period_value += shares * sell_price
+            else:
+                # 所有股票都触发止盈，资金保持现金
+                period_value = current_value
 
             current_value = period_value
 
@@ -539,12 +644,27 @@ def backtest_dynamic(stock_data, rebalance_dates, initial_capital=100000, moment
     total_return = (current_value - initial_capital) / initial_capital
     turnover_rate = total_turnover / (len(rebalance_dates) * 10) * 100
 
-    return {
+    result = {
         'final_value': current_value,
         'total_return': total_return,
         'turnover': turnover_rate,
         'holdings_history': holdings_history
     }
+
+    # Phase 6F: 添加止盈统计
+    if take_profit_tiers:
+        result['take_profit'] = {
+            'enabled': True,
+            'tiers': take_profit_tiers,
+            'trigger_count': len(take_profit_triggers),
+            'triggers': take_profit_triggers
+        }
+    else:
+        result['take_profit'] = {
+            'enabled': False
+        }
+
+    return result
 
 
 def calculate_benchmark_return(benchmark_df, start_date, end_date):
@@ -572,9 +692,46 @@ def calculate_benchmark_return(benchmark_df, start_date, end_date):
     return (end_price - start_price) / start_price
 
 
-def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq='monthly', pool_name='small_cap', commission=0.0, stability_ratio=0.0, target_count=20, debug=False):
+def run_backtest_with_config(config, benchmark_df, pool_stocks,
+                             pool_name, target_count=None,
+                             momentum_threshold=0.0, rebalance_freq='monthly',
+                             commission=0.0, stability_ratio=0.0, take_profit_tiers=None, debug=False):
     """
-    执行指定年份的完整回测
+    薄封装：解析config，委托给核心回测逻辑
+
+    Args:
+        config: 配置字典 {'start_date', 'end_date', 'rebalance_dates', 'target_count'}
+        benchmark_df: 沪深300数据
+        pool_stocks: 股票池数据（dict {symbol: name}）
+        pool_name: 股票池名称
+        target_count: 目标持仓数（可选，优先使用config中的值）
+        其他参数同_run_year_backtest_core
+
+    Returns:
+        dict: 回测结果
+    """
+    start_date = config['start_date']
+    end_date = config['end_date']
+    rebalance_dates = config['rebalance_dates']
+
+    # target_count优先使用config中的值
+    if 'target_count' in config:
+        target_count = config['target_count']
+    elif target_count is None:
+        # 如果都没有，推导
+        target_count = derive_target_count(pool_name, pool_stocks, None)
+
+    return _run_year_backtest_core(
+        start_date, end_date, rebalance_dates,
+        benchmark_df, pool_stocks, pool_name,
+        target_count, momentum_threshold, commission,
+        stability_ratio, take_profit_tiers, debug
+    )
+
+
+def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq='monthly', pool_name='small_cap', commission=0.0, stability_ratio=0.0, target_count=20, take_profit_tiers=None, debug=False):
+    """
+    执行指定年份的完整回测（薄包装，委托给run_backtest_with_config）
 
     Args:
         year: 年份（字符串）
@@ -585,6 +742,7 @@ def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq
         commission: 单边交易佣金率
         stability_ratio: 持仓稳定性比例
         target_count: 目标持仓数量
+        take_profit_tiers: 止盈梯度列表
         debug: 是否启用DEBUG日志
 
     Returns:
@@ -594,20 +752,60 @@ def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq
     if not config:
         raise ValueError(f"不支持的年份: {year}")
 
+    # 加载股票池
+    pool_stocks = load_stock_pool_from_yaml(pool_name)
+
+    # 委托给薄封装
+    return run_backtest_with_config(
+        config, benchmark_df, pool_stocks, pool_name,
+        target_count, momentum_threshold, rebalance_freq,
+        commission, stability_ratio, take_profit_tiers, debug
+    )
+
+
+def _run_year_backtest_core(start_date, end_date, rebalance_dates,
+                            benchmark_df, pool_stocks, pool_name,
+                            target_count, momentum_threshold, commission,
+                            stability_ratio, take_profit_tiers, debug):
+    """
+    核心回测逻辑（原run_year_backtest的主体，原地不动，只是重命名）
+
+    Args:
+        start_date: 起始日期
+        end_date: 结束日期
+        rebalance_dates: 调仓日期列表
+        benchmark_df: 沪深300数据
+        pool_stocks: 股票池 (dict {symbol: name})
+        pool_name: 股票池名称
+        target_count: 目标持仓数
+        momentum_threshold: 动量阈值
+        commission: 佣金率
+        stability_ratio: 稳定性系数
+        take_profit_tiers: 止盈梯度列表
+        debug: 调试开关
+
+    Returns:
+        dict: 回测结果
+    """
+    # 以下是原run_year_backtest的核心逻辑（从593行开始）
+
+    # 确定year标识（用于输出）
+    year_label = f"{start_date[:4]}" if start_date else "Custom"
+
     print(f"\n{'='*60}")
-    print(f"Phase 6D: {year}年回测")
-    print(f"  参数: 阈值={momentum_threshold}%, 频率={rebalance_freq}, 佣金={commission*100:.2f}%, 稳定性={stability_ratio:.1f}")
+    print(f"Phase 6D: {year_label}年回测 ({start_date} ~ {end_date})")
+    print(f"  参数: 阈值={momentum_threshold}%, 佣金={commission*100:.2f}%, 稳定性={stability_ratio:.1f}")
     print(f"{'='*60}\n")
 
     # 加载数据
     data_dir = Path.home() / '.qlib/qlib_data/cn_data'
-    stock_data = load_stock_data(data_dir, config['start_date'], config['end_date'], pool_name=pool_name)
+    stock_data = load_stock_data(data_dir, start_date, end_date, pool_name=pool_name)
 
     # 动态检查：至少需要5只股票（支持legacy_7stocks）
     if len(stock_data) < 5:
         raise ValueError(
             f"数据不足: 仅加载{len(stock_data)}只股票（最少需要5只）。"
-            f"请确认已将 {config['start_date']} ~ {config['end_date']} 区间内的数据转换到 ~/.qlib/qlib_data/cn_data"
+            f"请确认已将 {start_date} ~ {end_date} 区间内的数据转换到 ~/.qlib/qlib_data/cn_data"
         )
 
     # 固定持仓回测
@@ -617,23 +815,23 @@ def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq
 
     # 动态选股回测
     print("执行动态选股回测...")
-    dynamic_result = backtest_dynamic(stock_data, config['rebalance_dates'], momentum_threshold=momentum_threshold, commission=commission, stability_ratio=stability_ratio, target_count=target_count, debug=debug)
+    dynamic_result = backtest_dynamic(stock_data, rebalance_dates, momentum_threshold=momentum_threshold, commission=commission, stability_ratio=stability_ratio, target_count=target_count, take_profit_tiers=take_profit_tiers, debug=debug)
     print(f"✓ 动态选股: 收益{dynamic_result['total_return']*100:.2f}%")
 
     # 沪深300基准
     print("计算沪深300基准...")
     hs300_return = calculate_benchmark_return(
-        benchmark_df, config['start_date'], config['end_date']
+        benchmark_df, start_date, end_date
     )
     print(f"✓ 沪深300: 收益{hs300_return*100:.2f}%")
 
     # 计算年化收益
-    months = len(config['rebalance_dates'])
-    years = months / 12
+    months = len(rebalance_dates)
+    years_period = months / 12
 
-    annual_return_fixed = (1 + fixed_result['total_return']) ** (1 / years) - 1
-    annual_return_dynamic = (1 + dynamic_result['total_return']) ** (1 / years) - 1
-    annual_return_hs300 = (1 + hs300_return) ** (1 / years) - 1
+    annual_return_fixed = (1 + fixed_result['total_return']) ** (1 / years_period) - 1
+    annual_return_dynamic = (1 + dynamic_result['total_return']) ** (1 / years_period) - 1
+    annual_return_hs300 = (1 + hs300_return) ** (1 / years_period) - 1
 
     # 超额收益
     excess_vs_fixed = dynamic_result['total_return'] - fixed_result['total_return']
@@ -641,7 +839,7 @@ def run_year_backtest(year, benchmark_df, momentum_threshold=0.0, rebalance_freq
 
     # 汇总结果（注意：Sharpe已移除）
     result = {
-        'year': year,
+        'year': year_label,
         'months': months,
         'fixed': {
             'total_return': fixed_result['total_return'],
@@ -880,6 +1078,14 @@ def main():
                         help='持仓稳定性比例（0=关闭，0.5=优先保留50%%老仓位，范围0-1）')
     parser.add_argument('--debug', action='store_true',
                         help='启用DEBUG日志输出')
+    parser.add_argument('--take-profit', type=str, default=None,
+                        help='止盈梯度（逗号分隔，如"10,15"表示10%%和15%%），默认None关闭')
+    parser.add_argument('--start-date', type=str,
+                        help='Pilot模式：自定义起始日期 (YYYY-MM-DD)')
+    parser.add_argument('--end-date', type=str,
+                        help='Pilot模式：自定义结束日期 (YYYY-MM-DD)')
+    parser.add_argument('--with-ai-probe', action='store_true',
+                        help='Phase 9A: 回测后运行AI探针分析（需要设置 OPENAI_API_KEY）')
     args = parser.parse_args()
     
     # Legacy pool warning
@@ -893,10 +1099,22 @@ def main():
     # 初始化目录
     ensure_directories()
 
-    # 确定基准数据起始日期（Phase 8扩展：支持2007/2019）
-    if args.full:
-        benchmark_start = '2022-01-01'  # 完整三年模式
+    # Phase 8.1: Pilot模式检查
+    pilot_mode = args.year == 'pilot' or (args.start_date and args.end_date)
+
+    if pilot_mode:
+        # Pilot模式：自定义时间区间
+        if not args.start_date or not args.end_date:
+            print("❌ Pilot模式需要同时提供 --start-date 和 --end-date")
+            sys.exit(1)
+
+        benchmark_start = args.start_date
+        print(f"\n🚀 Phase 8.1 Pilot模式: {args.start_date} ~ {args.end_date}")
+    elif args.full:
+        # 完整三年模式
+        benchmark_start = '2022-01-01'
     else:
+        # 单年模式
         single_year_config = get_year_config(args.year, args.rebalance_freq)
         if not single_year_config:
             print(f"❌ 不支持的年份: {args.year}")
@@ -905,6 +1123,12 @@ def main():
 
     # 加载沪深300基准
     benchmark_df = load_benchmark_data(start_date=benchmark_start)
+
+    # Phase 6F: 解析止盈梯度参数
+    take_profit_tiers = None
+    if args.take_profit:
+        take_profit_tiers = [float(x)/100 for x in args.take_profit.split(',')]
+        print(f"✓ 启用固定止盈: {[f'{t*100:.0f}%' for t in take_profit_tiers]}")
 
     # 生成文件名后缀
     freq_suffix = 'quarterly' if args.rebalance_freq == 'quarterly' else 'monthly'
@@ -923,16 +1147,64 @@ def main():
 
     file_suffix = f"_{threshold_str}_{freq_suffix}_{pool_suffix}"
 
-    if args.full:
+    if pilot_mode:
+        # Phase 8.1: Pilot模式执行
+        print("\n" + "="*60)
+        print(f"Phase 8.1 Pilot: {args.pool} 池回测")
+        print(f"时间区间: {args.start_date} ~ {args.end_date}")
+        print(f"参数: 阈值={args.momentum_threshold}%, 佣金={args.commission*100:.2f}%, 稳定性={args.stability_ratio:.1f}")
+        print("="*60)
+
+        # 加载股票池
+        pool_stocks = load_stock_pool_from_yaml(args.pool)
+
+        # 构建pilot配置
+        pilot_config = build_custom_config(
+            args.start_date, args.end_date,
+            args.pool, pool_stocks,
+            freq='M',  # 月末调仓
+            target_count=target_count
+        )
+
+        # 执行回测
+        result = run_backtest_with_config(
+            pilot_config, benchmark_df, pool_stocks, args.pool,
+            target_count, args.momentum_threshold, args.rebalance_freq,
+            args.commission, args.stability_ratio, take_profit_tiers, args.debug
+        )
+
+        # 打印摘要
+        print(f"\n{'-'*60}")
+        print("Pilot回测摘要")
+        print(f"{'-'*60}")
+        print(f"时间区间: {args.start_date} ~ {args.end_date} ({result['months']}个月)")
+        print(f"动态选股: {result['dynamic']['total_return']*100:.2f}% (年化{result['dynamic']['annual_return']*100:.2f}%, 换手{result['dynamic']['turnover']:.2f}%)")
+        print(f"固定持仓: {result['fixed']['total_return']*100:.2f}% (年化{result['fixed']['annual_return']*100:.2f}%)")
+        print(f"沪深300: {result['hs300']['total_return']*100:.2f}% (年化{result['hs300']['annual_return']*100:.2f}%)")
+        print(f"超额收益(vs固定): {result['excess']['vs_fixed']*100:+.2f}%")
+        print(f"超额收益(vs300): {result['excess']['vs_hs300']*100:+.2f}%")
+        print()
+
+        # 保存pilot结果
+        pilot_suffix = f"_pilot_{args.pool}_{args.start_date[:4]}-{args.end_date[:4]}"
+        save_json_with_metadata(
+            data=result,
+            filepath=f'results/phase8{pilot_suffix}.json',
+            phase='Phase 8.1 Pilot',
+            version='1.0.0'
+        )
+        print(f"✓ Pilot结果已保存: results/phase8{pilot_suffix}.json")
+
+    elif args.full:
         # 完整三年回测
         print("\n" + "="*60)
         print("Phase 6D: 完整三年回测模式")
         print(f"参数: 阈值={args.momentum_threshold}%, 频率={args.rebalance_freq}, 佣金={args.commission*100:.2f}%, 稳定性={args.stability_ratio:.1f}")
         print("="*60)
 
-        results_2022 = run_year_backtest('2022', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
-        results_2023 = run_year_backtest('2023', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
-        results_2024 = run_year_backtest('2024', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
+        results_2022 = run_year_backtest('2022', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, take_profit_tiers, args.debug)
+        results_2023 = run_year_backtest('2023', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, take_profit_tiers, args.debug)
+        results_2024 = run_year_backtest('2024', benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, take_profit_tiers, args.debug)
 
         # 判定结果
         print("\n" + "="*60)
@@ -964,7 +1236,7 @@ def main():
 
     else:
         # 单年回测
-        result = run_year_backtest(args.year, benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, debug=args.debug)
+        result = run_year_backtest(args.year, benchmark_df, args.momentum_threshold, args.rebalance_freq, args.pool, args.commission, args.stability_ratio, target_count, take_profit_tiers, args.debug)
 
         # 打印摘要
         print(f"\n{'-'*60}")
@@ -976,6 +1248,38 @@ def main():
         print(f"超额收益(vs固定): {result['excess']['vs_fixed']*100:+.2f}%")
         print(f"超额收益(vs300): {result['excess']['vs_hs300']*100:+.2f}%")
         print()
+
+    # Phase 9A: AI探针集成
+    if args.with_ai_probe:
+        print("\n" + "="*60)
+        print("Phase 9A: 启动 AI 探针分析")
+        print("="*60)
+
+        # 检查环境变量
+        if not os.getenv('OPENAI_API_KEY'):
+            print("⚠️  警告: 未设置 OPENAI_API_KEY 环境变量")
+            print("   请运行: export OPENAI_API_KEY=your_api_key")
+            print("   跳过 AI 探针分析")
+        else:
+            try:
+                # 调用 AI 探针脚本
+                probe_script = Path(__file__).parent / 'trading_agents_probe.py'
+
+                print(f"✓ 调用探针脚本: {probe_script}")
+                subprocess.run([
+                    sys.executable,
+                    str(probe_script),
+                    '--max-samples', '10'
+                ], check=True)
+
+                print("✓ AI 探针分析完成")
+                print("  查看结果: results/phase9a_ai_probe.csv")
+                print("  查看汇总: results/phase9a_ai_probe_summary.json")
+
+            except subprocess.CalledProcessError as e:
+                print(f"❌ AI 探针执行失败: {e}")
+            except Exception as e:
+                print(f"❌ AI 探针错误: {e}")
 
 
 if __name__ == "__main__":
