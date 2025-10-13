@@ -1,0 +1,13 @@
+# Streamlit Web UI 依赖
+# 安装：pip install -r requirements_streamlit.txt
+
+# Web框架
+streamlit>=1.32.0
+
+# 数据处理（已有，确保版本）
+pandas>=1.5.0
+numpy>=1.24.0
+
+# 可选：增强图表（如需替换原生图表）
+# plotly>=5.18.0
+# altair>=5.2.0
