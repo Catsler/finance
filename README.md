@@ -75,6 +75,62 @@ python scripts/risk_control_backtest.py       # Phase 4: 风控优化
 
 ---
 
+## 🖥️ Web UI 界面（Phase 2 MVP）
+
+**Streamlit 可视化界面** - 每日选股 + 虚拟持仓管理
+
+### 快速启动
+
+```bash
+# 一键初始化（首次运行）
+./setup_streamlit.sh
+
+# 启动Web UI
+./run_streamlit.sh
+
+# 或手动启动
+source venv/bin/activate
+streamlit run app.py
+```
+
+浏览器访问 `http://localhost:8501`
+
+### 功能特性
+
+**📊 每日选股页面**:
+- 参数化选股（预算/候选池/动量阈值可调）
+- 候选股票展示（按20日涨幅排序）
+- 持仓建议（等权分配）
+- 历史记录查询
+- CSV导出
+
+**💼 虚拟持仓页面**:
+- 创建/重置虚拟持仓
+- 月度再平衡（模拟Phase 6D策略）
+- 持仓明细与收益统计
+- 交易历史查看
+- 数据导出
+
+**🏠 系统概览**:
+- 选股记录统计
+- 最新选股预览
+- 持仓概览
+- 快速操作入口
+
+### 技术特点
+
+- ✅ **零修改复用** - 原有脚本未改动一行代码
+- ✅ **数据统一管理** - 所有新数据写入 `data/` 目录
+- ✅ **三层架构** - UI / Backend / Scripts 分离
+- ✅ **API可独立调用** - Backend模块不依赖Streamlit
+
+**详细文档**:
+- [QUICK_START_STREAMLIT.md](QUICK_START_STREAMLIT.md) - Web UI完整使用指南
+- [DEPLOY_CHECKLIST.md](DEPLOY_CHECKLIST.md) - 部署检查清单
+- [ARCHITECTURE_PHASE2.md](ARCHITECTURE_PHASE2.md) - 架构说明
+
+---
+
 ## 💼 实盘部署指南
 
 ### ⚠️ 适用性评估
@@ -132,12 +188,16 @@ python scripts/phase6d_backtest.py --year 2025
 
 ## 📊 项目状态
 
-**✅ 已完成** - Phase 0-7 全部完成（2025-10-02）
+**✅ 已完成** - Phase 0-7 + Phase 2 全部完成
 
+**回测与策略**（2025-10-02）:
 - ✅ Phase 0-5：数据验证 → 策略开发 → 可视化
 - ✅ Phase 6A-6E：动态选股 → 参数优化 → 20股池验证
 - ✅ Phase 6F：降低换手率尝试（未达标，Phase 6E为最佳）
 - ✅ Phase 7：2025年实盘跟踪（发现牛市局限性）
+
+**Web UI**（2025-01-10）:
+- ✅ Phase 2 MVP：Streamlit界面 + 虚拟持仓管理
 
 详细进度见 [TODO.md](TODO.md) | **完整总结**: [PROJECT_FINAL_SUMMARY.md](PROJECT_FINAL_SUMMARY.md)
 
@@ -148,16 +208,39 @@ Stock/
 ├── config.yaml                 # 统一配置文件
 ├── TODO.md                     # 任务追踪
 ├── README.md                   # 项目说明
-├── docs/                       # 文档目录
-│   ├── phase0-environment-setup.md              # 环境配置指南
-│   ├── phase0-data-validation-checklist.md      # 数据验证清单
-│   ├── phase0-validation-report-template.md     # 验证报告模板
-│   └── phase0-validation-report-FILLED.md       # 已填写的验证报告
+│
+├── app.py                      # Streamlit主入口（Phase 2）
+├── pages/                      # Streamlit多页面（Phase 2）
+│   ├── 1_📊_每日选股.py
+│   └── 2_💼_模拟盘.py
+│
+├── backend/                    # 后端业务逻辑（Phase 2）
+│   ├── config.py              # 统一配置
+│   ├── selector_api.py        # 选股API封装
+│   ├── portfolio_manager.py   # 虚拟持仓管理
+│   └── data_access.py         # 数据访问层
+│
+├── components/                 # UI组件（Phase 2）
+│   ├── stock_table.py         # 股票表格
+│   └── portfolio_chart.py     # 收益图表
+│
 ├── scripts/                    # 脚本目录
-│   └── akshare-to-qlib-converter.py             # 数据转换脚本
-├── data/                       # 数据目录（待创建）
-├── strategies/                 # 策略目录（待创建）
-└── notebooks/                  # Jupyter 笔记本（待创建）
+│   ├── akshare-to-qlib-converter.py    # 数据转换
+│   ├── batch_download.py               # 批量下载
+│   ├── hs300_selector.py               # 选股脚本
+│   └── phase6d_backtest.py             # 回测脚本
+│
+├── utils/                      # 工具函数
+│   └── io.py                  # JSON/Git工具
+│
+├── data/                       # 数据目录（统一管理，Phase 2新增）
+│   ├── cache/                 # 缓存（HS300成分股）
+│   ├── daily/                 # 每日选股结果
+│   └── portfolio/             # 虚拟持仓数据
+│
+├── results/                    # 回测结果（Phase 0-7）
+├── docs/                       # 文档目录
+└── notebooks/                  # Jupyter笔记本
 ```
 
 ## 🚀 快速开始
@@ -223,6 +306,12 @@ Phase 0 采用并行开发模式，4个独立任务可同时进行：
 - [PHASE7_2025_TRACKING.md](PHASE7_2025_TRACKING.md) - 2025年跟踪（发现牛市局限性）
 - [PHASE0-5_SUMMARY.md](PHASE0_SUMMARY.md) - 早期Phase总结
 
+**Web UI文档**（Phase 2）：
+- [QUICK_START_STREAMLIT.md](QUICK_START_STREAMLIT.md) - Web UI使用指南 ⭐
+- [DEPLOY_CHECKLIST.md](DEPLOY_CHECKLIST.md) - 部署检查清单
+- [ARCHITECTURE_PHASE2.md](ARCHITECTURE_PHASE2.md) - 架构说明
+- [QUICK_START_HS300.md](QUICK_START_HS300.md) - 命令行版使用指南
+
 **配置文件**：
 - [stock_pool.yaml](stock_pool.yaml) - 20只股票池配置
 - [config.yaml](config.yaml) - 系统配置
@@ -249,6 +338,7 @@ Phase 0 采用并行开发模式，4个独立任务可同时进行：
 
 ## 📝 更新日志
 
+- **2025-01-10**: Phase 2 MVP完成，Streamlit Web UI + 虚拟持仓管理
 - **2025-10-02**: Phase 7完成，2025年跟踪揭示牛市局限性，项目归档
 - **2025-10-02**: Phase 6F完成，降低换手率尝试未达标
 - **2025-10-02**: Phase 6E完成，20股池修复2023年问题

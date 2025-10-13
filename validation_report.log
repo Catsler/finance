@@ -493,3 +493,1333 @@
 2025-10-02 11:34:59,599 [INFO] ============================================================
 2025-10-02 11:34:59,599 [INFO] ✅ Validation Passed: 002920.SZ → /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv
 2025-10-02 11:34:59,599 [INFO] ============================================================
+2025-10-05 18:29:25,220 [INFO] ============================================================
+2025-10-05 18:29:25,221 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:25,221 [INFO] ============================================================
+2025-10-05 18:29:25,223 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:25,226 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11181dca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:26,232 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:26,243 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11181dca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:28,250 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:28,255 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111848250>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:28,257 [ERROR] ============================================================
+2025-10-05 18:29:28,257 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111848250>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:28,258 [ERROR] ============================================================
+2025-10-05 18:29:30,865 [INFO] ============================================================
+2025-10-05 18:29:30,866 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:30,866 [INFO] ============================================================
+2025-10-05 18:29:30,867 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:30,868 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113cb22b0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:31,870 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:31,880 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113c95eb0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:33,886 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:33,889 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113cb20d0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:33,889 [ERROR] ============================================================
+2025-10-05 18:29:33,890 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113cb20d0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:33,890 [ERROR] ============================================================
+2025-10-05 18:29:36,502 [INFO] ============================================================
+2025-10-05 18:29:36,503 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:36,503 [INFO] ============================================================
+2025-10-05 18:29:36,504 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:36,506 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f51bdf0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:37,509 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:37,515 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f51ba60>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:39,517 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:39,524 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f5473a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:39,525 [ERROR] ============================================================
+2025-10-05 18:29:39,525 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f5473a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:39,526 [ERROR] ============================================================
+2025-10-05 18:29:42,081 [INFO] ============================================================
+2025-10-05 18:29:42,081 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:42,082 [INFO] ============================================================
+2025-10-05 18:29:42,082 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:42,084 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11403bfd0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:43,089 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:43,099 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11403bc40>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:45,102 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:45,107 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x114062040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:45,108 [ERROR] ============================================================
+2025-10-05 18:29:45,109 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x114062040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:45,109 [ERROR] ============================================================
+2025-10-05 18:29:47,985 [INFO] ============================================================
+2025-10-05 18:29:47,986 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:47,986 [INFO] ============================================================
+2025-10-05 18:29:47,987 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:47,989 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f51cee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:48,994 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:49,005 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f51cb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:51,007 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:51,012 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f545040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:51,013 [ERROR] ============================================================
+2025-10-05 18:29:51,014 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f545040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:51,015 [ERROR] ============================================================
+2025-10-05 18:29:53,573 [INFO] ============================================================
+2025-10-05 18:29:53,574 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:53,575 [INFO] ============================================================
+2025-10-05 18:29:53,575 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:53,577 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1123ddb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:54,583 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:54,592 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1123dda30>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:56,599 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:56,604 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112408100>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:56,607 [ERROR] ============================================================
+2025-10-05 18:29:56,608 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112408100>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:29:56,609 [ERROR] ============================================================
+2025-10-05 18:29:59,092 [INFO] ============================================================
+2025-10-05 18:29:59,094 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:29:59,094 [INFO] ============================================================
+2025-10-05 18:29:59,095 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:29:59,097 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10ff9cee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:00,098 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:00,103 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10ff9cb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:02,109 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:02,114 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10ffc5040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:02,115 [ERROR] ============================================================
+2025-10-05 18:30:02,116 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10ffc5040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:02,117 [ERROR] ============================================================
+2025-10-05 18:30:04,618 [INFO] ============================================================
+2025-10-05 18:30:04,619 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:04,619 [INFO] ============================================================
+2025-10-05 18:30:04,620 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:04,622 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112040a00>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:05,623 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:05,632 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112040610>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:07,634 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:07,637 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111f1bca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:07,638 [ERROR] ============================================================
+2025-10-05 18:30:07,639 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111f1bca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:07,640 [ERROR] ============================================================
+2025-10-05 18:30:10,113 [INFO] ============================================================
+2025-10-05 18:30:10,114 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:10,114 [INFO] ============================================================
+2025-10-05 18:30:10,115 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:10,116 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a810d0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:11,122 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:11,131 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a5afa0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:13,137 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:13,141 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a810a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:13,142 [ERROR] ============================================================
+2025-10-05 18:30:13,143 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a810a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:13,143 [ERROR] ============================================================
+2025-10-05 18:30:15,612 [INFO] ============================================================
+2025-10-05 18:30:15,613 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:15,613 [INFO] ============================================================
+2025-10-05 18:30:15,614 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:15,616 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113addbe0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:16,621 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:16,624 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113addbe0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:18,630 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:18,633 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113b08190>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:18,634 [ERROR] ============================================================
+2025-10-05 18:30:18,635 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113b08190>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:18,635 [ERROR] ============================================================
+2025-10-05 18:30:21,151 [INFO] ============================================================
+2025-10-05 18:30:21,151 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:21,152 [INFO] ============================================================
+2025-10-05 18:30:21,152 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:21,154 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1122eb760>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:22,159 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:22,167 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103e3dee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:24,172 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:24,177 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1121c3880>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:24,179 [ERROR] ============================================================
+2025-10-05 18:30:24,179 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1121c3880>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:24,180 [ERROR] ============================================================
+2025-10-05 18:30:26,663 [INFO] ============================================================
+2025-10-05 18:30:26,663 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:26,664 [INFO] ============================================================
+2025-10-05 18:30:26,664 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:26,666 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a332e0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:27,671 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:27,675 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a19dc0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:29,680 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:29,685 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a331f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:29,685 [ERROR] ============================================================
+2025-10-05 18:30:29,686 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113a331f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:29,686 [ERROR] ============================================================
+2025-10-05 18:30:32,197 [INFO] ============================================================
+2025-10-05 18:30:32,197 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:32,198 [INFO] ============================================================
+2025-10-05 18:30:32,198 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:32,200 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11169dd30>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:33,206 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:33,216 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11169dd30>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:35,221 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:35,226 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1116c82e0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:35,227 [ERROR] ============================================================
+2025-10-05 18:30:35,228 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1116c82e0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:35,228 [ERROR] ============================================================
+2025-10-05 18:30:37,694 [INFO] ============================================================
+2025-10-05 18:30:37,694 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:37,695 [INFO] ============================================================
+2025-10-05 18:30:37,695 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:37,697 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11180b760>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:38,703 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:38,712 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1033a9ee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:40,715 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:40,720 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1116e3880>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:40,721 [ERROR] ============================================================
+2025-10-05 18:30:40,722 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1116e3880>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:40,723 [ERROR] ============================================================
+2025-10-05 18:30:43,195 [INFO] ============================================================
+2025-10-05 18:30:43,195 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:43,195 [INFO] ============================================================
+2025-10-05 18:30:43,196 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:43,198 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11175be50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:44,203 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:44,212 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11175bac0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:46,215 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:46,221 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111787400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:46,222 [ERROR] ============================================================
+2025-10-05 18:30:46,223 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111787400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:46,224 [ERROR] ============================================================
+2025-10-05 18:30:48,684 [INFO] ============================================================
+2025-10-05 18:30:48,685 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:48,685 [INFO] ============================================================
+2025-10-05 18:30:48,686 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:48,688 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fa5cee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:49,692 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:49,702 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fa5cb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:51,708 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:51,713 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fa85040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:51,714 [ERROR] ============================================================
+2025-10-05 18:30:51,715 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fa85040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:51,716 [ERROR] ============================================================
+2025-10-05 18:30:54,212 [INFO] ============================================================
+2025-10-05 18:30:54,213 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:54,213 [INFO] ============================================================
+2025-10-05 18:30:54,214 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:54,216 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f75cee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:55,221 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:55,231 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f75cb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:57,237 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:57,243 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f785040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:57,244 [ERROR] ============================================================
+2025-10-05 18:30:57,245 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f785040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:30:57,246 [ERROR] ============================================================
+2025-10-05 18:30:59,727 [INFO] ============================================================
+2025-10-05 18:30:59,729 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:30:59,729 [INFO] ============================================================
+2025-10-05 18:30:59,730 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:30:59,732 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f75bf70>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:00,910 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:00,975 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f75bbe0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:02,984 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:02,998 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f785070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:02,999 [ERROR] ============================================================
+2025-10-05 18:31:03,000 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f785070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:03,001 [ERROR] ============================================================
+2025-10-05 18:31:05,707 [INFO] ============================================================
+2025-10-05 18:31:05,707 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:05,708 [INFO] ============================================================
+2025-10-05 18:31:05,708 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:05,712 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1136f22e0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:06,717 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:06,727 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1136d8dc0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:08,729 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:08,735 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1136f21f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:08,736 [ERROR] ============================================================
+2025-10-05 18:31:08,737 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1136f21f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:08,737 [ERROR] ============================================================
+2025-10-05 18:31:11,225 [INFO] ============================================================
+2025-10-05 18:31:11,225 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:11,226 [INFO] ============================================================
+2025-10-05 18:31:11,226 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:11,228 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f61db50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:12,231 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:12,242 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f61da30>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:14,244 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:14,249 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f648100>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:14,250 [ERROR] ============================================================
+2025-10-05 18:31:14,250 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f648100>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:14,251 [ERROR] ============================================================
+2025-10-05 18:31:26,398 [INFO] ============================================================
+2025-10-05 18:31:26,402 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:26,402 [INFO] ============================================================
+2025-10-05 18:31:26,406 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:26,411 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137c1070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:27,417 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:27,426 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11379af10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:29,429 [INFO] 正在获取 000001.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:29,434 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137c1040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:29,436 [ERROR] ============================================================
+2025-10-05 18:31:29,436 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000001&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137c1040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:29,437 [ERROR] ============================================================
+2025-10-05 18:31:31,921 [INFO] ============================================================
+2025-10-05 18:31:31,922 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:31,922 [INFO] ============================================================
+2025-10-05 18:31:31,923 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:31,924 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe1dc10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:32,929 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:32,940 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe1dc10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:34,946 [INFO] 正在获取 601318.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:34,951 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe481c0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:34,952 [ERROR] ============================================================
+2025-10-05 18:31:34,953 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601318&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe481c0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:34,954 [ERROR] ============================================================
+2025-10-05 18:31:37,430 [INFO] ============================================================
+2025-10-05 18:31:37,431 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:37,431 [INFO] ============================================================
+2025-10-05 18:31:37,432 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:37,433 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137ae490>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:38,439 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:38,449 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1136847f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:40,454 [INFO] 正在获取 000858.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:40,459 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137ae400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:40,461 [ERROR] ============================================================
+2025-10-05 18:31:40,461 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000858&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1137ae400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:40,462 [ERROR] ============================================================
+2025-10-05 18:31:42,945 [INFO] ============================================================
+2025-10-05 18:31:42,946 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:42,946 [INFO] ============================================================
+2025-10-05 18:31:42,947 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:42,948 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11029be50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:43,954 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:43,963 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11029bac0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:45,969 [INFO] 正在获取 600519.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:45,975 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1102c7400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:45,976 [ERROR] ============================================================
+2025-10-05 18:31:45,977 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600519&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1102c7400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:45,978 [ERROR] ============================================================
+2025-10-05 18:31:48,507 [INFO] ============================================================
+2025-10-05 18:31:48,509 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:48,509 [INFO] ============================================================
+2025-10-05 18:31:48,509 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:48,511 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111e1bf10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:49,517 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:49,526 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111e1bb80>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:51,533 [INFO] 正在获取 300750.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:51,539 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111e45070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:51,540 [ERROR] ============================================================
+2025-10-05 18:31:51,541 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111e45070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:51,541 [ERROR] ============================================================
+2025-10-05 18:31:54,042 [INFO] ============================================================
+2025-10-05 18:31:54,043 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:54,044 [INFO] ============================================================
+2025-10-05 18:31:54,044 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:54,046 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1141be430>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:55,052 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:55,061 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x114094790>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:57,067 [INFO] 正在获取 600036.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:57,073 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1141be2b0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:57,074 [ERROR] ============================================================
+2025-10-05 18:31:57,075 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600036&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1141be2b0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:31:57,075 [ERROR] ============================================================
+2025-10-05 18:31:59,548 [INFO] ============================================================
+2025-10-05 18:31:59,549 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:31:59,549 [INFO] ============================================================
+2025-10-05 18:31:59,550 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:31:59,551 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111a5dd90>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:00,557 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:00,567 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111a5da00>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:02,571 [INFO] 正在获取 002594.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:02,578 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111a88340>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:02,579 [ERROR] ============================================================
+2025-10-05 18:32:02,580 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002594&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111a88340>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:02,581 [ERROR] ============================================================
+2025-10-05 18:32:05,067 [INFO] ============================================================
+2025-10-05 18:32:05,067 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:05,068 [INFO] ============================================================
+2025-10-05 18:32:05,068 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:05,070 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1138fcee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:06,075 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:06,085 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1138fcb50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:08,091 [INFO] 正在获取 000002.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:08,097 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113925040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:08,098 [ERROR] ============================================================
+2025-10-05 18:32:08,099 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000002&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113925040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:08,100 [ERROR] ============================================================
+2025-10-05 18:32:10,584 [INFO] ============================================================
+2025-10-05 18:32:10,584 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:10,585 [INFO] ============================================================
+2025-10-05 18:32:10,585 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:10,587 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11365dcd0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:11,592 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:11,603 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11365dcd0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:13,609 [INFO] 正在获取 600276.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:13,614 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113688280>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:13,615 [ERROR] ============================================================
+2025-10-05 18:32:13,616 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600276&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x113688280>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:13,617 [ERROR] ============================================================
+2025-10-05 18:32:16,088 [INFO] ============================================================
+2025-10-05 18:32:16,088 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:16,088 [INFO] ============================================================
+2025-10-05 18:32:16,089 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:16,091 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11191ca90>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:17,096 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:17,108 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11191c970>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:19,113 [INFO] 正在获取 601166.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:19,116 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111946040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:19,117 [ERROR] ============================================================
+2025-10-05 18:32:19,117 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601166&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111946040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:19,118 [ERROR] ============================================================
+2025-10-05 18:32:21,583 [INFO] ============================================================
+2025-10-05 18:32:21,584 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:21,584 [INFO] ============================================================
+2025-10-05 18:32:21,585 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:21,586 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1116618b0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:22,592 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:22,603 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10323dee0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:24,604 [INFO] 正在获取 300059.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:24,610 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11153d9d0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:24,611 [ERROR] ============================================================
+2025-10-05 18:32:24,611 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300059&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11153d9d0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:24,612 [ERROR] ============================================================
+2025-10-05 18:32:27,084 [INFO] ============================================================
+2025-10-05 18:32:27,085 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:27,085 [INFO] ============================================================
+2025-10-05 18:32:27,086 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:27,087 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11039dca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:28,093 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:28,102 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11039dca0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:30,105 [INFO] 正在获取 601012.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:30,111 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1103c8250>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:30,112 [ERROR] ============================================================
+2025-10-05 18:32:30,113 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.601012&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1103c8250>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:30,113 [ERROR] ============================================================
+2025-10-05 18:32:32,589 [INFO] ============================================================
+2025-10-05 18:32:32,589 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:32,590 [INFO] ============================================================
+2025-10-05 18:32:32,590 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:32,592 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111919cd0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:33,597 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:33,607 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111919cd0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:35,613 [INFO] 正在获取 603288.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:35,620 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111944280>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:35,621 [ERROR] ============================================================
+2025-10-05 18:32:35,622 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.603288&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x111944280>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:35,623 [ERROR] ============================================================
+2025-10-05 18:32:38,093 [INFO] ============================================================
+2025-10-05 18:32:38,093 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:38,093 [INFO] ============================================================
+2025-10-05 18:32:38,094 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:38,096 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11239dc40>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:39,101 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:39,111 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11239dc40>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:41,118 [INFO] 正在获取 000333.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:41,123 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1123c81f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:41,124 [ERROR] ============================================================
+2025-10-05 18:32:41,125 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.000333&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1123c81f0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:41,126 [ERROR] ============================================================
+2025-10-05 18:32:43,596 [INFO] ============================================================
+2025-10-05 18:32:43,596 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:43,597 [INFO] ============================================================
+2025-10-05 18:32:43,597 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:43,599 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112073160>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:44,604 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:44,613 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11205adf0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:46,620 [INFO] 正在获取 002475.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:46,624 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112073130>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:46,624 [ERROR] ============================================================
+2025-10-05 18:32:46,625 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002475&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x112073130>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:46,626 [ERROR] ============================================================
+2025-10-05 18:32:49,183 [INFO] ============================================================
+2025-10-05 18:32:49,184 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:49,185 [INFO] ============================================================
+2025-10-05 18:32:49,185 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:49,187 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x110340070>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:50,192 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:50,202 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11031af10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:52,208 [INFO] 正在获取 600309.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:52,214 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x110340040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:52,216 [ERROR] ============================================================
+2025-10-05 18:32:52,217 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600309&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x110340040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:52,218 [ERROR] ============================================================
+2025-10-05 18:32:54,713 [INFO] ============================================================
+2025-10-05 18:32:54,713 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:32:54,713 [INFO] ============================================================
+2025-10-05 18:32:54,714 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:54,715 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fddce50>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:55,721 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:55,731 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fddcac0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:57,736 [INFO] 正在获取 600031.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:32:57,741 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe07400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:57,742 [ERROR] ============================================================
+2025-10-05 18:32:57,743 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fe07400>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:32:57,744 [ERROR] ============================================================
+2025-10-05 18:33:00,242 [INFO] ============================================================
+2025-10-05 18:33:00,243 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:33:00,243 [INFO] ============================================================
+2025-10-05 18:33:00,243 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:00,245 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11439bfa0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:01,251 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:01,261 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11439bc10>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:03,265 [INFO] 正在获取 300760.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:03,272 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1143c50a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:03,273 [ERROR] ============================================================
+2025-10-05 18:33:03,274 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300760&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1143c50a0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:03,275 [ERROR] ============================================================
+2025-10-05 18:33:05,721 [INFO] ============================================================
+2025-10-05 18:33:05,721 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:33:05,722 [INFO] ============================================================
+2025-10-05 18:33:05,722 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:05,724 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11035dbb0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:06,727 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:06,736 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11035da90>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:08,738 [INFO] 正在获取 600900.SH 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:08,744 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x110388160>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:08,745 [ERROR] ============================================================
+2025-10-05 18:33:08,746 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600900&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x110388160>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:08,746 [ERROR] ============================================================
+2025-10-05 18:33:11,202 [INFO] ============================================================
+2025-10-05 18:33:11,202 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-05 18:33:11,202 [INFO] ============================================================
+2025-10-05 18:33:11,203 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:11,205 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fd1af40>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:12,210 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:12,219 [WARNING] 第 2 次尝试失败，2 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fd1abb0>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:14,221 [INFO] 正在获取 002920.SZ 数据（20051005 ~ 20251005）...
+2025-10-05 18:33:14,226 [ERROR] 所有重试失败: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fd44040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:14,228 [ERROR] ============================================================
+2025-10-05 18:33:14,228 [ERROR] ❌ Validation Failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.002920&beg=20051005&end=20251005 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10fd44040>: Failed to resolve 'push2his.eastmoney.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-10-05 18:33:14,229 [ERROR] ============================================================
+2025-10-06 20:03:44,932 [INFO] ============================================================
+2025-10-06 20:03:44,932 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:03:44,932 [INFO] ============================================================
+2025-10-06 20:03:44,933 [INFO] 正在获取 000001.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:03:47,817 [INFO] 成功获取 4717 条记录
+2025-10-06 20:03:47,819 [INFO] 000001.SZ | 记录数=4717 | 缺失率=6.41% | 价格范围=[144.21, 3256.73] | 总成交量=3658134141
+2025-10-06 20:03:47,820 [ERROR] ✗ 000001.SZ 验证失败: 缺失率 6.41% 超过 5% 阈值
+2025-10-06 20:03:47,820 [ERROR] ============================================================
+2025-10-06 20:03:47,820 [ERROR] ❌ Validation Failed: 000001.SZ 数据质量不合格: 缺失率 6.41% 超过 5% 阈值
+2025-10-06 20:03:47,820 [ERROR] ============================================================
+2025-10-06 20:03:50,506 [INFO] ============================================================
+2025-10-06 20:03:50,506 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:03:50,507 [INFO] ============================================================
+2025-10-06 20:03:50,507 [INFO] 正在获取 601318.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:03:53,174 [INFO] 成功获取 4456 条记录
+2025-10-06 20:03:53,174 [INFO] 601318.SH | 记录数=4456 | 缺失率=11.59% | 价格范围=[21.90, 206.23] | 总成交量=2477734459
+2025-10-06 20:03:53,175 [ERROR] ✗ 601318.SH 验证失败: 缺失率 11.59% 超过 5% 阈值
+2025-10-06 20:03:53,175 [ERROR] ============================================================
+2025-10-06 20:03:53,175 [ERROR] ❌ Validation Failed: 601318.SH 数据质量不合格: 缺失率 11.59% 超过 5% 阈值
+2025-10-06 20:03:53,175 [ERROR] ============================================================
+2025-10-06 20:03:55,990 [INFO] ============================================================
+2025-10-06 20:03:55,990 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:03:55,990 [INFO] ============================================================
+2025-10-06 20:03:55,990 [INFO] 正在获取 000858.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:03:56,815 [INFO] 成功获取 4735 条记录
+2025-10-06 20:03:56,816 [INFO] 000858.SZ | 记录数=4735 | 缺失率=6.05% | 价格范围=[57.30, 5538.97] | 总成交量=1284343893
+2025-10-06 20:03:56,816 [ERROR] ✗ 000858.SZ 验证失败: 缺失率 6.05% 超过 5% 阈值
+2025-10-06 20:03:56,816 [ERROR] ============================================================
+2025-10-06 20:03:56,816 [ERROR] ❌ Validation Failed: 000858.SZ 数据质量不合格: 缺失率 6.05% 超过 5% 阈值
+2025-10-06 20:03:56,816 [ERROR] ============================================================
+2025-10-06 20:03:59,224 [INFO] ============================================================
+2025-10-06 20:03:59,224 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:03:59,224 [INFO] ============================================================
+2025-10-06 20:03:59,224 [INFO] 正在获取 600519.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:00,452 [INFO] 成功获取 4792 条记录
+2025-10-06 20:04:00,452 [INFO] 600519.SH | 记录数=4792 | 缺失率=4.92% | 价格范围=[80.06, 13457.95] | 总成交量=161982605
+2025-10-06 20:04:00,453 [INFO] ✓ 600519.SH 数据验证通过
+2025-10-06 20:04:00,469 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv (278.19 KB)
+2025-10-06 20:04:00,469 [INFO] ============================================================
+2025-10-06 20:04:00,469 [INFO] ✅ Validation Passed: 600519.SH → /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv
+2025-10-06 20:04:00,469 [INFO] ============================================================
+2025-10-06 20:04:02,903 [INFO] ============================================================
+2025-10-06 20:04:02,903 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:02,903 [INFO] ============================================================
+2025-10-06 20:04:02,903 [INFO] 正在获取 300750.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:07,754 [INFO] 成功获取 1777 条记录
+2025-10-06 20:04:07,755 [INFO] 300750.SZ | 记录数=1777 | 缺失率=64.74% | 价格范围=[36.20, 748.60] | 总成交量=324117852
+2025-10-06 20:04:07,756 [ERROR] ✗ 300750.SZ 验证失败: 缺失率 64.74% 超过 5% 阈值
+2025-10-06 20:04:07,756 [ERROR] ============================================================
+2025-10-06 20:04:07,756 [ERROR] ❌ Validation Failed: 300750.SZ 数据质量不合格: 缺失率 64.74% 超过 5% 阈值
+2025-10-06 20:04:07,756 [ERROR] ============================================================
+2025-10-06 20:04:10,395 [INFO] ============================================================
+2025-10-06 20:04:10,395 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:10,395 [INFO] ============================================================
+2025-10-06 20:04:10,395 [INFO] 正在获取 600036.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:14,894 [INFO] 成功获取 4792 条记录
+2025-10-06 20:04:14,895 [INFO] 600036.SH | 记录数=4792 | 缺失率=4.92% | 价格范围=[11.14, 249.49] | 总成交量=3513760216
+2025-10-06 20:04:14,895 [INFO] ✓ 600036.SH 数据验证通过
+2025-10-06 20:04:14,908 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv (262.58 KB)
+2025-10-06 20:04:14,908 [INFO] ============================================================
+2025-10-06 20:04:14,908 [INFO] ✅ Validation Passed: 600036.SH → /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv
+2025-10-06 20:04:14,908 [INFO] ============================================================
+2025-10-06 20:04:17,454 [INFO] ============================================================
+2025-10-06 20:04:17,455 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:17,455 [INFO] ============================================================
+2025-10-06 20:04:17,455 [INFO] 正在获取 002594.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:19,394 [INFO] 成功获取 3454 条记录
+2025-10-06 20:04:19,394 [INFO] 002594.SZ | 记录数=3454 | 缺失率=31.47% | 价格范围=[13.99, 410.49] | 总成交量=498704379
+2025-10-06 20:04:19,394 [ERROR] ✗ 002594.SZ 验证失败: 缺失率 31.47% 超过 5% 阈值
+2025-10-06 20:04:19,394 [ERROR] ============================================================
+2025-10-06 20:04:19,394 [ERROR] ❌ Validation Failed: 002594.SZ 数据质量不合格: 缺失率 31.47% 超过 5% 阈值
+2025-10-06 20:04:19,394 [ERROR] ============================================================
+2025-10-06 20:04:21,898 [INFO] ============================================================
+2025-10-06 20:04:21,898 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:21,898 [INFO] ============================================================
+2025-10-06 20:04:21,899 [INFO] 正在获取 000002.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:24,127 [INFO] 成功获取 4662 条记录
+2025-10-06 20:04:24,127 [INFO] 000002.SZ | 记录数=4662 | 缺失率=7.50% | 价格范围=[191.81, 5786.67] | 总成交量=4712797739
+2025-10-06 20:04:24,128 [ERROR] ✗ 000002.SZ 验证失败: 缺失率 7.50% 超过 5% 阈值
+2025-10-06 20:04:24,128 [ERROR] ============================================================
+2025-10-06 20:04:24,128 [ERROR] ❌ Validation Failed: 000002.SZ 数据质量不合格: 缺失率 7.50% 超过 5% 阈值
+2025-10-06 20:04:24,128 [ERROR] ============================================================
+2025-10-06 20:04:26,623 [INFO] ============================================================
+2025-10-06 20:04:26,623 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:26,623 [INFO] ============================================================
+2025-10-06 20:04:26,624 [INFO] 正在获取 600276.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:27,791 [INFO] ============================================================
+2025-10-06 20:04:27,791 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:27,791 [INFO] ============================================================
+2025-10-06 20:04:27,791 [INFO] 正在获取 000001.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:28,693 [INFO] 成功获取 4821 条记录
+2025-10-06 20:04:28,697 [INFO] 600276.SH | 记录数=4821 | 缺失率=4.35% | 价格范围=[26.29, 4538.88] | 总成交量=768783066
+2025-10-06 20:04:28,698 [INFO] ✓ 600276.SH 数据验证通过
+2025-10-06 20:04:28,749 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv (274.85 KB)
+2025-10-06 20:04:28,749 [INFO] ============================================================
+2025-10-06 20:04:28,750 [INFO] ✅ Validation Passed: 600276.SH → /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv
+2025-10-06 20:04:28,750 [INFO] ============================================================
+2025-10-06 20:04:31,196 [INFO] ============================================================
+2025-10-06 20:04:31,196 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:31,196 [INFO] ============================================================
+2025-10-06 20:04:31,196 [INFO] 正在获取 601166.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:04:31,450 [INFO] 成功获取 4717 条记录
+2025-10-06 20:04:31,450 [INFO] 000001.SZ | 记录数=4717 | 缺失率=6.41% | 价格范围=[144.21, 3256.73] | 总成交量=3658134141
+2025-10-06 20:04:31,451 [ERROR] ✗ 000001.SZ 验证失败: 缺失率 6.41% 超过 5% 阈值
+2025-10-06 20:04:31,451 [ERROR] ============================================================
+2025-10-06 20:04:31,451 [ERROR] ❌ Validation Failed: 000001.SZ 数据质量不合格: 缺失率 6.41% 超过 5% 阈值
+2025-10-06 20:04:31,451 [ERROR] ============================================================
+2025-10-06 20:04:34,189 [INFO] ============================================================
+2025-10-06 20:04:34,189 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:04:34,189 [INFO] ============================================================
+2025-10-06 20:04:34,189 [INFO] 正在获取 601318.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:05:07,420 [INFO] 成功获取 4511 条记录
+2025-10-06 20:05:07,422 [INFO] 601166.SH | 记录数=4511 | 缺失率=10.50% | 价格范围=[12.30, 112.67] | 总成交量=3684548536
+2025-10-06 20:05:07,424 [ERROR] ✗ 601166.SH 验证失败: 缺失率 10.50% 超过 5% 阈值
+2025-10-06 20:05:07,424 [ERROR] ============================================================
+2025-10-06 20:05:07,424 [ERROR] ❌ Validation Failed: 601166.SH 数据质量不合格: 缺失率 10.50% 超过 5% 阈值
+2025-10-06 20:05:07,424 [ERROR] ============================================================
+2025-10-06 20:05:10,123 [INFO] ============================================================
+2025-10-06 20:05:10,123 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:05:10,123 [INFO] ============================================================
+2025-10-06 20:05:10,123 [INFO] 正在获取 300059.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:05:11,679 [INFO] 成功获取 3712 条记录
+2025-10-06 20:05:11,680 [INFO] 300059.SZ | 记录数=3712 | 缺失率=26.35% | 价格范围=[18.48, 2360.90] | 总成交量=5654450511
+2025-10-06 20:05:11,681 [ERROR] ✗ 300059.SZ 验证失败: 缺失率 26.35% 超过 5% 阈值
+2025-10-06 20:05:11,681 [ERROR] ============================================================
+2025-10-06 20:05:11,681 [ERROR] ❌ Validation Failed: 300059.SZ 数据质量不合格: 缺失率 26.35% 超过 5% 阈值
+2025-10-06 20:05:11,681 [ERROR] ============================================================
+2025-10-06 20:05:14,115 [INFO] ============================================================
+2025-10-06 20:05:14,115 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:05:14,115 [INFO] ============================================================
+2025-10-06 20:05:14,115 [INFO] 正在获取 601012.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:05:29,947 [INFO] 成功获取 3237 条记录
+2025-10-06 20:05:29,948 [INFO] 601012.SH | 记录数=3237 | 缺失率=35.77% | 价格范围=[10.43, 1377.53] | 总成交量=1638630015
+2025-10-06 20:05:29,948 [ERROR] ✗ 601012.SH 验证失败: 缺失率 35.77% 超过 5% 阈值
+2025-10-06 20:05:29,948 [ERROR] ============================================================
+2025-10-06 20:05:29,948 [ERROR] ❌ Validation Failed: 601012.SH 数据质量不合格: 缺失率 35.77% 超过 5% 阈值
+2025-10-06 20:05:29,948 [ERROR] ============================================================
+2025-10-06 20:05:32,543 [INFO] ============================================================
+2025-10-06 20:05:32,543 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:05:32,543 [INFO] ============================================================
+2025-10-06 20:05:32,543 [INFO] 正在获取 603288.SH 数据（20051006 ~ 20251006）...
+2025-10-06 20:05:33,892 [INFO] 成功获取 2836 条记录
+2025-10-06 20:05:33,893 [INFO] 603288.SH | 记录数=2836 | 缺失率=43.73% | 价格范围=[64.88, 946.00] | 总成交量=167742355
+2025-10-06 20:05:33,894 [ERROR] ✗ 603288.SH 验证失败: 缺失率 43.73% 超过 5% 阈值
+2025-10-06 20:05:33,894 [ERROR] ============================================================
+2025-10-06 20:05:33,894 [ERROR] ❌ Validation Failed: 603288.SH 数据质量不合格: 缺失率 43.73% 超过 5% 阈值
+2025-10-06 20:05:33,894 [ERROR] ============================================================
+2025-10-06 20:05:36,329 [INFO] ============================================================
+2025-10-06 20:05:36,329 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:05:36,329 [INFO] ============================================================
+2025-10-06 20:05:36,329 [INFO] 正在获取 000333.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:05:47,580 [INFO] 成功获取 2865 条记录
+2025-10-06 20:05:47,581 [INFO] 000333.SZ | 记录数=2865 | 缺失率=43.15% | 价格范围=[38.16, 428.30] | 总成交量=855472775
+2025-10-06 20:05:47,582 [ERROR] ✗ 000333.SZ 验证失败: 缺失率 43.15% 超过 5% 阈值
+2025-10-06 20:05:47,582 [ERROR] ============================================================
+2025-10-06 20:05:47,582 [ERROR] ❌ Validation Failed: 000333.SZ 数据质量不合格: 缺失率 43.15% 超过 5% 阈值
+2025-10-06 20:05:47,582 [ERROR] ============================================================
+2025-10-06 20:05:50,244 [INFO] ============================================================
+2025-10-06 20:05:50,244 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:05:50,244 [INFO] ============================================================
+2025-10-06 20:05:50,245 [INFO] 正在获取 002475.SZ 数据（20051006 ~ 20251006）...
+2025-10-06 20:07:09,432 [INFO] 成功获取 3626 条记录
+2025-10-06 20:07:09,435 [INFO] 002475.SZ | 记录数=3626 | 缺失率=28.06% | 价格范围=[33.85, 2330.87] | 总成交量=1396819892
+2025-10-06 20:07:09,436 [ERROR] ✗ 002475.SZ 验证失败: 缺失率 28.06% 超过 5% 阈值
+2025-10-06 20:07:09,436 [ERROR] ============================================================
+2025-10-06 20:07:09,436 [ERROR] ❌ Validation Failed: 002475.SZ 数据质量不合格: 缺失率 28.06% 超过 5% 阈值
+2025-10-06 20:07:09,436 [ERROR] ============================================================
+2025-10-06 20:07:12,135 [INFO] ============================================================
+2025-10-06 20:07:12,135 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-06 20:07:12,135 [INFO] ============================================================
+2025-10-06 20:07:12,135 [INFO] 正在获取 600309.SH 数据（20051006 ~ 20251006）...
+2025-10-09 22:18:45,267 [INFO] ============================================================
+2025-10-09 22:18:45,267 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:18:45,267 [INFO] ============================================================
+2025-10-09 22:18:45,268 [INFO] 正在获取 000001.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:18:46,987 [INFO] 成功获取 728 条记录
+2025-10-09 22:18:46,988 [INFO] 000001.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[1323.03, 2052.53] | 总成交量=851921994
+2025-10-09 22:18:46,988 [INFO] ✓ 000001.SZ 数据验证通过
+2025-10-09 22:18:46,993 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv (45.34 KB)
+2025-10-09 22:18:46,993 [INFO] ============================================================
+2025-10-09 22:18:46,993 [INFO] ✅ Validation Passed: 000001.SZ → /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv
+2025-10-09 22:18:46,993 [INFO] ============================================================
+2025-10-09 22:18:49,499 [INFO] ============================================================
+2025-10-09 22:18:49,499 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:18:49,499 [INFO] ============================================================
+2025-10-09 22:18:49,499 [INFO] 正在获取 601318.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:18:50,614 [INFO] 成功获取 728 条记录
+2025-10-09 22:18:50,615 [INFO] 601318.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[101.17, 163.75] | 总成交量=424471954
+2025-10-09 22:18:50,615 [INFO] ✓ 601318.SH 数据验证通过
+2025-10-09 22:18:50,620 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv (41.84 KB)
+2025-10-09 22:18:50,620 [INFO] ============================================================
+2025-10-09 22:18:50,620 [INFO] ✅ Validation Passed: 601318.SH → /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv
+2025-10-09 22:18:50,620 [INFO] ============================================================
+2025-10-09 22:18:53,106 [INFO] ============================================================
+2025-10-09 22:18:53,106 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:18:53,106 [INFO] ============================================================
+2025-10-09 22:18:53,106 [INFO] 正在获取 000858.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:18:54,210 [INFO] 成功获取 728 条记录
+2025-10-09 22:18:54,210 [INFO] 000858.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[2057.02, 3643.65] | 总成交量=142411336
+2025-10-09 22:18:54,211 [INFO] ✓ 000858.SZ 数据验证通过
+2025-10-09 22:18:54,215 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv (45.13 KB)
+2025-10-09 22:18:54,215 [INFO] ============================================================
+2025-10-09 22:18:54,215 [INFO] ✅ Validation Passed: 000858.SZ → /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv
+2025-10-09 22:18:54,215 [INFO] ============================================================
+2025-10-09 22:18:56,703 [INFO] ============================================================
+2025-10-09 22:18:56,703 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:18:56,703 [INFO] ============================================================
+2025-10-09 22:18:56,703 [INFO] 正在获取 600519.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:18:58,191 [INFO] 成功获取 728 条记录
+2025-10-09 22:18:58,192 [INFO] 600519.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[7377.79, 10366.64] | 总成交量=22611933
+2025-10-09 22:18:58,193 [INFO] ✓ 600519.SH 数据验证通过
+2025-10-09 22:18:58,198 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv (44.04 KB)
+2025-10-09 22:18:58,198 [INFO] ============================================================
+2025-10-09 22:18:58,198 [INFO] ✅ Validation Passed: 600519.SH → /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv
+2025-10-09 22:18:58,198 [INFO] ============================================================
+2025-10-09 22:19:00,740 [INFO] ============================================================
+2025-10-09 22:19:00,740 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:00,740 [INFO] ============================================================
+2025-10-09 22:19:00,740 [INFO] 正在获取 300750.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:04,251 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=0.300750&beg=20221009&end=20251009 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2025-10-09 22:19:05,254 [INFO] 正在获取 300750.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:06,389 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:06,390 [INFO] 300750.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[257.13, 762.80] | 总成交量=161362216
+2025-10-09 22:19:06,391 [INFO] ✓ 300750.SZ 数据验证通过
+2025-10-09 22:19:06,396 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv (41.72 KB)
+2025-10-09 22:19:06,397 [INFO] ============================================================
+2025-10-09 22:19:06,397 [INFO] ✅ Validation Passed: 300750.SZ → /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv
+2025-10-09 22:19:06,397 [INFO] ============================================================
+2025-10-09 22:19:08,835 [INFO] ============================================================
+2025-10-09 22:19:08,836 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:08,836 [INFO] ============================================================
+2025-10-09 22:19:08,836 [INFO] 正在获取 600036.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:10,334 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:10,335 [INFO] 600036.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[136.47, 234.73] | 总成交量=459179368
+2025-10-09 22:19:10,335 [INFO] ✓ 600036.SH 数据验证通过
+2025-10-09 22:19:10,339 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv (41.73 KB)
+2025-10-09 22:19:10,339 [INFO] ============================================================
+2025-10-09 22:19:10,339 [INFO] ✅ Validation Passed: 600036.SH → /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv
+2025-10-09 22:19:10,339 [INFO] ============================================================
+2025-10-09 22:19:12,860 [INFO] ============================================================
+2025-10-09 22:19:12,860 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:12,860 [INFO] ============================================================
+2025-10-09 22:19:12,860 [INFO] 正在获取 002594.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:13,983 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:13,985 [INFO] 002594.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[169.40, 410.49] | 总成交量=114915261
+2025-10-09 22:19:13,986 [INFO] ✓ 002594.SZ 数据验证通过
+2025-10-09 22:19:13,997 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv (41.87 KB)
+2025-10-09 22:19:13,997 [INFO] ============================================================
+2025-10-09 22:19:13,997 [INFO] ✅ Validation Passed: 002594.SZ → /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv
+2025-10-09 22:19:13,998 [INFO] ============================================================
+2025-10-09 22:19:16,463 [INFO] ============================================================
+2025-10-09 22:19:16,464 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:16,464 [INFO] ============================================================
+2025-10-09 22:19:16,464 [INFO] 正在获取 000002.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:17,929 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:17,930 [INFO] 000002.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[1984.77, 3759.91] | 总成交量=997201289
+2025-10-09 22:19:17,930 [INFO] ✓ 000002.SZ 数据验证通过
+2025-10-09 22:19:17,934 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv (45.15 KB)
+2025-10-09 22:19:17,934 [INFO] ============================================================
+2025-10-09 22:19:17,934 [INFO] ✅ Validation Passed: 000002.SZ → /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv
+2025-10-09 22:19:17,934 [INFO] ============================================================
+2025-10-09 22:19:20,444 [INFO] ============================================================
+2025-10-09 22:19:20,444 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:20,444 [INFO] ============================================================
+2025-10-09 22:19:20,444 [INFO] 正在获取 600276.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:21,725 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:21,726 [INFO] 600276.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[1607.73, 3480.36] | 总成交量=291662987
+2025-10-09 22:19:21,726 [INFO] ✓ 600276.SH 数据验证通过
+2025-10-09 22:19:21,729 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv (44.42 KB)
+2025-10-09 22:19:21,730 [INFO] ============================================================
+2025-10-09 22:19:21,730 [INFO] ✅ Validation Passed: 600276.SH → /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv
+2025-10-09 22:19:21,730 [INFO] ============================================================
+2025-10-09 22:19:24,199 [INFO] ============================================================
+2025-10-09 22:19:24,199 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:24,199 [INFO] ============================================================
+2025-10-09 22:19:24,199 [INFO] 正在获取 601166.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:25,511 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:25,511 [INFO] 601166.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[69.26, 112.67] | 总成交量=459580843
+2025-10-09 22:19:25,512 [INFO] ✓ 601166.SH 数据验证通过
+2025-10-09 22:19:25,516 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv (38.93 KB)
+2025-10-09 22:19:25,516 [INFO] ============================================================
+2025-10-09 22:19:25,516 [INFO] ✅ Validation Passed: 601166.SH → /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv
+2025-10-09 22:19:25,516 [INFO] ============================================================
+2025-10-09 22:19:27,968 [INFO] ============================================================
+2025-10-09 22:19:27,968 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:27,968 [INFO] ============================================================
+2025-10-09 22:19:27,969 [INFO] 正在获取 300059.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:29,043 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:29,044 [INFO] 300059.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[797.47, 2360.90] | 总成交量=2530317776
+2025-10-09 22:19:29,045 [INFO] ✓ 300059.SZ 数据验证通过
+2025-10-09 22:19:29,050 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv (45.00 KB)
+2025-10-09 22:19:29,050 [INFO] ============================================================
+2025-10-09 22:19:29,050 [INFO] ✅ Validation Passed: 300059.SZ → /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv
+2025-10-09 22:19:29,050 [INFO] ============================================================
+2025-10-09 22:19:31,496 [INFO] ============================================================
+2025-10-09 22:19:31,496 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:31,497 [INFO] ============================================================
+2025-10-09 22:19:31,497 [INFO] 正在获取 601012.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:32,842 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:32,843 [INFO] 601012.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[258.63, 1011.81] | 总成交量=762764574
+2025-10-09 22:19:32,843 [INFO] ✓ 601012.SH 数据验证通过
+2025-10-09 22:19:32,847 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv (41.87 KB)
+2025-10-09 22:19:32,847 [INFO] ============================================================
+2025-10-09 22:19:32,847 [INFO] ✅ Validation Passed: 601012.SH → /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv
+2025-10-09 22:19:32,847 [INFO] ============================================================
+2025-10-09 22:19:35,649 [INFO] ============================================================
+2025-10-09 22:19:35,649 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:35,649 [INFO] ============================================================
+2025-10-09 22:19:35,650 [INFO] 正在获取 603288.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:37,055 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:37,055 [INFO] 603288.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[280.15, 551.59] | 总成交量=78727889
+2025-10-09 22:19:37,056 [INFO] ✓ 603288.SH 数据验证通过
+2025-10-09 22:19:37,060 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv (40.64 KB)
+2025-10-09 22:19:37,060 [INFO] ============================================================
+2025-10-09 22:19:37,060 [INFO] ✅ Validation Passed: 603288.SH → /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv
+2025-10-09 22:19:37,060 [INFO] ============================================================
+2025-10-09 22:19:39,532 [INFO] ============================================================
+2025-10-09 22:19:39,533 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:39,533 [INFO] ============================================================
+2025-10-09 22:19:39,533 [INFO] 正在获取 000333.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:40,942 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:40,942 [INFO] 000333.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[189.70, 362.04] | 总成交量=214856386
+2025-10-09 22:19:40,943 [INFO] ✓ 000333.SZ 数据验证通过
+2025-10-09 22:19:40,947 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv (42.15 KB)
+2025-10-09 22:19:40,947 [INFO] ============================================================
+2025-10-09 22:19:40,947 [INFO] ✅ Validation Passed: 000333.SZ → /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv
+2025-10-09 22:19:40,947 [INFO] ============================================================
+2025-10-09 22:19:43,434 [INFO] ============================================================
+2025-10-09 22:19:43,434 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:43,435 [INFO] ============================================================
+2025-10-09 22:19:43,435 [INFO] 正在获取 002475.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:45,237 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:45,238 [INFO] 002475.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[837.22, 2330.87] | 总成交量=598592248
+2025-10-09 22:19:45,239 [INFO] ✓ 002475.SZ 数据验证通过
+2025-10-09 22:19:45,243 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv (44.68 KB)
+2025-10-09 22:19:45,243 [INFO] ============================================================
+2025-10-09 22:19:45,243 [INFO] ✅ Validation Passed: 002475.SZ → /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv
+2025-10-09 22:19:45,243 [INFO] ============================================================
+2025-10-09 22:19:47,731 [INFO] ============================================================
+2025-10-09 22:19:47,731 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:47,731 [INFO] ============================================================
+2025-10-09 22:19:47,731 [INFO] 正在获取 600309.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:48,722 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:48,723 [INFO] 600309.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[1739.26, 2988.27] | 总成交量=117980710
+2025-10-09 22:19:48,723 [INFO] ✓ 600309.SH 数据验证通过
+2025-10-09 22:19:48,727 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv (43.92 KB)
+2025-10-09 22:19:48,727 [INFO] ============================================================
+2025-10-09 22:19:48,727 [INFO] ✅ Validation Passed: 600309.SH → /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv
+2025-10-09 22:19:48,727 [INFO] ============================================================
+2025-10-09 22:19:51,576 [INFO] ============================================================
+2025-10-09 22:19:51,576 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:19:51,576 [INFO] ============================================================
+2025-10-09 22:19:51,576 [INFO] 正在获取 600031.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:56,941 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=2&secid=1.600031&beg=20221009&end=20251009 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2025-10-09 22:19:57,945 [INFO] 正在获取 600031.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:19:59,289 [INFO] 成功获取 728 条记录
+2025-10-09 22:19:59,290 [INFO] 600031.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[600.97, 1026.45] | 总成交量=455756075
+2025-10-09 22:19:59,291 [INFO] ✓ 600031.SH 数据验证通过
+2025-10-09 22:19:59,294 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv (41.35 KB)
+2025-10-09 22:19:59,294 [INFO] ============================================================
+2025-10-09 22:19:59,294 [INFO] ✅ Validation Passed: 600031.SH → /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv
+2025-10-09 22:19:59,295 [INFO] ============================================================
+2025-10-09 22:20:01,998 [INFO] ============================================================
+2025-10-09 22:20:01,998 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:20:01,998 [INFO] ============================================================
+2025-10-09 22:20:01,999 [INFO] 正在获取 300760.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:20:03,018 [INFO] 成功获取 728 条记录
+2025-10-09 22:20:03,019 [INFO] 300760.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[236.10, 350.38] | 总成交量=35852883
+2025-10-09 22:20:03,019 [INFO] ✓ 300760.SZ 数据验证通过
+2025-10-09 22:20:03,025 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv (40.23 KB)
+2025-10-09 22:20:03,026 [INFO] ============================================================
+2025-10-09 22:20:03,026 [INFO] ✅ Validation Passed: 300760.SZ → /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv
+2025-10-09 22:20:03,026 [INFO] ============================================================
+2025-10-09 22:20:05,486 [INFO] ============================================================
+2025-10-09 22:20:05,486 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:20:05,486 [INFO] ============================================================
+2025-10-09 22:20:05,486 [INFO] 正在获取 600900.SH 数据（20221009 ~ 20251009）...
+2025-10-09 22:20:06,518 [INFO] 成功获取 727 条记录
+2025-10-09 22:20:06,519 [INFO] 600900.SH | 记录数=727 | 缺失率=3.84% | 价格范围=[49.41, 72.19] | 总成交量=538696399
+2025-10-09 22:20:06,519 [INFO] ✓ 600900.SH 数据验证通过
+2025-10-09 22:20:06,525 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv (38.76 KB)
+2025-10-09 22:20:06,525 [INFO] ============================================================
+2025-10-09 22:20:06,525 [INFO] ✅ Validation Passed: 600900.SH → /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv
+2025-10-09 22:20:06,525 [INFO] ============================================================
+2025-10-09 22:20:08,981 [INFO] ============================================================
+2025-10-09 22:20:08,981 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-09 22:20:08,981 [INFO] ============================================================
+2025-10-09 22:20:08,981 [INFO] 正在获取 002920.SZ 数据（20221009 ~ 20251009）...
+2025-10-09 22:20:10,276 [INFO] 成功获取 728 条记录
+2025-10-09 22:20:10,276 [INFO] 002920.SZ | 记录数=728 | 缺失率=3.70% | 价格范围=[82.54, 174.50] | 总成交量=43937176
+2025-10-09 22:20:10,277 [INFO] ✓ 002920.SZ 数据验证通过
+2025-10-09 22:20:10,282 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv (40.62 KB)
+2025-10-09 22:20:10,282 [INFO] ============================================================
+2025-10-09 22:20:10,282 [INFO] ✅ Validation Passed: 002920.SZ → /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv
+2025-10-09 22:20:10,283 [INFO] ============================================================
+2025-10-10 11:47:23,266 [INFO] ============================================================
+2025-10-10 11:47:23,266 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:47:23,266 [INFO] ============================================================
+2025-10-10 11:47:23,268 [INFO] 正在获取 000001.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:47:27,736 [INFO] 成功获取 729 条记录
+2025-10-10 11:47:27,737 [INFO] 000001.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[9.03, 15.15] | 总成交量=852629178
+2025-10-10 11:47:27,738 [INFO] ✓ 000001.SZ 数据验证通过
+2025-10-10 11:47:27,742 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv (39.26 KB)
+2025-10-10 11:47:27,742 [INFO] ============================================================
+2025-10-10 11:47:27,742 [INFO] ✅ Validation Passed: 000001.SZ → /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv
+2025-10-10 11:47:27,742 [INFO] ============================================================
+2025-10-10 11:47:50,548 [INFO] ============================================================
+2025-10-10 11:47:50,548 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:47:50,548 [INFO] ============================================================
+2025-10-10 11:47:50,551 [INFO] 正在获取 000001.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:47:53,003 [INFO] 成功获取 729 条记录
+2025-10-10 11:47:53,004 [INFO] 000001.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[9.03, 15.15] | 总成交量=852629178
+2025-10-10 11:47:53,004 [INFO] ✓ 000001.SZ 数据验证通过
+2025-10-10 11:47:53,010 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv (39.26 KB)
+2025-10-10 11:47:53,010 [INFO] ============================================================
+2025-10-10 11:47:53,010 [INFO] ✅ Validation Passed: 000001.SZ → /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv
+2025-10-10 11:47:53,010 [INFO] ============================================================
+2025-10-10 11:47:55,426 [INFO] ============================================================
+2025-10-10 11:47:55,426 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:47:55,426 [INFO] ============================================================
+2025-10-10 11:47:55,426 [INFO] 正在获取 601318.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:47:56,540 [INFO] 成功获取 729 条记录
+2025-10-10 11:47:56,541 [INFO] 601318.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[36.15, 61.73] | 总成交量=424891377
+2025-10-10 11:47:56,542 [INFO] ✓ 601318.SH 数据验证通过
+2025-10-10 11:47:56,549 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv (38.63 KB)
+2025-10-10 11:47:56,549 [INFO] ============================================================
+2025-10-10 11:47:56,549 [INFO] ✅ Validation Passed: 601318.SH → /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv
+2025-10-10 11:47:56,549 [INFO] ============================================================
+2025-10-10 11:47:59,008 [INFO] ============================================================
+2025-10-10 11:47:59,008 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:47:59,008 [INFO] ============================================================
+2025-10-10 11:47:59,008 [INFO] 正在获取 000858.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:01,123 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:01,124 [INFO] 000858.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[107.69, 217.60] | 总成交量=142519954
+2025-10-10 11:48:01,125 [INFO] ✓ 000858.SZ 数据验证通过
+2025-10-10 11:48:01,130 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv (41.66 KB)
+2025-10-10 11:48:01,130 [INFO] ============================================================
+2025-10-10 11:48:01,130 [INFO] ✅ Validation Passed: 000858.SZ → /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv
+2025-10-10 11:48:01,130 [INFO] ============================================================
+2025-10-10 11:48:03,580 [INFO] ============================================================
+2025-10-10 11:48:03,580 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:03,580 [INFO] ============================================================
+2025-10-10 11:48:03,580 [INFO] 正在获取 600519.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:05,086 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:05,086 [INFO] 600519.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[1261.00, 1912.90] | 总成交量=22631898
+2025-10-10 11:48:05,087 [INFO] ✓ 600519.SH 数据验证通过
+2025-10-10 11:48:05,092 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv (42.71 KB)
+2025-10-10 11:48:05,092 [INFO] ============================================================
+2025-10-10 11:48:05,092 [INFO] ✅ Validation Passed: 600519.SH → /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv
+2025-10-10 11:48:05,092 [INFO] ============================================================
+2025-10-10 11:48:07,506 [INFO] ============================================================
+2025-10-10 11:48:07,506 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:07,506 [INFO] ============================================================
+2025-10-10 11:48:07,507 [INFO] 正在获取 300750.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:08,977 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:08,978 [INFO] 300750.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[140.75, 476.80] | 总成交量=161690800
+2025-10-10 11:48:08,979 [INFO] ✓ 300750.SZ 数据验证通过
+2025-10-10 11:48:08,984 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv (40.91 KB)
+2025-10-10 11:48:08,984 [INFO] ============================================================
+2025-10-10 11:48:08,984 [INFO] ✅ Validation Passed: 300750.SZ → /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv
+2025-10-10 11:48:08,984 [INFO] ============================================================
+2025-10-10 11:48:11,705 [INFO] ============================================================
+2025-10-10 11:48:11,705 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:11,705 [INFO] ============================================================
+2025-10-10 11:48:11,705 [INFO] 正在获取 600036.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:13,896 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:13,897 [INFO] 600036.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[26.82, 48.24] | 总成交量=459730635
+2025-10-10 11:48:13,898 [INFO] ✓ 600036.SH 数据验证通过
+2025-10-10 11:48:13,905 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv (38.67 KB)
+2025-10-10 11:48:13,905 [INFO] ============================================================
+2025-10-10 11:48:13,905 [INFO] ✅ Validation Passed: 600036.SH → /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv
+2025-10-10 11:48:13,906 [INFO] ============================================================
+2025-10-10 11:48:16,361 [INFO] ============================================================
+2025-10-10 11:48:16,361 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:16,361 [INFO] ============================================================
+2025-10-10 11:48:16,361 [INFO] 正在获取 002594.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:17,541 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:17,542 [INFO] 002594.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[103.93, 405.00] | 总成交量=115228497
+2025-10-10 11:48:17,543 [INFO] ✓ 002594.SZ 数据验证通过
+2025-10-10 11:48:17,549 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv (41.36 KB)
+2025-10-10 11:48:17,549 [INFO] ============================================================
+2025-10-10 11:48:17,549 [INFO] ✅ Validation Passed: 002594.SZ → /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv
+2025-10-10 11:48:17,549 [INFO] ============================================================
+2025-10-10 11:48:19,975 [INFO] ============================================================
+2025-10-10 11:48:19,976 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:19,976 [INFO] ============================================================
+2025-10-10 11:48:19,976 [INFO] 正在获取 000002.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:20,402 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:20,403 [INFO] 000002.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[6.22, 20.46] | 总成交量=998212637
+2025-10-10 11:48:20,404 [INFO] ✓ 000002.SZ 数据验证通过
+2025-10-10 11:48:20,409 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv (37.83 KB)
+2025-10-10 11:48:20,409 [INFO] ============================================================
+2025-10-10 11:48:20,409 [INFO] ✅ Validation Passed: 000002.SZ → /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv
+2025-10-10 11:48:20,409 [INFO] ============================================================
+2025-10-10 11:48:22,824 [INFO] ============================================================
+2025-10-10 11:48:22,824 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:22,824 [INFO] ============================================================
+2025-10-10 11:48:22,824 [INFO] 正在获取 600276.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:46,809 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600276&beg=20221010&end=20251010 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2025-10-10 11:48:47,812 [INFO] 正在获取 600276.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:50,695 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:50,696 [INFO] 600276.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[33.25, 72.47] | 总成交量=292033099
+2025-10-10 11:48:50,696 [INFO] ✓ 600276.SH 数据验证通过
+2025-10-10 11:48:50,700 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv (38.37 KB)
+2025-10-10 11:48:50,700 [INFO] ============================================================
+2025-10-10 11:48:50,700 [INFO] ✅ Validation Passed: 600276.SH → /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv
+2025-10-10 11:48:50,700 [INFO] ============================================================
+2025-10-10 11:48:53,236 [INFO] ============================================================
+2025-10-10 11:48:53,236 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:48:53,236 [INFO] ============================================================
+2025-10-10 11:48:53,236 [INFO] 正在获取 601166.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:48:57,462 [INFO] 成功获取 729 条记录
+2025-10-10 11:48:57,465 [INFO] 601166.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[14.11, 25.14] | 总成交量=460345403
+2025-10-10 11:48:57,466 [INFO] ✓ 601166.SH 数据验证通过
+2025-10-10 11:48:57,472 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv (38.52 KB)
+2025-10-10 11:48:57,473 [INFO] ============================================================
+2025-10-10 11:48:57,473 [INFO] ✅ Validation Passed: 601166.SH → /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv
+2025-10-10 11:48:57,473 [INFO] ============================================================
+2025-10-10 11:49:00,036 [INFO] ============================================================
+2025-10-10 11:49:00,036 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:00,036 [INFO] ============================================================
+2025-10-10 11:49:00,037 [INFO] 正在获取 300059.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:02,408 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:02,408 [INFO] 300059.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[9.96, 30.00] | 总成交量=2533919598
+2025-10-10 11:49:02,409 [INFO] ✓ 300059.SZ 数据验证通过
+2025-10-10 11:49:02,415 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv (39.63 KB)
+2025-10-10 11:49:02,415 [INFO] ============================================================
+2025-10-10 11:49:02,415 [INFO] ✅ Validation Passed: 300059.SZ → /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv
+2025-10-10 11:49:02,415 [INFO] ============================================================
+2025-10-10 11:49:04,840 [INFO] ============================================================
+2025-10-10 11:49:04,840 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:04,840 [INFO] ============================================================
+2025-10-10 11:49:04,840 [INFO] 正在获取 601012.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:05,659 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:05,660 [INFO] 601012.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[12.73, 52.40] | 总成交量=763841941
+2025-10-10 11:49:05,661 [INFO] ✓ 601012.SH 数据验证通过
+2025-10-10 11:49:05,667 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv (38.87 KB)
+2025-10-10 11:49:05,668 [INFO] ============================================================
+2025-10-10 11:49:05,668 [INFO] ✅ Validation Passed: 601012.SH → /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv
+2025-10-10 11:49:05,668 [INFO] ============================================================
+2025-10-10 11:49:08,115 [INFO] ============================================================
+2025-10-10 11:49:08,115 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:08,115 [INFO] ============================================================
+2025-10-10 11:49:08,115 [INFO] 正在获取 603288.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:09,934 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:09,934 [INFO] 603288.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[33.34, 85.08] | 总成交量=78842686
+2025-10-10 11:49:09,935 [INFO] ✓ 603288.SH 数据验证通过
+2025-10-10 11:49:09,940 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv (37.46 KB)
+2025-10-10 11:49:09,940 [INFO] ============================================================
+2025-10-10 11:49:09,940 [INFO] ✅ Validation Passed: 603288.SH → /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv
+2025-10-10 11:49:09,940 [INFO] ============================================================
+2025-10-10 11:49:12,350 [INFO] ============================================================
+2025-10-10 11:49:12,351 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:12,351 [INFO] ============================================================
+2025-10-10 11:49:12,351 [INFO] 正在获取 000333.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:12,831 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:12,832 [INFO] 000333.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[40.18, 80.19] | 总成交量=215146289
+2025-10-10 11:49:12,833 [INFO] ✓ 000333.SZ 数据验证通过
+2025-10-10 11:49:12,839 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv (39.01 KB)
+2025-10-10 11:49:12,839 [INFO] ============================================================
+2025-10-10 11:49:12,839 [INFO] ✅ Validation Passed: 000333.SZ → /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv
+2025-10-10 11:49:12,839 [INFO] ============================================================
+2025-10-10 11:49:15,270 [INFO] ============================================================
+2025-10-10 11:49:15,270 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:15,270 [INFO] ============================================================
+2025-10-10 11:49:15,270 [INFO] 正在获取 002475.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:16,779 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:16,780 [INFO] 002475.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[25.15, 70.20] | 总成交量=600152112
+2025-10-10 11:49:16,781 [INFO] ✓ 002475.SZ 数据验证通过
+2025-10-10 11:49:16,786 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv (39.34 KB)
+2025-10-10 11:49:16,786 [INFO] ============================================================
+2025-10-10 11:49:16,787 [INFO] ✅ Validation Passed: 002475.SZ → /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv
+2025-10-10 11:49:16,787 [INFO] ============================================================
+2025-10-10 11:49:19,221 [INFO] ============================================================
+2025-10-10 11:49:19,221 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:19,221 [INFO] ============================================================
+2025-10-10 11:49:19,221 [INFO] 正在获取 600309.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:20,698 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:20,698 [INFO] 600309.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[52.53, 106.80] | 总成交量=118187620
+2025-10-10 11:49:20,699 [INFO] ✓ 600309.SH 数据验证通过
+2025-10-10 11:49:20,706 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv (37.92 KB)
+2025-10-10 11:49:20,706 [INFO] ============================================================
+2025-10-10 11:49:20,706 [INFO] ✅ Validation Passed: 600309.SH → /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv
+2025-10-10 11:49:20,706 [INFO] ============================================================
+2025-10-10 11:49:23,131 [INFO] ============================================================
+2025-10-10 11:49:23,132 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:23,132 [INFO] ============================================================
+2025-10-10 11:49:23,132 [INFO] 正在获取 600031.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:42,608 [WARNING] 第 1 次尝试失败，1 秒后重试: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600031&beg=20221010&end=20251010 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+2025-10-10 11:49:43,611 [INFO] 正在获取 600031.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:49:52,842 [INFO] 成功获取 729 条记录
+2025-10-10 11:49:52,843 [INFO] 600031.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[12.70, 23.29] | 总成交量=456188748
+2025-10-10 11:49:52,844 [INFO] ✓ 600031.SH 数据验证通过
+2025-10-10 11:49:52,849 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv (38.39 KB)
+2025-10-10 11:49:52,849 [INFO] ============================================================
+2025-10-10 11:49:52,849 [INFO] ✅ Validation Passed: 600031.SH → /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv
+2025-10-10 11:49:52,849 [INFO] ============================================================
+2025-10-10 11:49:55,451 [INFO] ============================================================
+2025-10-10 11:49:55,451 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:49:55,451 [INFO] ============================================================
+2025-10-10 11:49:55,451 [INFO] 正在获取 300760.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:50:12,837 [INFO] 成功获取 729 条记录
+2025-10-10 11:50:12,840 [INFO] 300760.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[211.59, 341.88] | 总成交量=35896474
+2025-10-10 11:50:12,840 [INFO] ✓ 300760.SZ 数据验证通过
+2025-10-10 11:50:12,845 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv (40.01 KB)
+2025-10-10 11:50:12,845 [INFO] ============================================================
+2025-10-10 11:50:12,845 [INFO] ✅ Validation Passed: 300760.SZ → /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv
+2025-10-10 11:50:12,845 [INFO] ============================================================
+2025-10-10 11:50:15,443 [INFO] ============================================================
+2025-10-10 11:50:15,443 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:50:15,443 [INFO] ============================================================
+2025-10-10 11:50:15,444 [INFO] 正在获取 600900.SH 数据（20221010 ~ 20251010）...
+2025-10-10 11:50:16,944 [INFO] 成功获取 728 条记录
+2025-10-10 11:50:16,945 [INFO] 600900.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[19.98, 31.36] | 总成交量=539086944
+2025-10-10 11:50:16,945 [INFO] ✓ 600900.SH 数据验证通过
+2025-10-10 11:50:16,948 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv (38.67 KB)
+2025-10-10 11:50:16,948 [INFO] ============================================================
+2025-10-10 11:50:16,948 [INFO] ✅ Validation Passed: 600900.SH → /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv
+2025-10-10 11:50:16,948 [INFO] ============================================================
+2025-10-10 11:50:19,343 [INFO] ============================================================
+2025-10-10 11:50:19,344 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 11:50:19,344 [INFO] ============================================================
+2025-10-10 11:50:19,344 [INFO] 正在获取 002920.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 11:50:20,977 [INFO] 成功获取 729 条记录
+2025-10-10 11:50:20,977 [INFO] 002920.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[80.54, 172.50] | 总成交量=44006582
+2025-10-10 11:50:20,977 [INFO] ✓ 002920.SZ 数据验证通过
+2025-10-10 11:50:20,980 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv (40.13 KB)
+2025-10-10 11:50:20,980 [INFO] ============================================================
+2025-10-10 11:50:20,980 [INFO] ✅ Validation Passed: 002920.SZ → /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv
+2025-10-10 11:50:20,981 [INFO] ============================================================
+2025-10-10 17:36:06,124 [INFO] ============================================================
+2025-10-10 17:36:06,125 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:06,125 [INFO] ============================================================
+2025-10-10 17:36:06,125 [INFO] 正在获取 000001.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:11,551 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:11,552 [INFO] 000001.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[7.70, 13.54] | 总成交量=853009942
+2025-10-10 17:36:11,552 [INFO] ✓ 000001.SZ 数据验证通过
+2025-10-10 17:36:11,557 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv (38.47 KB)
+2025-10-10 17:36:11,557 [INFO] ============================================================
+2025-10-10 17:36:11,557 [INFO] ✅ Validation Passed: 000001.SZ → /Users/elie/.qlib/qlib_data/cn_data/000001.SZ.csv
+2025-10-10 17:36:11,557 [INFO] ============================================================
+2025-10-10 17:36:14,130 [INFO] ============================================================
+2025-10-10 17:36:14,130 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:14,130 [INFO] ============================================================
+2025-10-10 17:36:14,130 [INFO] 正在获取 601318.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:22,695 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:22,697 [INFO] 601318.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[29.71, 61.00] | 总成交量=425113419
+2025-10-10 17:36:22,697 [INFO] ✓ 601318.SH 数据验证通过
+2025-10-10 17:36:22,702 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv (38.91 KB)
+2025-10-10 17:36:22,703 [INFO] ============================================================
+2025-10-10 17:36:22,703 [INFO] ✅ Validation Passed: 601318.SH → /Users/elie/.qlib/qlib_data/cn_data/601318.SH.csv
+2025-10-10 17:36:22,703 [INFO] ============================================================
+2025-10-10 17:36:25,258 [INFO] ============================================================
+2025-10-10 17:36:25,258 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:25,258 [INFO] ============================================================
+2025-10-10 17:36:25,258 [INFO] 正在获取 000858.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:42,206 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:42,208 [INFO] 000858.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[101.95, 203.40] | 总成交量=142586696
+2025-10-10 17:36:42,209 [INFO] ✓ 000858.SZ 数据验证通过
+2025-10-10 17:36:42,213 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv (42.20 KB)
+2025-10-10 17:36:42,213 [INFO] ============================================================
+2025-10-10 17:36:42,213 [INFO] ✅ Validation Passed: 000858.SZ → /Users/elie/.qlib/qlib_data/cn_data/000858.SZ.csv
+2025-10-10 17:36:42,213 [INFO] ============================================================
+2025-10-10 17:36:44,807 [INFO] ============================================================
+2025-10-10 17:36:44,807 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:44,807 [INFO] ============================================================
+2025-10-10 17:36:44,808 [INFO] 正在获取 600519.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:45,779 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:45,780 [INFO] 600519.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[1200.72, 1795.54] | 总成交量=22647934
+2025-10-10 17:36:45,781 [INFO] ✓ 600519.SH 数据验证通过
+2025-10-10 17:36:45,786 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv (43.71 KB)
+2025-10-10 17:36:45,786 [INFO] ============================================================
+2025-10-10 17:36:45,786 [INFO] ✅ Validation Passed: 600519.SH → /Users/elie/.qlib/qlib_data/cn_data/600519.SH.csv
+2025-10-10 17:36:45,786 [INFO] ============================================================
+2025-10-10 17:36:48,277 [INFO] ============================================================
+2025-10-10 17:36:48,277 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:48,277 [INFO] ============================================================
+2025-10-10 17:36:48,277 [INFO] 正在获取 300750.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:50,759 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:50,760 [INFO] 300750.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[128.96, 409.89] | 总成交量=161895334
+2025-10-10 17:36:50,761 [INFO] ✓ 300750.SZ 数据验证通过
+2025-10-10 17:36:50,766 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv (41.69 KB)
+2025-10-10 17:36:50,766 [INFO] ============================================================
+2025-10-10 17:36:50,766 [INFO] ✅ Validation Passed: 300750.SZ → /Users/elie/.qlib/qlib_data/cn_data/300750.SZ.csv
+2025-10-10 17:36:50,766 [INFO] ============================================================
+2025-10-10 17:36:53,175 [INFO] ============================================================
+2025-10-10 17:36:53,175 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:53,175 [INFO] ============================================================
+2025-10-10 17:36:53,175 [INFO] 正在获取 600036.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:36:54,009 [INFO] 成功获取 729 条记录
+2025-10-10 17:36:54,010 [INFO] 600036.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[21.11, 46.24] | 总成交量=460134418
+2025-10-10 17:36:54,011 [INFO] ✓ 600036.SH 数据验证通过
+2025-10-10 17:36:54,015 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv (38.85 KB)
+2025-10-10 17:36:54,015 [INFO] ============================================================
+2025-10-10 17:36:54,015 [INFO] ✅ Validation Passed: 600036.SH → /Users/elie/.qlib/qlib_data/cn_data/600036.SH.csv
+2025-10-10 17:36:54,015 [INFO] ============================================================
+2025-10-10 17:36:56,408 [INFO] ============================================================
+2025-10-10 17:36:56,408 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:36:56,408 [INFO] ============================================================
+2025-10-10 17:36:56,408 [INFO] 正在获取 002594.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:06,625 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:06,627 [INFO] 002594.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[53.31, 133.68] | 总成交量=115505364
+2025-10-10 17:37:06,628 [INFO] ✓ 002594.SZ 数据验证通过
+2025-10-10 17:37:06,633 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv (39.98 KB)
+2025-10-10 17:37:06,633 [INFO] ============================================================
+2025-10-10 17:37:06,633 [INFO] ✅ Validation Passed: 002594.SZ → /Users/elie/.qlib/qlib_data/cn_data/002594.SZ.csv
+2025-10-10 17:37:06,633 [INFO] ============================================================
+2025-10-10 17:37:09,226 [INFO] ============================================================
+2025-10-10 17:37:09,226 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:09,226 [INFO] ============================================================
+2025-10-10 17:37:09,226 [INFO] 正在获取 000002.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:11,169 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:11,170 [INFO] 000002.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[6.22, 19.78] | 总成交量=998749629
+2025-10-10 17:37:11,171 [INFO] ✓ 000002.SZ 数据验证通过
+2025-10-10 17:37:11,176 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv (37.85 KB)
+2025-10-10 17:37:11,176 [INFO] ============================================================
+2025-10-10 17:37:11,176 [INFO] ✅ Validation Passed: 000002.SZ → /Users/elie/.qlib/qlib_data/cn_data/000002.SZ.csv
+2025-10-10 17:37:11,176 [INFO] ============================================================
+2025-10-10 17:37:13,590 [INFO] ============================================================
+2025-10-10 17:37:13,590 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:13,590 [INFO] ============================================================
+2025-10-10 17:37:13,590 [INFO] 正在获取 600276.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:15,031 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:15,033 [INFO] 600276.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[32.69, 72.47] | 总成交量=292369088
+2025-10-10 17:37:15,034 [INFO] ✓ 600276.SH 数据验证通过
+2025-10-10 17:37:15,039 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv (38.47 KB)
+2025-10-10 17:37:15,039 [INFO] ============================================================
+2025-10-10 17:37:15,040 [INFO] ✅ Validation Passed: 600276.SH → /Users/elie/.qlib/qlib_data/cn_data/600276.SH.csv
+2025-10-10 17:37:15,040 [INFO] ============================================================
+2025-10-10 17:37:17,449 [INFO] ============================================================
+2025-10-10 17:37:17,449 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:17,449 [INFO] ============================================================
+2025-10-10 17:37:17,449 [INFO] 正在获取 601166.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:27,586 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:27,586 [INFO] 601166.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[11.74, 25.14] | 总成交量=460805730
+2025-10-10 17:37:27,587 [INFO] ✓ 601166.SH 数据验证通过
+2025-10-10 17:37:27,591 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv (38.61 KB)
+2025-10-10 17:37:27,591 [INFO] ============================================================
+2025-10-10 17:37:27,591 [INFO] ✅ Validation Passed: 601166.SH → /Users/elie/.qlib/qlib_data/cn_data/601166.SH.csv
+2025-10-10 17:37:27,591 [INFO] ============================================================
+2025-10-10 17:37:30,627 [INFO] ============================================================
+2025-10-10 17:37:30,627 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:30,627 [INFO] ============================================================
+2025-10-10 17:37:30,627 [INFO] 正在获取 300059.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:32,300 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:32,301 [INFO] 300059.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[9.90, 29.94] | 总成交量=2536347631
+2025-10-10 17:37:32,302 [INFO] ✓ 300059.SZ 数据验证通过
+2025-10-10 17:37:32,307 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv (39.71 KB)
+2025-10-10 17:37:32,307 [INFO] ============================================================
+2025-10-10 17:37:32,307 [INFO] ✅ Validation Passed: 300059.SZ → /Users/elie/.qlib/qlib_data/cn_data/300059.SZ.csv
+2025-10-10 17:37:32,307 [INFO] ============================================================
+2025-10-10 17:37:34,739 [INFO] ============================================================
+2025-10-10 17:37:34,739 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:34,739 [INFO] ============================================================
+2025-10-10 17:37:34,740 [INFO] 正在获取 601012.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:46,223 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:46,224 [INFO] 601012.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[12.73, 51.83] | 总成交量=764653299
+2025-10-10 17:37:46,225 [INFO] ✓ 601012.SH 数据验证通过
+2025-10-10 17:37:46,230 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv (39.08 KB)
+2025-10-10 17:37:46,230 [INFO] ============================================================
+2025-10-10 17:37:46,230 [INFO] ✅ Validation Passed: 601012.SH → /Users/elie/.qlib/qlib_data/cn_data/601012.SH.csv
+2025-10-10 17:37:46,230 [INFO] ============================================================
+2025-10-10 17:37:48,837 [INFO] ============================================================
+2025-10-10 17:37:48,837 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:48,837 [INFO] ============================================================
+2025-10-10 17:37:48,837 [INFO] 正在获取 603288.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:49,783 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:49,784 [INFO] 603288.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[31.92, 68.54] | 总成交量=78903804
+2025-10-10 17:37:49,784 [INFO] ✓ 603288.SH 数据验证通过
+2025-10-10 17:37:49,788 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv (37.84 KB)
+2025-10-10 17:37:49,788 [INFO] ============================================================
+2025-10-10 17:37:49,788 [INFO] ✅ Validation Passed: 603288.SH → /Users/elie/.qlib/qlib_data/cn_data/603288.SH.csv
+2025-10-10 17:37:49,788 [INFO] ============================================================
+2025-10-10 17:37:52,209 [INFO] ============================================================
+2025-10-10 17:37:52,209 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:52,209 [INFO] ============================================================
+2025-10-10 17:37:52,209 [INFO] 正在获取 000333.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:54,587 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:54,588 [INFO] 000333.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[31.22, 77.18] | 总成交量=215289691
+2025-10-10 17:37:54,589 [INFO] ✓ 000333.SZ 数据验证通过
+2025-10-10 17:37:54,594 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv (39.41 KB)
+2025-10-10 17:37:54,594 [INFO] ============================================================
+2025-10-10 17:37:54,594 [INFO] ✅ Validation Passed: 000333.SZ → /Users/elie/.qlib/qlib_data/cn_data/000333.SZ.csv
+2025-10-10 17:37:54,594 [INFO] ============================================================
+2025-10-10 17:37:57,158 [INFO] ============================================================
+2025-10-10 17:37:57,158 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:37:57,158 [INFO] ============================================================
+2025-10-10 17:37:57,158 [INFO] 正在获取 002475.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:37:59,967 [INFO] 成功获取 729 条记录
+2025-10-10 17:37:59,967 [INFO] 002475.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[24.52, 70.20] | 总成交量=601201799
+2025-10-10 17:37:59,967 [INFO] ✓ 002475.SZ 数据验证通过
+2025-10-10 17:37:59,971 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv (39.43 KB)
+2025-10-10 17:37:59,971 [INFO] ============================================================
+2025-10-10 17:37:59,971 [INFO] ✅ Validation Passed: 002475.SZ → /Users/elie/.qlib/qlib_data/cn_data/002475.SZ.csv
+2025-10-10 17:37:59,971 [INFO] ============================================================
+2025-10-10 17:38:02,464 [INFO] ============================================================
+2025-10-10 17:38:02,464 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:38:02,464 [INFO] ============================================================
+2025-10-10 17:38:02,464 [INFO] 正在获取 600309.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:38:03,457 [INFO] 成功获取 729 条记录
+2025-10-10 17:38:03,457 [INFO] 600309.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[52.53, 102.33] | 总成交量=118309627
+2025-10-10 17:38:03,458 [INFO] ✓ 600309.SH 数据验证通过
+2025-10-10 17:38:03,462 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv (38.34 KB)
+2025-10-10 17:38:03,462 [INFO] ============================================================
+2025-10-10 17:38:03,462 [INFO] ✅ Validation Passed: 600309.SH → /Users/elie/.qlib/qlib_data/cn_data/600309.SH.csv
+2025-10-10 17:38:03,462 [INFO] ============================================================
+2025-10-10 17:38:05,911 [INFO] ============================================================
+2025-10-10 17:38:05,911 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:38:05,911 [INFO] ============================================================
+2025-10-10 17:38:05,911 [INFO] 正在获取 600031.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:38:07,930 [INFO] 成功获取 729 条记录
+2025-10-10 17:38:07,930 [INFO] 600031.SH | 记录数=729 | 缺失率=3.57% | 价格范围=[12.12, 23.24] | 总成交量=456578746
+2025-10-10 17:38:07,931 [INFO] ✓ 600031.SH 数据验证通过
+2025-10-10 17:38:07,933 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv (38.51 KB)
+2025-10-10 17:38:07,933 [INFO] ============================================================
+2025-10-10 17:38:07,933 [INFO] ✅ Validation Passed: 600031.SH → /Users/elie/.qlib/qlib_data/cn_data/600031.SH.csv
+2025-10-10 17:38:07,933 [INFO] ============================================================
+2025-10-10 17:38:10,376 [INFO] ============================================================
+2025-10-10 17:38:10,376 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:38:10,376 [INFO] ============================================================
+2025-10-10 17:38:10,376 [INFO] 正在获取 300760.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:38:13,041 [INFO] 成功获取 729 条记录
+2025-10-10 17:38:13,041 [INFO] 300760.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[208.31, 322.59] | 总成交量=35930851
+2025-10-10 17:38:13,042 [INFO] ✓ 300760.SZ 数据验证通过
+2025-10-10 17:38:13,046 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv (40.81 KB)
+2025-10-10 17:38:13,046 [INFO] ============================================================
+2025-10-10 17:38:13,046 [INFO] ✅ Validation Passed: 300760.SZ → /Users/elie/.qlib/qlib_data/cn_data/300760.SZ.csv
+2025-10-10 17:38:13,046 [INFO] ============================================================
+2025-10-10 17:38:15,473 [INFO] ============================================================
+2025-10-10 17:38:15,473 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:38:15,473 [INFO] ============================================================
+2025-10-10 17:38:15,473 [INFO] 正在获取 600900.SH 数据（20221010 ~ 20251010）...
+2025-10-10 17:38:17,018 [INFO] 成功获取 728 条记录
+2025-10-10 17:38:17,020 [INFO] 600900.SH | 记录数=728 | 缺失率=3.70% | 价格范围=[17.36, 30.38] | 总成交量=539409004
+2025-10-10 17:38:17,020 [INFO] ✓ 600900.SH 数据验证通过
+2025-10-10 17:38:17,025 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv (38.82 KB)
+2025-10-10 17:38:17,025 [INFO] ============================================================
+2025-10-10 17:38:17,025 [INFO] ✅ Validation Passed: 600900.SH → /Users/elie/.qlib/qlib_data/cn_data/600900.SH.csv
+2025-10-10 17:38:17,025 [INFO] ============================================================
+2025-10-10 17:38:19,442 [INFO] ============================================================
+2025-10-10 17:38:19,442 [INFO] Stock 数据转换工具 - Phase 0
+2025-10-10 17:38:19,442 [INFO] ============================================================
+2025-10-10 17:38:19,442 [INFO] 正在获取 002920.SZ 数据（20221010 ~ 20251010）...
+2025-10-10 17:38:20,338 [INFO] 成功获取 729 条记录
+2025-10-10 17:38:20,339 [INFO] 002920.SZ | 记录数=729 | 缺失率=3.57% | 价格范围=[78.50, 170.46] | 总成交量=44053953
+2025-10-10 17:38:20,340 [INFO] ✓ 002920.SZ 数据验证通过
+2025-10-10 17:38:20,346 [INFO] 数据已保存: /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv (40.44 KB)
+2025-10-10 17:38:20,346 [INFO] ============================================================
+2025-10-10 17:38:20,346 [INFO] ✅ Validation Passed: 002920.SZ → /Users/elie/.qlib/qlib_data/cn_data/002920.SZ.csv
+2025-10-10 17:38:20,346 [INFO] ============================================================

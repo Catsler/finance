@@ -9,3 +9,14 @@ config/*_local.yaml
 .env.local
 *.env
 **/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
