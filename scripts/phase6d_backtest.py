@@ -39,6 +39,9 @@ from utils.io import (
     load_benchmark_data
 )
 
+# 导入新配置系统
+from config import get_settings, Settings
+
 
 # ===== 配置区（阈值常量）=====
 THRESHOLDS = {
@@ -46,21 +49,33 @@ THRESHOLDS = {
     'excess_acceleration': 0.10     # 超额收益加速阈值（10%/年）
 }
 
+# ===== Combo-A: 多周期动量配置 =====
+MOMENTUM_CONFIG = {
+    'return_5d_min': 0.0,       # 5日涨幅下限（%）
+    'return_20d_min': 3.0,      # 20日涨幅下限（%）- 提高阈值
+    'return_60d_min': 5.0,      # 60日涨幅下限（%）
+    'ma_requirement': 'ma5>ma10>ma20',  # 均线要求
+    'enable_60d_check': True    # 是否启用60日检查
+}
+
 
 def derive_target_count(pool_name, pool_stocks, cli_value=None):
     """
     统一推导target_count（复用现有规则）
+    **Phase 6F更新**: large_cap改为集中持仓策略（从96只候选池选5只最强）
 
     优先级：CLI参数 > 池名规则 > 池大小
     """
     if cli_value is not None:
         return cli_value
 
-    # 池名规则（与现有行为完全一致）
+    # 池名规则
     if pool_name == 'small_cap':
         return 10
     elif pool_name == 'medium_cap':
         return 20
+    elif pool_name == 'large_cap':
+        return 5  # Phase 6F: 集中持仓 - 从96只候选池选5只最强势股
     elif pool_name == 'legacy_7stocks':
         return 7
     else:
@@ -104,60 +119,51 @@ def build_custom_config(start_date, end_date, pool_name, pool_stocks,
     }
 
 
-def load_stock_pool_from_yaml(pool_name='small_cap'):
+def load_stock_pool_from_yaml(pool_name='small_cap', settings=None):
     """
-    从stock_pool.yaml或stock_pool_legacy7.yaml加载股票池
+    从配置系统加载股票池（已迁移到Pydantic Settings）
 
     Args:
-        pool_name: 股票池名称（small_cap/medium_cap/legacy_7stocks）
+        pool_name: 股票池名称（small_cap/medium_cap/legacy_test_pool/legacy_7stocks）
+        settings: Settings实例（可选，如不提供则自动加载）
 
     Returns:
         dict: {symbol: name}
     """
-    try:
-        from ruamel.yaml import YAML
-    except ImportError:
-        print("❌ 请安装 ruamel.yaml: pip install ruamel.yaml")
-        sys.exit(1)
+    # 获取配置
+    if settings is None:
+        settings = get_settings()
 
-    # 根据池名选择配置文件
-    if pool_name == 'legacy_7stocks':
-        yaml_path = Path(__file__).parent.parent / 'stock_pool_legacy7.yaml'
-    else:
-        yaml_path = Path(__file__).parent.parent / 'stock_pool.yaml'
+    # 映射到配置系统中的池名
+    pool_mapping = {
+        'small_cap': 'small_cap',
+        'medium_cap': 'medium_cap',
+        'large_cap': 'large_cap',
+        'legacy_test_pool': 'legacy_test_pool',
+        'legacy_7stocks': 'legacy_test_pool'  # 向后兼容
+    }
 
-    if not yaml_path.exists():
-        print(f"❌ 配置文件不存在: {yaml_path}")
-        sys.exit(1)
+    config_pool_name = pool_mapping.get(pool_name)
 
-    yaml = YAML(typ='safe')
-    with open(yaml_path) as f:
-        config = yaml.load(f)
-
-    stock_pools = config.get('stock_pools', {})
-
-    if pool_name == 'small_cap':
-        # 直接返回small_cap列表
-        stocks = {s['symbol']: s['name'] for s in stock_pools.get('small_cap', [])}
-    elif pool_name == 'medium_cap':
-        # medium_cap = small_cap + additional
-        small_cap_stocks = {s['symbol']: s['name'] for s in stock_pools.get('small_cap', [])}
-        medium_cap_config = stock_pools.get('medium_cap', {})
-        additional_stocks = {s['symbol']: s['name'] for s in medium_cap_config.get('additional', [])}
-        stocks = {**small_cap_stocks, **additional_stocks}
-    elif pool_name == 'legacy_7stocks':
-        # Phase 8: 7只老股（2005年就存在）
-        stocks = {s['symbol']: s['name'] for s in stock_pools.get('legacy_7stocks', [])}
-    elif pool_name in stock_pools and isinstance(stock_pools[pool_name], list):
-        # Phase 8.1: 支持其他简单列表池（如legacy_test_pool）
-        stocks = {s['symbol']: s['name'] for s in stock_pools[pool_name]}
-    else:
+    if config_pool_name is None:
         print(f"❌ 未知股票池: {pool_name}")
         sys.exit(1)
 
-    yaml_file = 'stock_pool_legacy7.yaml' if pool_name == 'legacy_7stocks' else 'stock_pool.yaml'
-    print(f"✓ 从{yaml_file}加载 {pool_name}（{len(stocks)}只股票）")
-    return stocks
+    # 从配置系统获取股票池
+    try:
+        stock_list = settings.stock_pool.get_pool(config_pool_name)
+        stocks = {stock.symbol: stock.name for stock in stock_list}
+
+        if not stocks:
+            print(f"❌ 股票池 {pool_name} 为空")
+            sys.exit(1)
+
+        print(f"✓ 从配置系统加载 {pool_name}（{len(stocks)}只股票）")
+        return stocks
+
+    except Exception as e:
+        print(f"❌ 加载股票池失败: {e}")
+        sys.exit(1)
 
 
 def get_year_config(year, rebalance_freq='monthly'):
@@ -286,9 +292,10 @@ def load_stock_data(data_dir, start_date, end_date, pool_name='small_cap'):
         df['symbol'] = symbol
         df['name'] = name
 
-        # 计算MA5和MA10
+        # 计算MA5、MA10、MA20（Combo-A需要）
         df['ma5'] = df['close'].rolling(window=5).mean()
         df['ma10'] = df['close'].rolling(window=10).mean()
+        df['ma20'] = df['close'].rolling(window=20).mean()  # Phase 6F: 均线多头排列需要
 
         data[symbol] = df
 
@@ -296,26 +303,45 @@ def load_stock_data(data_dir, start_date, end_date, pool_name='small_cap'):
     return data
 
 
-def calculate_20d_return(df, date):
-    """计算20日涨幅"""
+def calculate_nd_return(df, date, n=5):
+    """
+    计算N日涨幅（通用函数）
+
+    Args:
+        df: 股票数据DataFrame
+        date: 计算日期
+        n: 时间周期（天数）
+
+    Returns:
+        float: N日涨幅（小数形式，如0.05表示5%），失败返回np.nan
+    """
     try:
         if date not in df.index:
             return np.nan
 
         date_loc = df.index.get_loc(date)
-        if date_loc < 20:
+        if date_loc < n:
             return np.nan
 
         current_price = df.loc[date, 'close']
-        price_20d_ago = df.iloc[date_loc - 20]['close']
+        price_nd_ago = df.iloc[date_loc - n]['close']
 
-        return (current_price - price_20d_ago) / price_20d_ago
+        return (current_price - price_nd_ago) / price_nd_ago
     except:
         return np.nan
 
 
-def check_ma_crossover(df, date):
-    """检查MA5>MA10"""
+def check_ma_bullish(df, date):
+    """
+    检查MA5 > MA10 > MA20（均线多头排列）
+
+    Args:
+        df: 股票数据DataFrame
+        date: 检查日期
+
+    Returns:
+        bool: 是否满足均线多头排列
+    """
     try:
         if date not in df.index:
             return False
@@ -326,37 +352,71 @@ def check_ma_crossover(df, date):
         if pd.isna(ma5) or pd.isna(ma10):
             return False
 
-        return ma5 > ma10
+        # 检查是否有MA20列
+        if 'ma20' in df.columns:
+            ma20 = df.loc[date, 'ma20']
+            if pd.isna(ma20):
+                return False
+            return ma5 > ma10 > ma20  # 严格多头排列
+        else:
+            # 如果没有MA20，回退到原逻辑（MA5>MA10）
+            return ma5 > ma10
     except:
         return False
 
 
-def select_stocks(stock_data, date, momentum_threshold=0.0):
+def select_stocks(stock_data, date, momentum_threshold=0.0, momentum_config=None, return_with_scores=False):
     """
-    选股规则：20日涨幅>threshold AND MA5>MA10
+    Combo-A多周期动量选股：5日 + 20日 + 60日涨幅 + MA5>MA10>MA20
+    **Phase 6F更新**: 多周期动量验证，降低弱势股票入选概率
 
     Args:
         stock_data: 股票数据字典
         date: 选股日期
-        momentum_threshold: 20日涨幅阈值（百分比，如-5.0表示-5%）
+        momentum_threshold: 20日涨幅阈值（百分比，如-5.0表示-5%）【已废弃，保留用于向后兼容】
+        momentum_config: 动量配置字典（None则使用MOMENTUM_CONFIG全局变量）
+        return_with_scores: 是否返回(symbol, score)元组列表
 
     Returns:
-        list: 满足条件的股票代码列表
+        list: 按20日动量强度降序排序的股票代码列表（或(symbol, return_20d)元组列表）
     """
-    selected = []
-    threshold_decimal = momentum_threshold / 100  # 转换为小数
+    if momentum_config is None:
+        momentum_config = MOMENTUM_CONFIG
+
+    qualified_with_scores = []  # [(symbol, return_20d), ...]
 
     for symbol, df in stock_data.items():
-        ret_20d = calculate_20d_return(df, date)
-        if pd.isna(ret_20d) or ret_20d <= threshold_decimal:
+        # ===== Combo-A: 多周期动量验证 =====
+
+        # 1. 检查5日涨幅（短期动量）
+        ret_5d = calculate_nd_return(df, date, n=5)
+        if pd.isna(ret_5d) or ret_5d <= momentum_config['return_5d_min'] / 100:
             continue
 
-        if not check_ma_crossover(df, date):
+        # 2. 检查20日涨幅（中期动量）
+        ret_20d = calculate_nd_return(df, date, n=20)
+        if pd.isna(ret_20d) or ret_20d <= momentum_config['return_20d_min'] / 100:
             continue
 
-        selected.append(symbol)
+        # 3. 检查60日涨幅（长期趋势）- 可选
+        if momentum_config['enable_60d_check']:
+            ret_60d = calculate_nd_return(df, date, n=60)
+            if pd.isna(ret_60d) or ret_60d <= momentum_config['return_60d_min'] / 100:
+                continue
 
-    return selected
+        # 4. 检查MA5>MA10>MA20（均线多头排列）
+        if not check_ma_bullish(df, date):
+            continue
+
+        # 通过所有检查，加入候选池（使用20日涨幅作为排序依据）
+        qualified_with_scores.append((symbol, ret_20d))
+
+    # 按20日动量强度降序排序（最强的排前面）
+    qualified_with_scores.sort(key=lambda x: x[1], reverse=True)
+
+    if return_with_scores:
+        return qualified_with_scores
+    return [symbol for symbol, _ in qualified_with_scores]
 
 
 def select_stocks_with_stability(stock_data, date, prev_holdings, momentum_threshold=0.0, stability_ratio=0.5, target_count=20, debug=False):
@@ -431,34 +491,6 @@ def select_stocks_with_stability(stock_data, date, prev_holdings, momentum_thres
         print(f"  换手率: {turnover_rate:.1f}%")
 
     return final_selection
-
-
-def calculate_sharpe_ratio(returns, risk_free_rate=0.03):
-    """
-    计算Sharpe比率
-
-    Args:
-        returns: 日收益率序列
-        risk_free_rate: 无风险利率（年化）
-
-    Returns:
-        float: Sharpe比率
-    """
-    if len(returns) == 0:
-        return 0.0
-
-    # 日均超额收益
-    daily_rf = risk_free_rate / 252
-    excess_returns = returns - daily_rf
-
-    # 年化
-    mean_excess = excess_returns.mean() * 252
-    std = returns.std() * np.sqrt(252)
-
-    if std == 0:
-        return 0.0
-
-    return mean_excess / std
 
 
 def backtest_fixed(stock_data, initial_capital=100000, commission=0.0):
@@ -797,8 +829,9 @@ def _run_year_backtest_core(start_date, end_date, rebalance_dates,
     print(f"  参数: 阈值={momentum_threshold}%, 佣金={commission*100:.2f}%, 稳定性={stability_ratio:.1f}")
     print(f"{'='*60}\n")
 
-    # 加载数据
-    data_dir = Path.home() / '.qlib/qlib_data/cn_data'
+    # 加载数据（使用配置系统的数据目录）
+    settings = get_settings()
+    data_dir = settings.data_dir
     stock_data = load_stock_data(data_dir, start_date, end_date, pool_name=pool_name)
 
     # 动态检查：至少需要5只股票（支持legacy_7stocks）
@@ -1070,12 +1103,14 @@ def main():
                         choices=['monthly', 'quarterly'],
                         help='调仓频率（默认monthly）')
     parser.add_argument('--pool', type=str, default='medium_cap',
-                        choices=['small_cap', 'medium_cap', 'legacy_7stocks'],
-                        help='股票池（默认medium_cap=20只[推荐], small_cap=10只[legacy], legacy_7stocks=7只[Phase 8]）')
+                        choices=['small_cap', 'medium_cap', 'large_cap', 'legacy_7stocks'],
+                        help='股票池（默认medium_cap=20只[推荐], large_cap=96只[Phase 3], small_cap=10只[legacy], legacy_7stocks=7只[Phase 8]）')
     parser.add_argument('--commission', type=float, default=0.0,
                         help='单边交易佣金率（默认0.0，示例：0.001=0.1%%）')
     parser.add_argument('--stability-ratio', type=float, default=0.0,
                         help='持仓稳定性比例（0=关闭，0.5=优先保留50%%老仓位，范围0-1）')
+    parser.add_argument('--target-holdings', type=int, default=None,
+                        help='实际持仓数量（1-20），默认None使用池默认值（large_cap=5, medium_cap=20）')
     parser.add_argument('--debug', action='store_true',
                         help='启用DEBUG日志输出')
     parser.add_argument('--take-profit', type=str, default=None,
@@ -1134,13 +1169,20 @@ def main():
     freq_suffix = 'quarterly' if args.rebalance_freq == 'quarterly' else 'monthly'
     threshold_str = f"m{int(args.momentum_threshold)}" if args.momentum_threshold != 0 else "m0"
 
-    # 根据股票池确定目标持仓数量和文件后缀（Phase 8扩展）
-    if args.pool == 'legacy_7stocks':
+    # 确定target_count（Phase 6F更新：支持--target-holdings参数，large_cap默认5只）
+    if args.target_holdings:
+        # 优先使用CLI指定的持仓数量
+        target_count = args.target_holdings
+        pool_suffix = f'{target_count}stocks'
+    elif args.pool == 'legacy_7stocks':
         target_count = 7
         pool_suffix = '7stocks'
     elif args.pool == 'medium_cap':
         target_count = 20
         pool_suffix = '20stocks'
+    elif args.pool == 'large_cap':
+        target_count = 5  # Phase 6F: 集中持仓 - 从96只候选池选5只最强
+        pool_suffix = '5stocks'
     else:  # small_cap
         target_count = 10
         pool_suffix = '10stocks'
