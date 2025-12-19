@@ -1,4 +1,443 @@
-# TODO - Phase 6F 止盈策略研究
+# TODO - 项目任务追踪
+
+**最后更新**：2025-12-18 16:13
+
+---
+
+## 🚧 Phase 1: 数据源扩展准备 (2025-10-16启动)
+
+**目标**：为接入AData、Tushare等多数据源做架构准备
+
+| 阶段 | 任务 | 状态 | 产出 | 负责 |
+|------|------|------|------|------|
+| 1.1 | adjfactor验证与回测对比 | ✅ | `results/adjfactor_analysis_findings.md` | 完成 |
+| 1.2 | 配置整合 (Pydantic) | ✅ | `config/settings.py` + `results/phase1_verification.md` | Agent A-E 完成 |
+| 2.1 | DataProvider抽象层 | ✅ | `utils/data_provider/base.py` + `exceptions.py` | Agent G-H 完成 |
+| 2.2 | AKShare Provider实现 | ✅ | `utils/data_provider/akshare_provider.py` | Agent I 完成 |
+| 2.3 | AData Provider占位 | ✅ | `utils/data_provider/adata_provider.py` | Agent K 完成 |
+| 2.4 | Converter脚本重构 | ✅ | `scripts/akshare-to-qlib-converter.py` (Phase 2) | Agent J 完成 |
+| 3.1 | 100只股票池设计 | ✅ | `results/stock_pool_100_design.csv` | Agent L 完成 |
+| 3.2 | 配置系统扩展 | ✅ | `stock_pool.yaml` (large_cap 100只) | Agent M 完成 |
+| 3.3 | 批量下载优化 | ✅ | `scripts/batch_download.py` (并行+续传) | Agent N 完成 |
+| 3.4 | 批量下载执行 | ✅ | 96/100只成功下载 (96%成功率) | Agent 完成 |
+| 3.5 | 回测脚本适配 | ✅ | `scripts/phase6d_backtest.py` (96股池测试通过) | 完成 |
+| 3.6 | 回测性能评估 | ✅ | `results/phase3_96stocks_comparison.md` | 完成 |
+
+**当前焦点**: Phase 3 完成 ✅ (核心结论：20只精选池优于96只扩展池，保持Phase 6E配置)
+
+---
+
+## 🚧 Phase 6G: 全市场 Universe 同步 (2025-12-15)
+
+**目标**：同步全量 A 股股票列表（可选下载历史行情），为全市场筛选/回测做数据底座。
+
+| 任务 | 状态 | 产出 |
+|------|------|------|
+| 同步股票列表（SH/SZ，可选BJ） | ✅ | `scripts/phase6g_sync_all_a_shares.py` + `results/phase6g_a_share_universe.csv` |
+| 可选下载历史行情（建议限量试跑） | ⏳ | `results/phase6g_a_share_price_sync_report.json` |
+
+---
+
+## 🖥️ Dashboard v0.2: 60分K + KDJ 图表（2025-12-18）
+
+**目标**：支持“信号触发后人工确认/干预”的图表视图（60分K + KDJ + 成交标记 + 成本线）。
+
+**详细计划**：[docs/implementation_plan_v0.2.md](docs/implementation_plan_v0.2.md)
+
+| 模块 | 优先级 | 状态 |
+|------|--------|------|
+| 数据契约（candles API） | P0 | 🔜 待启动 |
+| 60m 图表渲染（K线+VOL+KDJ） | P0 | 🔜 待启动 |
+| 成交标记与悬浮（fills） | P0 | 🔜 待启动 |
+| 成本线（positions.avg_cost） | P0 | 🔜 待启动 |
+| 轮询策略调整 | P0 | 🔜 待启动 |
+| 日线趋势过滤（daily_trend） | P1 | 🔜 待启动 |
+| 分时图 | P1 | 🔜 待启动 |
+
+### ✅ Phase 2 完成总结
+
+**完成时间**: 2025-10-16
+**开发方式**: 并行Agent开发（Agent G-K）
+
+**产出文件**:
+- `utils/data_provider/__init__.py` (~70行) - 包初始化和导出
+- `utils/data_provider/base.py` (~300行) - 抽象基类
+- `utils/data_provider/exceptions.py` (~150行) - 异常体系
+- `utils/data_provider/akshare_provider.py` (~350行) - AKShare实现
+- `utils/data_provider/adata_provider.py` (~120行) - AData占位
+- `scripts/akshare-to-qlib-converter.py` (重构) - 使用新Provider
+
+**核心特性**:
+1. ✅ 统一的数据接口（BaseDataProvider）
+2. ✅ 完整的异常体系（6个异常类）
+3. ✅ AKShare完整实现（支持股票+指数数据）
+4. ✅ AData占位实现（预留接口）
+5. ✅ CLI工具重构（向后兼容）
+6. ✅ 类型安全（完整类型注解）
+
+**验证状态**: ✅ 所有模块导入正常，CLI接口工作正常
+
+### ✅ 阶段1.2 验收结果
+
+**验收状态**: ✅ **PASSED** - 零回归，配置整合成功
+
+| 验收项 | 要求 | 实际结果 | 状态 |
+|--------|------|---------|------|
+| **配置加载** | 正常读取 stock_pool.yaml | 20只股票正确加载 | ✅ 通过 |
+| **回测执行** | 无报错，正常运行 | 三年回测全部成功 | ✅ 通过 |
+| **结果一致性** | 与 Phase 6E 基线一致 | 100%一致（0.00%差异） | ✅ 通过 |
+| **类型验证** | Pydantic 验证生效 | 股票代码格式自动验证 | ✅ 通过 |
+| **向后兼容** | 保持旧接口可用 | load_stock_pool() 兼容 | ✅ 通过 |
+
+**回测收益验证** (2022-2024):
+```
+2022: +3.33% (vs 沪深300 -21.27%, 超额+24.60%) ✅
+2023: +1.03% (vs 沪深300 -11.75%, 超额+12.78%) ✅
+2024: +51.54% (vs 沪深300 +18.65%, 超额+32.89%) ✅
+```
+
+**详细报告**: [Phase 1 验证报告](results/phase1_verification.md)
+
+### 🔧 阶段1.2 并行开发计划 (已完成 ✅)
+
+**Agent A** (基础架构 1-2h): `config/settings.py` Pydantic BaseSettings ✅
+**Agent B** (配置迁移 1h): YAML → Pydantic ✅
+**Agent C** (脚本更新 1-2h): `phase6d_backtest.py`, `batch_download.py` ✅
+**Agent D** (验证测试 30min): 运行测试确认配置系统正常 ✅
+**Agent E** (回测验证 1h): 验证策略收益与 Phase 6E 基线一致 ✅
+
+---
+
+## 🔬 Phase 9: 数据复权验证与基础设施优化 (2025-10-17启动)
+
+**目标**：渐进式验证数据链路，基于实测决策是否扩展全市场
+
+**总耗时**：5-8天（1-1.5周）
+**开发方式**：并行Agent开发（3轮并行）
+**核心原则**：小步快跑、数据驱动、最小可行增量
+
+---
+
+### Phase 9.1: 复权验证与最小抽象（2-3天）
+
+| Agent | 任务 | 耗时 | 产出 | 独立性 | 状态 |
+|-------|------|------|------|--------|------|
+| **Agent A** | 复权数据验证 | 1天 | `results/adjfactor_verification.txt` | ✅ 独立 | ✅ 已完成 |
+| **Agent B** | 配置加载器 | 0.5天 | `config/__init__.py` | ✅ 独立 | ✅ 已完成 |
+| **Agent C** | Smoke Test框架 | 0.5天 | `tests/test_smoke.py` | ✅ 独立 | ✅ 已完成 |
+| **Agent D** | DataProvider接口 | 1天 | `utils/data_provider.py` | ❌ 依赖A+B | ✅ 已完成 |
+
+**并行策略**：
+- 第1轮：Agent A + B + C 同时启动（3个并行）
+- 第2轮：Agent D 等待A+B完成后启动
+
+**Agent A任务详情**：
+```python
+# scripts/verify_adjfactor.py
+# 对比3只高分红股票：
+# - 贵州茅台 (600519.SH)
+# - 工商银行 (601398.SH)
+# - 中国神华 (601088.SH)
+# 验证：AKShare adjust='qfq' vs adjust='' vs 东方财富
+# 决策：误差<1% → 直接用AKShare；否则自建adjfactor
+```
+
+**Agent B任务详情**：
+```python
+# config/__init__.py
+from dataclasses import dataclass
+import yaml
+
+@dataclass
+class Config:
+    data_dir: str
+    pools: dict  # small_cap/medium_cap/large_cap
+    backtest: dict
+
+def load_config() -> Config:
+    # 加载 config.yaml + stock_pool.yaml
+    # 返回统一Config对象
+```
+
+**Agent C任务详情**：
+```python
+# tests/test_smoke.py
+def test_backtest_end_to_end():
+    # 1只股票 × 1个月回测
+    # 不抛异常即通过
+```
+
+**验收标准**：
+- [ ] AKShare qfq误差<1% OR 自建adjfactor完成 （待人工验证）
+- [x] 配置统一加载正常 ✅
+- [x] Smoke测试通过 ✅ (11/11 tests passed - 含复权数据验证)
+- [x] DataProvider接口清晰 ✅
+
+---
+
+### Phase 9.2: 实测与性能数据（2-3天）
+
+| Agent | 任务 | 耗时 | 产出 | 独立性 | 状态 |
+|-------|------|------|------|--------|------|
+| **Agent E** | 20只股票复权回测 | 1天 | `results/phase9_20stocks_qfq_comparison.md` | ✅ 独立 | 🔜 待启动 |
+| **Agent F** | Combo-A失败复盘 | 1天 | `results/combo_a_failure_analysis.md` | ✅ 独立 | 🔜 待启动 |
+| **Agent G** | 100只股票扩展测试 | 1-2天 | `results/performance_100stocks.txt` | ❌ 依赖E | 🔜 待启动 |
+
+**并行策略**：
+- 第1轮：Agent E + F 同时启动（2个并行）
+- 第2轮：Agent G 等待E完成后启动
+
+**Agent E任务详情**：
+- 使用`AKShareProvider(adjust='qfq')`重新下载20只
+- 运行`phase6d_backtest.py --full --pool medium_cap`
+- 对比`results/phase6d_comparison_m0_monthly_20stocks.md`
+- 记录：磁盘占用、内存峰值、回测耗时
+
+**Agent F任务详情**：
+- 分析Combo-A 2022年0持仓根因
+- 打印每日过滤后的候选股票数
+- 检查复权/MA/阈值问题
+- 输出根因：复权 vs 阈值 vs 市场
+
+**Agent G任务详情**：
+- 回测96/100只（large_cap池）
+- 记录性能指标：
+  ```
+  磁盘：100只 × 5年 = ? MB
+  内存峰值：? MB
+  下载耗时：? 分钟
+  回测耗时：? 分钟
+  ```
+
+**验收标准**：
+- [ ] 20只复权回测收益差异<3%
+- [ ] Combo-A根因明确（复权/阈值/市场）
+- [ ] 100只性能数据完整
+
+---
+
+### Phase 9.3: 决策评估（1-2天）
+
+| Agent | 任务 | 耗时 | 产出 | 独立性 | 状态 |
+|-------|------|------|------|--------|------|
+| **Agent H** | 资源推算 | 0.5天 | `results/resource_projection.md` | ❌ 依赖G | 🔜 待启动 |
+| **Agent I** | 数据源调研 | 1天 | `results/data_source_comparison.md` | ✅ 独立 | 🔜 待启动 |
+| **Agent J** | 扩展决策报告 | 0.5天 | `results/expansion_decision.md` | ❌ 依赖H+I | 🔜 待启动 |
+
+**并行策略**：
+- Agent I 可随时启动（独立研究）
+- Agent H 等待Phase 9.2完成
+- Agent J 等待H+I完成
+
+**Agent H任务详情**：
+```markdown
+基于Phase 9.2实测数据推算：
+磁盘需求：100只实测 = X MB → 4000只 = X × 40 ≈ ?GB
+内存需求：100只峰值 = Y MB → 4000只 = ?GB
+下载时间：100只实测 = Z分钟 → 4000只 = ?小时
+AKShare限流：是否可行？
+```
+
+**Agent I任务详情**：
+- Tushare Pro：API限制、积分成本、除权因子质量
+- AData：是否支持A股、成本
+- WindAPI：企业级方案、成本
+- 输出对比表
+
+**Agent J任务详情**：
+综合H+I输出决策：
+- 方案A：继续AKShare（免费，限流风险）
+- 方案B：购买Tushare（成本vs质量）
+- 方案C：暂不扩展（专注20-96只优化）
+
+**决策点**：
+- [ ] 方案A：继续AKShare（免费）
+- [ ] 方案B：购买Tushare积分
+- [ ] 方案C：暂不扩展
+
+---
+
+### Phase 9 产出文件清单
+
+```
+Stock/
+├── scripts/
+│   └── verify_adjfactor.py           # Agent A
+├── config/
+│   └── __init__.py                   # Agent B
+├── utils/
+│   ├── data_provider.py              # Agent D
+│   └── adjfactor.py                  # 可选（如Agent A验证失败）
+├── tests/
+│   └── test_smoke.py                 # Agent C
+└── results/
+    ├── adjfactor_verification.txt           # Agent A
+    ├── phase9_20stocks_qfq_comparison.md    # Agent E
+    ├── combo_a_failure_analysis.md          # Agent F
+    ├── performance_100stocks.txt            # Agent G
+    ├── resource_projection.md               # Agent H
+    ├── data_source_comparison.md            # Agent I
+    └── expansion_decision.md                # Agent J
+```
+
+**当前焦点**: Phase 9.1 已完成 ✅ (Agent A/B/C/D 全部完成，验收标准通过)
+
+---
+
+## 🚀 Phase 2: DataProvider 抽象层 (已完成 ✅)
+
+**目标**: 创建统一数据接口，支持 AKShare/AData/Tushare 多数据源切换
+
+**预计时间**: 1-1.5周 (8-12小时开发时间)
+**依赖条件**: ✅ Phase 1.2 配置系统已完成
+
+### 阶段2.1: DataProvider 抽象接口设计 (3-4小时)
+
+**产出文件**:
+- `utils/data_provider/__init__.py`
+- `utils/data_provider/base.py`
+- `utils/data_provider/exceptions.py`
+
+**核心设计**:
+```python
+class BaseDataProvider(ABC):
+    """数据提供者抽象基类"""
+
+    @abstractmethod
+    def get_stock_data(self, symbol: str, start_date: str, end_date: str,
+                       adjust: str = 'qfq') -> pd.DataFrame:
+        """获取股票历史数据"""
+        pass
+
+    @abstractmethod
+    def get_index_data(self, symbol: str, start_date: str, end_date: str) -> pd.DataFrame:
+        """获取指数数据（如沪深300）"""
+        pass
+
+    @abstractmethod
+    def validate_symbol(self, symbol: str) -> bool:
+        """验证股票代码格式"""
+        pass
+
+    @abstractmethod
+    def download_to_qlib(self, symbol: str, years: int, adjust: str) -> dict:
+        """下载并转换为 Qlib 格式"""
+        pass
+```
+
+**关键特性**:
+- 统一的数据接口（get_stock_data, get_index_data）
+- 支持前复权/后复权/不复权
+- 异常处理机制（DataProviderError, SymbolNotFoundError）
+- 数据格式标准化（OHLCV + volume + money）
+- Qlib 格式转换接口
+
+**Agent 分配**:
+- **Agent G**: 设计 `base.py` 抽象接口
+- **Agent H**: 实现 `exceptions.py` 异常体系
+
+### 阶段2.2: AKShare Provider 实现 (4-5小时)
+
+**产出文件**:
+- `utils/data_provider/akshare_provider.py`
+- `tests/test_akshare_provider.py` (可选)
+
+**实现内容**:
+```python
+class AKShareProvider(BaseDataProvider):
+    """AKShare 数据提供者实现"""
+
+    def __init__(self, settings: Settings = None):
+        self.settings = settings or get_settings()
+        self.logger = logging.getLogger(__name__)
+
+    def get_stock_data(self, symbol: str, start_date: str, end_date: str,
+                       adjust: str = 'qfq') -> pd.DataFrame:
+        """从 AKShare 获取股票数据"""
+        # 封装现有的 akshare.stock_zh_a_hist() 逻辑
+        # 标准化输出格式
+        pass
+
+    def download_to_qlib(self, symbol: str, years: int, adjust: str) -> dict:
+        """下载并保存为 Qlib CSV 格式"""
+        # 封装现有的 akshare-to-qlib-converter.py 逻辑
+        pass
+```
+
+**封装内容**:
+- 将 `scripts/akshare-to-qlib-converter.py` 的核心逻辑提取到 Provider
+- 保留原脚本作为 CLI 入口（调用 AKShareProvider）
+- 添加重试机制和错误处理
+- 支持数据缓存（可选优化）
+
+**Agent 分配**:
+- **Agent I**: 实现 AKShareProvider 核心逻辑
+- **Agent J**: 重构 `akshare-to-qlib-converter.py` 使用新 Provider
+
+### 阶段2.3: AData Provider 占位实现 (1-2小时)
+
+**产出文件**:
+- `utils/data_provider/adata_provider.py`
+
+**占位实现**:
+```python
+class ADataProvider(BaseDataProvider):
+    """AData 数据提供者（占位实现）"""
+
+    def __init__(self, settings: Settings = None):
+        self.settings = settings or get_settings()
+        self.logger = logging.getLogger(__name__)
+
+    def get_stock_data(self, symbol: str, start_date: str, end_date: str,
+                       adjust: str = 'qfq') -> pd.DataFrame:
+        raise NotImplementedError(
+            "AData provider is not yet implemented. "
+            "Please use AKShareProvider for now."
+        )
+
+    # 其他方法类似占位...
+```
+
+**Agent 分配**:
+- **Agent K**: 创建 ADataProvider 占位类
+- **Agent K**: 更新 `utils/data_provider/__init__.py` 导出接口
+
+### Phase 2 并行开发策略
+
+**第一轮并行** (3-4小时):
+- Agent G + Agent H: 同时开发 base.py + exceptions.py（独立任务）
+
+**第二轮并行** (4-5小时):
+- Agent I: 开发 AKShareProvider
+- Agent K: 开发 ADataProvider 占位（快速完成）
+- Agent J: 等待 Agent I 完成后重构 converter 脚本
+
+**第三轮验证** (1小时):
+- 运行现有回测验证 Provider 正常工作
+- 确认与 Phase 1.2 基线结果一致
+
+### Phase 2 验收标准
+
+| 验收项 | 标准 | 验证方法 |
+|--------|------|---------|
+| **接口设计** | BaseDataProvider 完整定义 | 代码审查 |
+| **AKShare 实现** | 所有接口可用，数据格式正确 | 单元测试 |
+| **数据一致性** | 与原始 converter 输出一致 | 对比测试 |
+| **回测兼容** | phase6d_backtest 正常运行 | 完整回测 |
+| **占位实现** | ADataProvider 占位类存在 | 代码审查 |
+
+### Phase 2 风险评估
+
+| 风险 | 等级 | 缓解措施 |
+|------|------|---------|
+| **性能退化** | 低 | 保持原有逻辑，仅封装重构 |
+| **数据格式变化** | 中 | 严格测试数据格式一致性 |
+| **回测结果偏差** | 低 | 运行完整验证，对比 Phase 1.2 |
+| **接口设计不足** | 中 | 预留扩展接口，支持未来数据源 |
+
+---
+
+## 📌 Phase 6F 止盈策略研究 (已完成)
 
 **最后更新**：2025-10-11 18:30
 

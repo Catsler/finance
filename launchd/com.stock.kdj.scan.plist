@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.stock.kdj.scan</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elie/Downloads/Stock</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/elie/Downloads/Stock/venv/bin/python</string>
+      <string>/Users/elie/Downloads/Stock/scripts/kdj_scan.py</string>
+      <string>--paper-url</string>
+      <string>http://127.0.0.1:8000/api/v1</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartCalendarInterval</key>
+    <array>
+      <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>31</integer></dict>
+      <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>31</integer></dict>
+      <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>1</integer></dict>
+      <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>1</integer></dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_kdj_scan.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_kdj_scan.err.log</string>
+  </dict>
+</plist>
+

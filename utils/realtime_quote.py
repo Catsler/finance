@@ -209,8 +209,8 @@ def _fetch_sina_quote(symbol: str) -> Optional[Dict]:
         try:
             bid1 = float(data[6]) if data[6] else None
             ask1 = float(data[7]) if data[7] else None
-            bid1_volume = int(float(data[10])) if data[10] else None
-            ask1_volume = int(float(data[20])) if data[20] else None
+            bid1_volume = int(float(data[10])) // 100 if data[10] else None
+            ask1_volume = int(float(data[20])) // 100 if data[20] else None
         except (ValueError, IndexError):
             bid1 = None
             ask1 = None

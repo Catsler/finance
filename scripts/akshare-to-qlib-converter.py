@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-AKShare → Qlib 数据转换脚本（Phase 0 MVP）
+AKShare → Qlib 数据转换脚本（Phase 2 Refactored）
 
 用法示例：
     # 命令行调用
     python scripts/akshare-to-qlib-converter.py --symbol 000001.SZ --years 3
     python scripts/akshare-to-qlib-converter.py --symbol 000858.SZ --start 2022-01-01
 
-    # Python 代码调用
-    from akshare_to_qlib_converter import download_and_convert
-    download_and_convert("000001.SZ", years=3)
+    # Python 代码调用（推荐使用新接口）
+    from utils.data_provider import AKShareProvider
+    provider = AKShareProvider()
+    result = provider.download_to_qlib("000001.SZ", years=3)
 
 输出：
     - CSV 数据文件：~/.qlib/qlib_data/cn_data/000001.SZ.csv
@@ -21,18 +22,23 @@ AKShare → Qlib 数据转换脚本（Phase 0 MVP）
     - 累计成交量 > 0
 
 注意：
-    - Phase 0 使用 CSV 格式（便于验证）
-    - Phase 1 可考虑转换为 Qlib bin 格式（性能优化）
+    - Phase 2: 使用 DataProvider 抽象层
+    - 保留旧函数以向后兼容，但推荐使用 AKShareProvider
 """
 
 import argparse
 import logging
+import sys
 import time
 from pathlib import Path
 from typing import Optional
 
 import akshare as ak
 import pandas as pd
+
+# Phase 2: 导入新的 DataProvider 抽象层
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from utils.data_provider import AKShareProvider
 
 # ============================================
 # 配置常量
@@ -231,9 +237,13 @@ def download_and_convert(
     years: int = 3,
     output_root: Optional[str] = None,
     adjust: str = "",
+    use_legacy: bool = False,
 ) -> Path:
     """
     完整流程：下载 → 验证 → 保存
+
+    Phase 2: 默认使用 AKShareProvider (推荐)
+    可选: use_legacy=True 使用原有逻辑
 
     参数：
         symbol: 股票代码，如 "000001.SZ"
@@ -242,6 +252,7 @@ def download_and_convert(
         years: 回溯年数（默认 3 年）
         output_root: 输出目录（默认 ~/.qlib/qlib_data/cn_data）
         adjust: 复权类型（""=真实价格，"qfq"=前复权，"hfq"=后复权，默认""）
+        use_legacy: 是否使用原有逻辑（默认False，使用新的Provider）
 
     返回：
         保存的 CSV 文件路径
@@ -249,6 +260,17 @@ def download_and_convert(
     异常：
         ValueError: 数据获取或验证失败
     """
+    # Phase 2: 使用新的 AKShareProvider (推荐)
+    if not use_legacy:
+        provider = AKShareProvider()
+        result = provider.download_to_qlib(symbol, years, adjust)
+
+        if result['status'] == 'success':
+            return Path(result['output_path'])
+        else:
+            raise ValueError(f"{symbol} 下载失败: {result['message']}")
+
+    # Legacy 逻辑（向后兼容）
     output_root = Path(output_root or QLIB_ROOT).expanduser().resolve()
 
     # 1. 下载数据
@@ -323,7 +345,7 @@ def main() -> None:
 
     try:
         logging.info("=" * 60)
-        logging.info("Stock 数据转换工具 - Phase 0")
+        logging.info("Stock 数据转换工具 - Phase 2 (DataProvider)")
         logging.info("=" * 60)
 
         csv_file = download_and_convert(

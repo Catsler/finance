@@ -1,0 +1,4 @@
+# MVP2-A: KDJ strategy (60m) dependencies
+# Install: pip install -r requirements_kdj_strategy.txt
+akshare>=1.12.0
+

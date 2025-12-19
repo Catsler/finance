@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.stock.paper.server</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elie/Downloads/Stock</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/elie/Downloads/Stock/venv/bin/python</string>
+      <string>-m</string>
+      <string>uvicorn</string>
+      <string>paper_trading.app:app</string>
+      <string>--host</string>
+      <string>127.0.0.1</string>
+      <string>--port</string>
+      <string>8000</string>
+      <string>--log-level</string>
+      <string>warning</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PAPER_DB_PATH</key>
+      <string>/Users/elie/Downloads/Stock/results/paper_trading.db</string>
+      <key>PAPER_QUOTE_CACHE_SECONDS</key>
+      <string>2</string>
+      <key>PAPER_POLL_SECONDS</key>
+      <string>2</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>StandardOutPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_paper_server.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_paper_server.err.log</string>
+  </dict>
+</plist>
+

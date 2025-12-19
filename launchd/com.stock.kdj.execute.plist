@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.stock.kdj.execute</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elie/Downloads/Stock</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/elie/Downloads/Stock/venv/bin/python</string>
+      <string>/Users/elie/Downloads/Stock/scripts/kdj_execute.py</string>
+      <string>--file</string>
+      <string>/Users/elie/Downloads/Stock/results/pending_signals.json</string>
+      <string>--paper-url</string>
+      <string>http://127.0.0.1:8000/api/v1</string>
+      <string>--confirm</string>
+    </array>
+
+    <!-- Week 1 dry-run: keep this job disabled -->
+    <key>Disabled</key>
+    <true/>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartCalendarInterval</key>
+    <array>
+      <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>32</integer></dict>
+      <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>32</integer></dict>
+      <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>2</integer></dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_kdj_execute.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/elie/Downloads/Stock/results/launchd_kdj_execute.err.log</string>
+  </dict>
+</plist>
+

@@ -131,6 +131,129 @@ streamlit run app.py
 
 ---
 
+## 📡 实时行情模块（Phase 2）
+
+**数据源**: 新浪财经 API（免费，实时更新）
+
+### 核心特性
+
+- ✅ **60秒缓存** - 减少API调用，提升响应速度
+- ✅ **5层防御** - HTTP状态、格式、空值、字段数、合理性校验
+- ✅ **单位规范化** - 成交量转换为"手"，成交额转换为"万元"
+- ✅ **公开API** - 清晰的接口定义（`__all__` 声明）
+- ⚠️ **单用户设计** - 本地环境无线程锁，多用户部署需改造
+
+### 使用示例
+
+#### 1. CLI 命令行验证
+
+```bash
+# 单只股票
+python scripts/fetch_realtime_quote.py 600519.SH
+
+# 多只股票
+python scripts/fetch_realtime_quote.py 600519.SH 000001.SZ 601318.SH
+```
+
+#### 2. Python API 调用
+
+```python
+from utils.realtime_quote import fetch_sina_quote, get_realtime_quotes, clear_cache
+
+# 获取单只股票行情
+quote = fetch_sina_quote('600519.SH')
+if quote:
+    print(f"{quote['name']}: ¥{quote['price']:.2f} ({quote['change_pct']:+.2f}%)")
+    print(f"成交量: {quote['volume']:,} 手")
+    print(f"成交额: ¥{quote['amount']:.0f} 万元")
+
+# 批量获取（带60秒缓存）
+quotes = get_realtime_quotes(['600519.SH', '000001.SZ'], cache_seconds=60)
+for q in quotes:
+    print(f"{q['name']}: ¥{q['price']:.2f}")
+
+# 强制刷新（清空缓存）
+clear_cache()
+quotes = get_realtime_quotes(['600519.SH'])
+```
+
+#### 3. Web UI 实时行情页面
+
+访问 `http://localhost:8501` → **📡 实时行情** 页面：
+- 自动加载股票池（20只股票）
+- 60秒缓存，点击"🔄 刷新行情"强制更新
+- 涨跌排行榜（Top 5）
+- CSV下载
+
+### 字段说明
+
+**返回数据字段**（详见 `utils/realtime_quote.py` 模块 docstring）：
+
+| 字段 | 说明 | 单位 | 原始单位 |
+|------|------|------|----------|
+| `symbol` | 股票代码 | - | - |
+| `name` | 股票名称 | - | - |
+| `price` | 现价 | 元 | 元（保持）|
+| `prev_close` | 昨收 | 元 | 元（保持）|
+| `open` | 今开 | 元 | 元（保持）|
+| `high` | 最高 | 元 | 元（保持）|
+| `low` | 最低 | 元 | 元（保持）|
+| `volume` | 成交量 | **手** | **股**（÷100）|
+| `amount` | 成交额 | **万元** | **元**（÷10000）|
+| `change_pct` | 涨跌幅 | % | 计算值 |
+| `timestamp` | 更新时间 | YYYY-MM-DD HH:MM:SS | 拼接 |
+| `source` | 数据来源 | - | "sina" |
+
+**单位转换依据**：
+- **成交量**: 新浪返回"股"，转换为"手"（1手=100股）
+- **成交额**: 新浪返回"元"，转换为"万元"（便于阅读）
+- **参考文档**: [新浪财经API字段定义](https://blog.sina.com.cn/s/blog_5dc29fcc0101dq5s.html)
+
+### ⚠️ 多用户部署注意
+
+**当前限制**：
+- 代码为**单用户环境**设计（本地运行）
+- 缓存字典 `_CACHE` 和统计字典 `_STATS` **无线程锁保护**
+- 并发访问可能导致：缓存计数不准确、数据不一致
+
+**多用户环境改造方案**：
+```python
+from threading import Lock
+
+_cache_lock = Lock()
+
+def get_realtime_quotes(symbols, cache_seconds=60):
+    with _cache_lock:
+        # 缓存读写操作
+        ...
+```
+
+**部署建议**：
+- 单用户场景：直接使用当前代码
+- 多用户场景：添加线程锁或改用 Redis 缓存
+
+### 技术细节
+
+**5层防御机制**（`_fetch_sina_quote` 函数）：
+1. HTTP 状态检查（200 OK）
+2. 返回格式验证（包含引号）
+3. 空字符串判断（停牌/无效代码）
+4. 字段数量检查（≥32 个字段）
+5. 关键字段合理性（价格 > 0）
+
+**缓存策略**：
+- 手写TTL缓存（vs `lru_cache`），逻辑透明
+- 默认60秒过期，可自定义
+- 提供 `clear_cache()` 强制刷新
+- 缓存命中率统计（`get_stats()`）
+
+**代码模块**：
+- `scripts/fetch_realtime_quote.py` - CLI验证工具（92行）
+- `utils/realtime_quote.py` - 核心工具模块（400+行）
+- `pages/3_📡_实时行情.py` - Streamlit UI页面（268行）
+
+---
+
 ## 💼 实盘部署指南
 
 ### ⚠️ 适用性评估

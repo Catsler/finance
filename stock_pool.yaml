@@ -108,6 +108,345 @@ stock_pools:
       name: 德赛西威
       industry: 科技
       sector: 汽车电子
+  large_cap:
+    inherit_from: medium_cap
+    plan: Phase 8.2
+    plan_name: 扩展版（100只A股）
+    plan_description: 继承medium_cap（20只）并新增80只股票，用于Phase 8.2大规模回测
+    additional:
+    # ============================================
+    # large_cap新增80只股票（Agent L已完成设计）
+    # 来源：results/stock_pool_100_design.csv
+    # 行业分布：金融21只、消费14只、科技13只、新能源9只、医药8只、周期7只、地产4只、公用事业4只
+    # ============================================
+    # 金融行业（21只）
+    - symbol: 600000.SH
+      name: 浦发银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601328.SH
+      name: 交通银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601398.SH
+      name: 工商银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601939.SH
+      name: 建设银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601288.SH
+      name: 农业银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601988.SH
+      name: 中国银行
+      industry: 金融
+      sector: 银行
+    - symbol: 600016.SH
+      name: 民生银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601169.SH
+      name: 北京银行
+      industry: 金融
+      sector: 银行
+    - symbol: 002142.SZ
+      name: 宁波银行
+      industry: 金融
+      sector: 银行
+    - symbol: 601601.SH
+      name: 中国太保
+      industry: 金融
+      sector: 保险
+    - symbol: 601336.SH
+      name: 新华保险
+      industry: 金融
+      sector: 保险
+    - symbol: 601688.SH
+      name: 华泰证券
+      industry: 金融
+      sector: 证券
+    - symbol: 600030.SH
+      name: 中信证券
+      industry: 金融
+      sector: 证券
+    - symbol: 601211.SH
+      name: 国泰君安
+      industry: 金融
+      sector: 证券
+    - symbol: 000776.SZ
+      name: 广发证券
+      industry: 金融
+      sector: 证券
+    - symbol: 600999.SH
+      name: 招商证券
+      industry: 金融
+      sector: 证券
+    - symbol: 002736.SZ
+      name: 国信证券
+      industry: 金融
+      sector: 证券
+    - symbol: 601066.SH
+      name: 中信建投
+      industry: 金融
+      sector: 证券
+    - symbol: 300033.SZ
+      name: 同花顺
+      industry: 金融
+      sector: 金融科技
+    - symbol: 601628.SH
+      name: 中国人寿
+      industry: 金融
+      sector: 保险
+    - symbol: 601377.SH
+      name: 兴业证券
+      industry: 金融
+      sector: 证券
+    # 医药行业（8只）
+    - symbol: 002773.SZ
+      name: 康弘药业
+      industry: 医药
+      sector: 生物制药
+    - symbol: 300015.SZ
+      name: 爱尔眼科
+      industry: 医药
+      sector: 医疗服务
+    - symbol: 300347.SZ
+      name: 泰格医药
+      industry: 医药
+      sector: 医药外包
+    - symbol: 603259.SH
+      name: 药明康德
+      industry: 医药
+      sector: 医药外包
+    - symbol: 000661.SZ
+      name: 长春高新
+      industry: 医药
+      sector: 生物制药
+    - symbol: 300832.SZ
+      name: 新产业
+      industry: 医药
+      sector: 体外诊断
+    - symbol: 300676.SZ
+      name: 华大基因
+      industry: 医药
+      sector: 基因检测
+    - symbol: 000538.SZ
+      name: 云南白药
+      industry: 医药
+      sector: 中药
+    # 科技行业（13只）
+    - symbol: 688111.SH
+      name: 金山办公
+      industry: 科技
+      sector: 软件
+    - symbol: 002230.SZ
+      name: 科大讯飞
+      industry: 科技
+      sector: 人工智能
+    - symbol: 000063.SZ
+      name: 中兴通讯
+      industry: 科技
+      sector: 通信设备
+    - symbol: 002415.SZ
+      name: 海康威视
+      industry: 科技
+      sector: 安防
+    - symbol: 300433.SZ
+      name: 蓝思科技
+      industry: 科技
+      sector: 电子制造
+    - symbol: 000100.SZ
+      name: TCL科技
+      industry: 科技
+      sector: 面板
+    - symbol: 002371.SZ
+      name: 北方华创
+      industry: 科技
+      sector: 半导体设备
+    - symbol: 603501.SH
+      name: 韦尔股份
+      industry: 科技
+      sector: 半导体
+    - symbol: 300124.SZ
+      name: 汇川技术
+      industry: 科技
+      sector: 工业自动化
+    - symbol: 002008.SZ
+      name: 大族激光
+      industry: 科技
+      sector: 激光设备
+    - symbol: 002049.SZ
+      name: 紫光国微
+      industry: 科技
+      sector: 芯片
+    - symbol: 000725.SZ
+      name: 京东方A
+      industry: 科技
+      sector: 面板
+    - symbol: 300136.SZ
+      name: 信维通信
+      industry: 科技
+      sector: 通信组件
+    # 消费行业（14只）
+    - symbol: 600887.SH
+      name: 伊利股份
+      industry: 消费
+      sector: 乳制品
+    - symbol: 000568.SZ
+      name: 泸州老窖
+      industry: 消费
+      sector: 白酒
+    - symbol: 000596.SZ
+      name: 古井贡酒
+      industry: 消费
+      sector: 白酒
+    - symbol: 603369.SH
+      name: 今世缘
+      industry: 消费
+      sector: 白酒
+    - symbol: 600600.SH
+      name: 青岛啤酒
+      industry: 消费
+      sector: 啤酒
+    - symbol: 000895.SZ
+      name: 双汇发展
+      industry: 消费
+      sector: 肉制品
+    - symbol: 002304.SZ
+      name: 洋河股份
+      industry: 消费
+      sector: 白酒
+    - symbol: 600809.SH
+      name: 山西汾酒
+      industry: 消费
+      sector: 白酒
+    - symbol: 000651.SZ
+      name: 格力电器
+      industry: 消费
+      sector: 家电
+    - symbol: 603899.SH
+      name: 晨光股份
+      industry: 消费
+      sector: 文具
+    - symbol: 002555.SZ
+      name: 三七互娱
+      industry: 消费
+      sector: 游戏
+    - symbol: 603486.SH
+      name: 科沃斯
+      industry: 消费
+      sector: 小家电
+    - symbol: 603605.SH
+      name: 珀莱雅
+      industry: 消费
+      sector: 化妆品
+    - symbol: 600779.SH
+      name: 水井坊
+      industry: 消费
+      sector: 白酒
+    # 周期行业（7只）
+    - symbol: 601899.SH
+      name: 紫金矿业
+      industry: 周期
+      sector: 有色金属
+    - symbol: 600219.SH
+      name: 南山铝业
+      industry: 周期
+      sector: 有色金属
+    - symbol: 601088.SH
+      name: 中国神华
+      industry: 周期
+      sector: 煤炭
+    - symbol: 600426.SH
+      name: 华鲁恒升
+      industry: 周期
+      sector: 化工
+    - symbol: 600585.SH
+      name: 海螺水泥
+      industry: 周期
+      sector: 水泥
+    - symbol: 601600.SH
+      name: 中国铝业
+      industry: 周期
+      sector: 有色金属
+    - symbol: 600019.SH
+      name: 宝钢股份
+      industry: 周期
+      sector: 钢铁
+    # 新能源行业（9只）
+    - symbol: 002129.SZ
+      name: 中环股份
+      industry: 新能源
+      sector: 光伏
+    - symbol: 601865.SH
+      name: 福莱特
+      industry: 新能源
+      sector: 光伏玻璃
+    - symbol: 300274.SZ
+      name: 阳光电源
+      industry: 新能源
+      sector: 光伏逆变器
+    - symbol: 300014.SZ
+      name: 亿纬锂能
+      industry: 新能源
+      sector: 锂电池
+    - symbol: 002460.SZ
+      name: 赣锋锂业
+      industry: 新能源
+      sector: 锂资源
+    - symbol: 300450.SZ
+      name: 先导智能
+      industry: 新能源
+      sector: 锂电设备
+    - symbol: 688599.SH
+      name: 天合光能
+      industry: 新能源
+      sector: 光伏组件
+    - symbol: 002466.SZ
+      name: 天齐锂业
+      industry: 新能源
+      sector: 锂资源
+    - symbol: 600438.SH
+      name: 通威股份
+      industry: 新能源
+      sector: 光伏
+    # 地产行业（4只）
+    - symbol: 600048.SH
+      name: 保利发展
+      industry: 地产
+      sector: 房地产
+    - symbol: 001979.SZ
+      name: 招商蛇口
+      industry: 地产
+      sector: 房地产
+    - symbol: 000069.SZ
+      name: 华侨城A
+      industry: 地产
+      sector: 房地产
+    - symbol: 600340.SH
+      name: 华夏幸福
+      industry: 地产
+      sector: 房地产
+    # 公用事业行业（4只）
+    - symbol: 600011.SH
+      name: 华能国际
+      industry: 公用事业
+      sector: 电力
+    - symbol: 600886.SH
+      name: 国投电力
+      industry: 公用事业
+      sector: 电力
+    - symbol: 600025.SH
+      name: 华能水电
+      industry: 公用事业
+      sector: 水电
+    - symbol: 600674.SH
+      name: 川投能源
+      industry: 公用事业
+      sector: 电力
 industry_config:
   金融:
   - 银行

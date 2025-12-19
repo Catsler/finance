@@ -32,3 +32,17 @@ results/phase7_kdj_state.json
 
 # Claude Code临时分析报告
 claudedocs/
+
+# Local tool state
+.serena/memories/
+
+# Frontend dependencies/build output
+**/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local datasets / caches (keep out of git by default)
+data/
+
+# Local portfolio exports (generated)
+portfolios/
