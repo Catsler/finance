@@ -1,0 +1,57 @@
+{
+  "status": "PASSED",
+  "trigger": "三年稳健性验证通过",
+  "next_step": "Phase 6E（股票池扩展）",
+  "reason": "2022年收益>=-20%，三年表现稳定",
+  "metrics": {
+    "2022": {
+      "total_return": 0.0071900165960835875,
+      "annual_return": 0.007190016596083648,
+      "final_value": 100719.00165960836,
+      "turnover": 69.16666666666667,
+      "hs300_return": -0.21272488620338717,
+      "excess_vs_fixed": -0.01738361624603902,
+      "excess_vs_hs300": 0.21991490279947076
+    },
+    "2023": {
+      "total_return": -0.12966734797130236,
+      "annual_return": -0.12966734797130242,
+      "final_value": 87033.26520286976,
+      "turnover": 336.6666666666667,
+      "hs300_return": -0.1174899347951168,
+      "excess_vs_fixed": -0.08305806490093556,
+      "excess_vs_hs300": -0.012177413176185564
+    },
+    "2024": {
+      "total_return": 0.31980667278413866,
+      "annual_return": 0.4477061734432699,
+      "final_value": 131980.66727841386,
+      "turnover": 393.3333333333333,
+      "hs300_return": 0.18648474818920188,
+      "excess_vs_fixed": 0.11665423706169184,
+      "excess_vs_hs300": 0.13332192459493677
+    }
+  },
+  "config": {
+    "thresholds": {
+      "return_min_2022": -0.2,
+      "excess_acceleration": 0.1
+    },
+    "stock_pool_size": 10,
+    "years_tested": [
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "_metadata": {
+    "timestamp": "2025-10-16 16:44:01",
+    "phase": "Phase 6D",
+    "version": "1.0.0",
+    "git": {
+      "commit": "84c3db38",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

@@ -10,26 +10,26 @@
       "final_value": 100000,
       "turnover": 0.0,
       "hs300_return": -0.21272488620338717,
-      "excess_vs_fixed": -0.03296440615748288,
+      "excess_vs_fixed": -0.024573632842122606,
       "excess_vs_hs300": 0.21272488620338717
     },
     "2023": {
-      "total_return": -0.1377117880067206,
-      "annual_return": -0.13771178800672057,
-      "final_value": 86228.82119932794,
-      "turnover": 12.5,
+      "total_return": -0.2715480548841707,
+      "annual_return": -0.27154805488417066,
+      "final_value": 72845.19451158293,
+      "turnover": 57.49999999999999,
       "hs300_return": -0.1174899347951168,
-      "excess_vs_fixed": -0.018571586526017633,
-      "excess_vs_hs300": -0.020221853211603802
+      "excess_vs_fixed": -0.22493877181380392,
+      "excess_vs_hs300": -0.15405812008905392
     },
     "2024": {
-      "total_return": 0.35094808665637917,
-      "annual_return": 0.4934300328949073,
-      "final_value": 135094.80866563792,
-      "turnover": 41.11111111111111,
+      "total_return": 0.36376426040408844,
+      "annual_return": 0.5123503337865738,
+      "final_value": 136376.42604040884,
+      "turnover": 40.0,
       "hs300_return": 0.18648474818920188,
-      "excess_vs_fixed": 0.04481631951713294,
-      "excess_vs_hs300": 0.16446333846717728
+      "excess_vs_fixed": 0.16061182468164162,
+      "excess_vs_hs300": 0.17727951221488655
     }
   },
   "config": {
@@ -45,11 +45,11 @@
     ]
   },
   "_metadata": {
-    "timestamp": "2025-10-27 10:38:10",
+    "timestamp": "2025-10-16 17:40:10",
     "phase": "Phase 6D",
     "version": "1.0.0",
     "git": {
-      "commit": "de00e48a",
+      "commit": "84c3db38",
       "branch": "phase8-20year-backtest",
       "dirty": true
     }

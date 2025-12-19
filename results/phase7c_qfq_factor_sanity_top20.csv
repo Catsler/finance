@@ -1,0 +1,19 @@
+﻿symbol,status,days,factor_min,factor_max,unique_factor_rounded_1e-6,factor_jumps_gt_0_001,error
+601899.SH,ok,493.0,0.9256993006993007,1.0,375.0,71.0,
+600276.SH,ok,493.0,0.9888734353268427,1.0,317.0,2.0,
+000063.SZ,ok,493.0,0.9400921658986174,1.0,303.0,67.0,
+002230.SZ,ok,493.0,0.9947753396029257,1.0,333.0,2.0,
+300124.SZ,ok,493.0,0.9838588588588588,1.0,333.0,3.0,
+601600.SH,ok,493.0,0.9161676646706587,1.0,333.0,108.0,
+002415.SZ,ok,493.0,0.9341021416803954,1.0,385.0,57.0,
+600031.SH,ok,493.0,0.9299212598425198,1.0,369.0,67.0,
+300059.SZ,ok,493.0,0.9917355371900827,1.0,278.0,2.0,
+601688.SH,error,,,,,,"('Connection broken: IncompleteRead(7913 bytes read, 6417 more expected)', IncompleteRead(7913 bytes read, 6417 more expected))"
+300433.SZ,ok,493.0,0.921951219512195,1.0,408.0,95.0,
+300136.SZ,ok,493.0,0.9898853674983142,1.0,345.0,2.0,
+601088.SH,ok,493.0,0.8191384413022033,1.0,403.0,193.0,
+300014.SZ,ok,493.0,0.9612862940992819,1.0,400.0,41.0,
+603259.SH,error,,,,,,"HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2"
+300832.SZ,ok,493.0,0.9633932834633138,1.0,335.0,32.0,
+002920.SZ,error,,,,,,"HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2"
+002466.SZ,error,,,,,,"HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2"

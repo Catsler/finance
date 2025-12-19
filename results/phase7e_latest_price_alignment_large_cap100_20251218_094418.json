@@ -1,0 +1,11 @@
+{
+  "generated_at": "20251218_094418",
+  "target_date": "2025-12-18",
+  "count": 100,
+  "status_counts": {
+    "ok": 51,
+    "mismatch_online_qfq": 46,
+    "online_fail": 3
+  },
+  "report_csv": "results/phase7e_latest_price_alignment_large_cap100_20251218_094418.csv"
+}

@@ -1,0 +1,305 @@
+{
+  "generated_at": "2025-10-16 10:18:49",
+  "tier": "tier1",
+  "start_date": "2020-01-01",
+  "end_date": "2024-12-31",
+  "issues": [
+    {
+      "symbol": "300059.SZ",
+      "issue": "abnormal_price_moves",
+      "severity": "warning",
+      "message": "异常涨跌幅比例 1.66%，涉及 9 天",
+      "dates": [
+        "2023-04-03",
+        "2024-09-24",
+        "2024-09-26",
+        "2024-09-27",
+        "2024-09-30",
+        "2024-10-08",
+        "2024-10-10",
+        "2024-10-18",
+        "2024-11-07"
+      ]
+    },
+    {
+      "symbol": "000001.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/000001SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ca6100>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "601318.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/601318SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ca6f70>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "000858.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/000858SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ca6b80>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600519.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600519SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111a5eaf0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "300750.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/300750SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc39a0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600036.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600036SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cce340>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "002594.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/002594SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cceca0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "000002.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/000002SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ccebb0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600276.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600276SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cce130>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "601166.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/601166SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc3b80>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "300059.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/300059SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc3340>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "601012.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/601012SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ca6850>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "603288.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/603288SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cd9640>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "000333.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/000333SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ca64c0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "002475.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/002475SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc32b0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600309.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600309SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc3580>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600031.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600031SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cd9700>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "300760.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/300760SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cd9ca0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "600900.SH",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/600900SH/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111ce1640>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "symbol": "002920.SZ",
+      "issue": "fundamentals_unavailable",
+      "severity": "critical",
+      "message": "基本面指标覆盖率 0%",
+      "details": {
+        "pe_ratio": false,
+        "pb_ratio": false,
+        "roe": false,
+        "revenue_growth": false,
+        "net_profit_growth": false
+      },
+      "error": "HTTPSConnectionPool(host='money.finance.sina.com.cn', port=443): Max retries exceeded with url: /corp/go.php/vFD_FinancialGuideLine/stockid/002920SZ/ctrl/2020/displaytype/4.phtml (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x111cc3dc0>: Failed to resolve 'money.finance.sina.com.cn' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    }
+  ]
+}

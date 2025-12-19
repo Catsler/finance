@@ -18,5 +18,17 @@ __pycache__/
 # Logs
 *.log
 
+# Paper trading artifacts
+results/paper_trading*.db
+results/paper_trading*.db-*
+
+# KDJ strategy artifacts
+results/pending_signals.json
+results/phase7_kdj_signals*.jsonl
+results/phase7_kdj_state.json
+
 # OS
 .DS_Store
+
+# Claude Code临时分析报告
+claudedocs/

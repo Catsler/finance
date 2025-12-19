@@ -1,0 +1,194 @@
+{
+  "phase": "Phase 7B",
+  "purpose": "Refresh local qfq daily prices for large_cap warn symbols (backup then overwrite)",
+  "backup_dir": "/Users/elie/.qlib/qlib_data/cn_data_backup_phase7b_20251217_212258",
+  "symbols": [
+    "601398.SH",
+    "601939.SH",
+    "601288.SH",
+    "601988.SH",
+    "002142.SZ",
+    "601336.SH",
+    "601688.SH",
+    "000776.SZ",
+    "601628.SH",
+    "300433.SZ",
+    "603501.SH",
+    "600887.SH",
+    "002555.SZ",
+    "603605.SH",
+    "600219.SH",
+    "600426.SH",
+    "601600.SH",
+    "300274.SZ"
+  ],
+  "result_summary": {
+    "count": 18,
+    "success": 18,
+    "failed": 0
+  },
+  "results": [
+    {
+      "symbol": "601398.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601398.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601939.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601939.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601288.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601288.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601988.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601988.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "002142.SZ",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/002142.SZ.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601336.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601336.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601688.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601688.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "000776.SZ",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/000776.SZ.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601628.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601628.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "300433.SZ",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/300433.SZ.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "603501.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/603501.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "600887.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/600887.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "002555.SZ",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/002555.SZ.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "603605.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/603605.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "600219.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/600219.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "600426.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/600426.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "601600.SH",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/601600.SH.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    },
+    {
+      "symbol": "300274.SZ",
+      "records": 727,
+      "start_date": "2022-12-19",
+      "end_date": "2025-12-17",
+      "output_path": "/Users/elie/.qlib/qlib_data/cn_data/300274.SZ.csv",
+      "status": "success",
+      "message": "Successfully downloaded 727 records"
+    }
+  ]
+}

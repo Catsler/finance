@@ -1,0 +1,621 @@
+{
+  "total": 100,
+  "success": 100,
+  "failed": 0,
+  "skipped": 0,
+  "failed_symbols": [],
+  "duration_seconds": 539.65,
+  "parallel_workers": 5,
+  "details": [
+    {
+      "symbol": "600519.SH",
+      "status": "success",
+      "elapsed": 3.395766019821167,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300750.SZ",
+      "status": "success",
+      "elapsed": 3.4427011013031006,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000001.SZ",
+      "status": "success",
+      "elapsed": 4.378415107727051,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002594.SZ",
+      "status": "success",
+      "elapsed": 3.533596992492676,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000002.SZ",
+      "status": "success",
+      "elapsed": 4.960211277008057,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601318.SH",
+      "status": "success",
+      "elapsed": 9.537348985671997,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600276.SH",
+      "status": "success",
+      "elapsed": 2.5912270545959473,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601166.SH",
+      "status": "success",
+      "elapsed": 4.2595109939575195,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300059.SZ",
+      "status": "success",
+      "elapsed": 4.776257038116455,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603288.SH",
+      "status": "success",
+      "elapsed": 4.070818901062012,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600036.SH",
+      "status": "success",
+      "elapsed": 16.76143479347229,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601012.SH",
+      "status": "success",
+      "elapsed": 11.85537600517273,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000333.SZ",
+      "status": "success",
+      "elapsed": 7.277107238769531,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002475.SZ",
+      "status": "success",
+      "elapsed": 6.087100982666016,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600900.SH",
+      "status": "success",
+      "elapsed": 2.7403929233551025,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600309.SH",
+      "status": "success",
+      "elapsed": 6.393712282180786,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600031.SH",
+      "status": "success",
+      "elapsed": 6.468335866928101,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002920.SZ",
+      "status": "success",
+      "elapsed": 3.2755839824676514,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600000.SH",
+      "status": "success",
+      "elapsed": 5.139852046966553,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601939.SH",
+      "status": "success",
+      "elapsed": 1.4970529079437256,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601328.SH",
+      "status": "success",
+      "elapsed": 7.0827648639678955,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000858.SZ",
+      "status": "success",
+      "elapsed": 46.73478817939758,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601288.SH",
+      "status": "success",
+      "elapsed": 14.522980690002441,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300760.SZ",
+      "status": "success",
+      "elapsed": 30.70015001296997,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601988.SH",
+      "status": "success",
+      "elapsed": 18.42514395713806,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601169.SH",
+      "status": "success",
+      "elapsed": 6.513960838317871,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601398.SH",
+      "status": "success",
+      "elapsed": 26.926560163497925,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002142.SZ",
+      "status": "success",
+      "elapsed": 6.29187798500061,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601336.SH",
+      "status": "success",
+      "elapsed": 5.018160343170166,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600030.SH",
+      "status": "success",
+      "elapsed": 2.210345983505249,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601601.SH",
+      "status": "success",
+      "elapsed": 9.233130931854248,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000776.SZ",
+      "status": "success",
+      "elapsed": 3.357943058013916,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002736.SZ",
+      "status": "success",
+      "elapsed": 3.2137317657470703,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600999.SH",
+      "status": "success",
+      "elapsed": 6.461909055709839,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601066.SH",
+      "status": "success",
+      "elapsed": 2.2895939350128174,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601688.SH",
+      "status": "success",
+      "elapsed": 13.73134994506836,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300033.SZ",
+      "status": "success",
+      "elapsed": 2.463141918182373,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601377.SH",
+      "status": "success",
+      "elapsed": 2.3857779502868652,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600016.SH",
+      "status": "success",
+      "elapsed": 26.161142110824585,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601628.SH",
+      "status": "success",
+      "elapsed": 3.3537657260894775,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002773.SZ",
+      "status": "success",
+      "elapsed": 2.347424030303955,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300347.SZ",
+      "status": "success",
+      "elapsed": 2.5299649238586426,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603259.SH",
+      "status": "success",
+      "elapsed": 2.8347980976104736,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300015.SZ",
+      "status": "success",
+      "elapsed": 3.4802229404449463,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601211.SH",
+      "status": "success",
+      "elapsed": 17.908445119857788,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000661.SZ",
+      "status": "success",
+      "elapsed": 3.5333518981933594,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300832.SZ",
+      "status": "success",
+      "elapsed": 2.5803639888763428,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300676.SZ",
+      "status": "success",
+      "elapsed": 2.3100028038024902,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000538.SZ",
+      "status": "success",
+      "elapsed": 2.65309476852417,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "688111.SH",
+      "status": "success",
+      "elapsed": 2.3074398040771484,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002230.SZ",
+      "status": "success",
+      "elapsed": 2.5181479454040527,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000063.SZ",
+      "status": "success",
+      "elapsed": 2.3170931339263916,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002415.SZ",
+      "status": "success",
+      "elapsed": 2.305605173110962,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300433.SZ",
+      "status": "success",
+      "elapsed": 2.4034180641174316,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000100.SZ",
+      "status": "success",
+      "elapsed": 2.2135019302368164,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002371.SZ",
+      "status": "success",
+      "elapsed": 2.4145352840423584,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603501.SH",
+      "status": "success",
+      "elapsed": 2.436177968978882,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300124.SZ",
+      "status": "success",
+      "elapsed": 3.1401309967041016,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002049.SZ",
+      "status": "success",
+      "elapsed": 2.8556606769561768,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002008.SZ",
+      "status": "success",
+      "elapsed": 3.6608469486236572,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000725.SZ",
+      "status": "success",
+      "elapsed": 2.7507100105285645,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300136.SZ",
+      "status": "success",
+      "elapsed": 2.8261771202087402,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600887.SH",
+      "status": "success",
+      "elapsed": 3.204129934310913,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000568.SZ",
+      "status": "success",
+      "elapsed": 2.8523900508880615,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603369.SH",
+      "status": "success",
+      "elapsed": 2.973282814025879,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600600.SH",
+      "status": "success",
+      "elapsed": 2.7992992401123047,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000596.SZ",
+      "status": "success",
+      "elapsed": 3.679244041442871,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000895.SZ",
+      "status": "success",
+      "elapsed": 2.757478952407837,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002304.SZ",
+      "status": "success",
+      "elapsed": 2.7294960021972656,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600809.SH",
+      "status": "success",
+      "elapsed": 2.740139961242676,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000651.SZ",
+      "status": "success",
+      "elapsed": 2.7856357097625732,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603899.SH",
+      "status": "success",
+      "elapsed": 2.803807258605957,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002555.SZ",
+      "status": "success",
+      "elapsed": 2.5323469638824463,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600779.SH",
+      "status": "success",
+      "elapsed": 2.3282082080841064,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603605.SH",
+      "status": "success",
+      "elapsed": 2.960937023162842,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "603486.SH",
+      "status": "success",
+      "elapsed": 3.7357988357543945,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600219.SH",
+      "status": "success",
+      "elapsed": 2.291084051132202,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601899.SH",
+      "status": "success",
+      "elapsed": 3.371933937072754,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601088.SH",
+      "status": "success",
+      "elapsed": 3.504495143890381,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601600.SH",
+      "status": "success",
+      "elapsed": 2.985943078994751,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600585.SH",
+      "status": "success",
+      "elapsed": 3.527597188949585,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600019.SH",
+      "status": "success",
+      "elapsed": 2.668006181716919,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600426.SH",
+      "status": "success",
+      "elapsed": 3.74422287940979,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "601865.SH",
+      "status": "success",
+      "elapsed": 2.6294901371002197,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300274.SZ",
+      "status": "success",
+      "elapsed": 2.657806158065796,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002460.SZ",
+      "status": "success",
+      "elapsed": 2.54909610748291,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300014.SZ",
+      "status": "success",
+      "elapsed": 2.6132569313049316,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "688599.SH",
+      "status": "success",
+      "elapsed": 2.362349033355713,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002466.SZ",
+      "status": "success",
+      "elapsed": 2.4131898880004883,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600438.SH",
+      "status": "success",
+      "elapsed": 2.3871190547943115,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "300450.SZ",
+      "status": "success",
+      "elapsed": 3.4713361263275146,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "002129.SZ",
+      "status": "success",
+      "elapsed": 7.142956018447876,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600048.SH",
+      "status": "success",
+      "elapsed": 2.3773796558380127,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "001979.SZ",
+      "status": "success",
+      "elapsed": 3.3012542724609375,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600340.SH",
+      "status": "success",
+      "elapsed": 2.4464571475982666,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600886.SH",
+      "status": "success",
+      "elapsed": 2.488468885421753,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600011.SH",
+      "status": "success",
+      "elapsed": 3.347383975982666,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "000069.SZ",
+      "status": "success",
+      "elapsed": 5.7484681606292725,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600025.SH",
+      "status": "success",
+      "elapsed": 2.495743989944458,
+      "message": "下载成功"
+    },
+    {
+      "symbol": "600674.SH",
+      "status": "success",
+      "elapsed": 2.393900156021118,
+      "message": "下载成功"
+    }
+  ],
+  "_metadata": {
+    "timestamp": "2025-12-18 09:41:27",
+    "phase": "Phase 8.2",
+    "version": "1.1.0",
+    "git": {
+      "commit": "de00e48a",
+      "branch": "phase8-20year-backtest",
+      "dirty": true
+    }
+  }
+}

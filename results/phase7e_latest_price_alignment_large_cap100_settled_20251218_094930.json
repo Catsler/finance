@@ -1,0 +1,9 @@
+{
+  "generated_at": "20251218_094930",
+  "today": "2025-12-18",
+  "count": 100,
+  "status_counts": {
+    "ok": 100
+  },
+  "report_csv": "results/phase7e_latest_price_alignment_large_cap100_settled_20251218_094930.csv"
+}

@@ -1,0 +1,40 @@
+{
+  "symbol": "601088.SH",
+  "data_source": "ak.stock_zh_a_minute(period=60, adjust=qfq) -> 120min aggregation",
+  "window_days": 252,
+  "start_date": "2024-11-21",
+  "end_date": "2025-12-17",
+  "D0": "2024-11-21",
+  "P0": 37.83753338188881,
+  "params": {
+    "base_pct": 0.7,
+    "t_pct": 0.3,
+    "tranche_pct": 0.1,
+    "kdj": [
+      9,
+      3,
+      3
+    ],
+    "dev_th": 0.03,
+    "J_sell": 80,
+    "J_buy": 20,
+    "gap_th": 0.05,
+    "gap_persist_bars": 2
+  },
+  "skip_days": [
+    "2023-07-05",
+    "2024-07-08",
+    "2025-07-07",
+    "2025-11-10"
+  ],
+  "results": {
+    "start_equity": 1003930.632435057,
+    "end_equity": 1040005.632435057,
+    "total_return": 0.035933757606837036,
+    "annual_return": 0.035933757606837036,
+    "max_drawdown": 0.13318785962453006,
+    "calmar": 0.269797545422968,
+    "monthly_win_rate": 0.46153846153846156,
+    "trade_count": 0
+  }
+}
